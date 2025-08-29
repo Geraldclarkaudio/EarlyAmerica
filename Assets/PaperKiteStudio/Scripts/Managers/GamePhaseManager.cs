@@ -17,10 +17,15 @@ namespace PaperKiteStudio.Dangers
         [SerializeField]
         private UIManager _uiManager;
 
-        public int _gamePhase;
-        public int _phaseStep;
-        public int _tempPhase;
-        public int _tempStep;
+        public int _gamePhase; // used to store value of overall game's progression
+        public int _phaseStep; // used to store sub phase of the current game/temp phase. may not need it. depends on the design. 
+        public int _tempPhase; // used to store the value of the currently played phase.. 
+
+        /// <summary>
+        /// You can have a tempPhase of 1 while the gmae phase is 10 for example. If we want the player to be able to return to previous parts of the game, this is 
+        /// necessary. Otherwise we probably wont need a tempPhase. 
+        /// </summary>
+
 
         [SerializeField]
         private bool isContinuePressed;
@@ -96,10 +101,6 @@ namespace PaperKiteStudio.Dangers
         public int GetTempPhase()
         {
             return _tempPhase;
-        }
-        public int GetTempStep()
-        {
-            return _tempStep;
         }
     }
 }

@@ -4335,7 +4335,6 @@ MonoBehaviour:
   _gamePhase: 0
   _phaseStep: 0
   _tempPhase: 0
-  _tempStep: 0
   isContinuePressed: 0
 --- !u!1 &7023401435812314625
 GameObject:

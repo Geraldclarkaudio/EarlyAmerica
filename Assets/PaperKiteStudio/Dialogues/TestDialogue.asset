@@ -19,6 +19,8 @@ MonoBehaviour:
   icons:
   - {fileID: 21300000, guid: 473d16f3cc5e1154aa27e7fffdc57b5f, type: 3}
   - {fileID: 21300000, guid: 78ca8aa0f509aa24a9c3a93760838529, type: 3}
+  _speakerName:
+  - George Washington
   _animations: []
   _newUIEvents: []
   _dialoguePositionChanges: []
