@@ -15,6 +15,8 @@ namespace PaperKiteStudio.Dangers
         [SerializeField]
         private Image _iconObject;
         [SerializeField]
+        private TMP_Text _speakerNameText;
+        [SerializeField]
         private float canProceed = -1;
         [SerializeField]
         private float textRate = 1f;  // default. adjusts to how long the TTS takes to read it. 
@@ -89,6 +91,7 @@ namespace PaperKiteStudio.Dangers
 
             textComponent.text = _init.GetText(currentDialogue.key[keyIndex]);
             _iconObject.sprite = currentDialogue.icons[keyIndex];
+            _speakerNameText.text = currentDialogue._speakerName[keyIndex];
             textRate = textComponent.text.Length * 0.0667f;
             canProceed = Time.time + textRate;
             _progressSlider.value = 0;
