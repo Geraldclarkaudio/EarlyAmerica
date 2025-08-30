@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &14155196 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1978722648672749651, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+  m_PrefabInstance: {fileID: 245055834584810418}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 947af43141d33a64985fbe9323c8a650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &75255058
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,6 +362,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1065405816}
+        m_TargetAssemblyTypeName: PaperKiteStudio.Dangers.GamePhaseManager, Assembly-CSharp
+        m_MethodName: IncrementGamePhase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &311732389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,6 +388,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sceneToLoadIndex: 1
   _uiManager: {fileID: 0}
+--- !u!114 &1065405816 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5666582874912599789, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+  m_PrefabInstance: {fileID: 245055834584810418}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64bfa6957fcabb14ca3ae65486611af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1171670031
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,6 +545,7 @@ GameObject:
   - component: {fileID: 1244628860}
   - component: {fileID: 1244628859}
   - component: {fileID: 1244628861}
+  - component: {fileID: 1244628862}
   m_Layer: 5
   m_Name: Continue_Button
   m_TagString: Untagged
@@ -619,7 +654,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1244628859}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1244628862}
+        m_TargetAssemblyTypeName: PaperKiteStudio.Dangers.SceneLoader, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1244628862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244628857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c45cce381adc534d9e8d82ec0ae74d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneToLoadIndex: 1
+  _uiManager: {fileID: 14155196}
 --- !u!1 &1297821817
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,7 +866,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1543034406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1099,10 +1160,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2035480472968296338, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5234325266525428643, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5307849168010421398, guid: 76bad3483ecdcba45b3276c584839209, type: 3}

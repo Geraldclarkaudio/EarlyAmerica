@@ -5323,6 +5323,9 @@ MonoBehaviour:
   textRate: 1
   dialogues:
   - {fileID: 11400000, guid: f7e9ef12983ca8347878fdd1a2425642, type: 2}
+  - {fileID: 11400000, guid: 20520b32a0e7f4a4a9263b3237b42037, type: 2}
+  - {fileID: 11400000, guid: 505c45dd51968bf4886ab1a43c6ad78c, type: 2}
+  - {fileID: 11400000, guid: 997837210270e6b449366ac396302e8e, type: 2}
   currentDialogue: {fileID: 0}
   keyIndex: 0
   dialogueIndex: 0

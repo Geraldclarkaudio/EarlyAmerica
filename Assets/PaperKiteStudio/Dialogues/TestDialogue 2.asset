@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0368cd5f494b8dd4cab4883467603c5b, type: 3}
-  m_Name: TestDialogue
+  m_Name: TestDialogue 2
   m_EditorClassIdentifier: 
   dialogueID: 0
   key:

@@ -46,7 +46,23 @@ namespace PaperKiteStudio.Dangers
                 case "Init": // do nothing. 
                     return;
                 case "Scene1":
-                    _dialogueManager.dialogueIndex = 0;
+                    switch (_gamePhase) // this can get pretty ganular depending on the game design
+                    {
+                        case 1: // new game clicked OR continue clicked without having completed phase 1
+                            _dialogueManager.dialogueIndex = 0;
+                            break;
+                        case 2: // clicked continue and has completed phase 1 / not finished phase 2 
+                            _dialogueManager.dialogueIndex = 1;
+                            break;
+                        case 3://clicked continu and has completed phase 2 / not finished phase 3 
+                            _dialogueManager.dialogueIndex = 2;
+                            break;
+                        case 4:
+                            break;
+                        case 5:
+                            _dialogueManager.dialogueIndex = 3;
+                            break;
+                    }
                     break;
                 case "Scene 2 name":
                     break;
@@ -74,19 +90,35 @@ namespace PaperKiteStudio.Dangers
 
         public void IncrementGamePhase() // call when current phase is completed. 
         {
-            if (GetTempPhase() < GetGamePhase())//intention with this is to allow the student to return to previous sections of the game without changing the actual game phase. 
+            _gamePhase++;
+            if (_gamePhase > 9)
             {
-
+                _gamePhase = 10;
             }
-            else
+            SetGamePhase(_gamePhase);
+            SetPhaseStep(0);
+            //if (GetTempPhase() < GetGamePhase())//intention with this is to allow the student to return to previous sections of the game without changing the actual game phase. 
+            //{
+
+            //}
+            //else
+            //{
+            //    _gamePhase++;
+            //    if(_gamePhase > 9)
+            //    {
+            //        _gamePhase = 10;
+            //    }
+            //    SetGamePhase(_gamePhase);
+            //    SetPhaseStep(0);
+            //}
+        }
+        public void IncrementPhaseStep()
+        {
+            _phaseStep++;
+
+            if(_phaseStep > 3)
             {
-                _gamePhase++;
-                if(_gamePhase > 9)
-                {
-                    _gamePhase = 10;
-                }
-                SetGamePhase(_gamePhase);
-                SetPhaseStep(0);
+                IncrementGamePhase();
             }
         }
 
@@ -101,6 +133,14 @@ namespace PaperKiteStudio.Dangers
         public int GetTempPhase()
         {
             return _tempPhase;
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha9))
+            {
+                IncrementPhaseStep();
+            }
         }
     }
 }
