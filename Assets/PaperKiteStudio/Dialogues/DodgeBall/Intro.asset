@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0368cd5f494b8dd4cab4883467603c5b, type: 3}
+  m_Name: Intro
+  m_EditorClassIdentifier: 
+  dialogueID: 0
+  key:
+  - DodgeBall_Intro_1
+  - DodgeBall_Intro_2
+  icons:
+  - {fileID: 21300000, guid: 473d16f3cc5e1154aa27e7fffdc57b5f, type: 3}
+  - {fileID: 21300000, guid: 473d16f3cc5e1154aa27e7fffdc57b5f, type: 3}
+  _speakerName:
+  - George Washington
+  - George Washington
+  _animations: []
+  _newUIEvents: []
+  _dialoguePositionChanges: []
+  _eventTriggers: []
+  _endDialogueEvent: {fileID: 11400000, guid: 3f42df9bcfa68e741835d17291117e75, type: 2}

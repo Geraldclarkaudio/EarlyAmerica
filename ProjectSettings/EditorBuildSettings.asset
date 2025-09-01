@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/PaperKiteStudio/Scenes/Init.unity
     guid: e548f853c2cb11e4fa69a2b0b60f3e8a
   - enabled: 1
-    path: Assets/PaperKiteStudio/Scenes/Scene1.unity
+    path: Assets/PaperKiteStudio/Scenes/DodgeBall.unity
     guid: a1edd43f104660a448c2c56289079de6
   m_configObjects: {}

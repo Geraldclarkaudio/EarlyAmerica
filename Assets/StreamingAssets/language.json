@@ -2,9 +2,6 @@
   "en": {
     "newGame": "New Game",
     "continue": "Continue",
-    "Test1": "I'm test dialogue.",
-    "Test2": "At least I work... unlike you Gerald...",
-    "Test3": "YAY",
-    "Test4": "You're not an idiot afterall'"
+    "DodgeBall_Intro_1": "I need to remain neutral bruh!", 
+    "DodgeBall_Intro_2": "No Cap!"
   }
-}

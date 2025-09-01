@@ -45,7 +45,7 @@ namespace PaperKiteStudio.Dangers
             {
                 case "Init": // do nothing. 
                     return;
-                case "Scene1":
+                case "DodgeBall":
                     switch (_gamePhase) // this can get pretty ganular depending on the game design
                     {
                         case 1: // new game clicked OR continue clicked without having completed phase 1
