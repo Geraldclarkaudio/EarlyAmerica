@@ -14,14 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueID: 0
   key:
-  - DodgeBall_Intro_1
-  - DodgeBall_Intro_2
+  - Guide_Bot_01
+  - Guide_Bot_02
+  - Guide_Bot_03
   icons:
-  - {fileID: 21300000, guid: 473d16f3cc5e1154aa27e7fffdc57b5f, type: 3}
-  - {fileID: 21300000, guid: 473d16f3cc5e1154aa27e7fffdc57b5f, type: 3}
+  - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
+  - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
+  - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
   _speakerName:
-  - George Washington
-  - George Washington
+  - Guide Bot
+  - Guide Bot
+  - Guide Bot
   _animations: []
   _newUIEvents: []
   _dialoguePositionChanges: []
