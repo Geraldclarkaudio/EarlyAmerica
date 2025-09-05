@@ -18,6 +18,7 @@ namespace PaperKiteStudio.Dangers
             Off, 
             Fade,
             Dialogue, 
+            Journal
             //whatevcer other states might exist later.
         }
             
@@ -27,6 +28,8 @@ namespace PaperKiteStudio.Dangers
         private Canvas _dialogueCanvas;
         [SerializeField]
         private Canvas _fadeCanvas;
+        [SerializeField]
+        private Canvas _journalCanvas;
 
         [SerializeField]
         private Image _fadeImage;
@@ -68,11 +71,31 @@ namespace PaperKiteStudio.Dangers
                     SceneManager.LoadScene(sceneIndex);
             });
         }
+        public void TurnOffJournal()
+        {
+            state = UIState.Off;
+            _journalCanvas.enabled = false;
+        }
         private void Update()
         {
             if (_dialogueManager.dialogueIsActive)
             {
                 return; // use to lock up the screen while dialogue is active. 
+            }
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                //open journal.. 
+                if(state != UIState.Journal)
+                {
+                    state = UIState.Journal;
+                    _journalCanvas.enabled = true;
+                }
+                else
+                {
+                    state = UIState.Off;
+                    _journalCanvas.enabled = false;
+                }
+
             }
         }
     }

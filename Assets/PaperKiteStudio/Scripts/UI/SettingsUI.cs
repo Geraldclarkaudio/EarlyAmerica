@@ -35,6 +35,7 @@ namespace PaperKiteStudio.Dangers
         {
             _ttsOn = true; // on by default
             _onOffText.text = "ON";
+            _generalRect.DOAnchorPosX(675, 0.1f);
         }
         public void ToggleTTS()
         {
