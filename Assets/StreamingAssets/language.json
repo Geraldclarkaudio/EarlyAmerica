@@ -3,5 +3,12 @@
     "newGame": "New Game",
     "continue": "Continue",
     "DodgeBall_Intro_1": "I need to remain neutral bruh!", 
-    "DodgeBall_Intro_2": "No Cap!"
+    "DodgeBall_Intro_2": "No Cap!",
+    "Guide_Bot_01": "Time breach detected! You've landed in 1793-America's caught between France and Britain.",
+    "Guide_Bot_02": "Recover the lost documents before history unravels!",
+    "Guide_Bot_03": "Incoming pressure! Dodge the chaos and recover the Proclamation of Neutrality!",
+    "Dodgeball_Washington_01": "Peace is fragile. I must choose wisely-for the sake of the nation.",
+    "Dodgeball_Jefferson_01": "France stood with us. Now we stand with them!",
+    "Dodgeball_Hamilton_01": "Neutrality is cowardice dressed as caution."
   }
+}
