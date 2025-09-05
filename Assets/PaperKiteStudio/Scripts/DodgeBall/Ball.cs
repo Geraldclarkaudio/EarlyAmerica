@@ -35,7 +35,7 @@ namespace PaperKiteStudio.Dangers
             _targetObject = GameObject.FindGameObjectWithTag("Player").transform.position;
             _targetDirection = (_targetObject - transform.position).normalized;
         }
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Player"))
             {
