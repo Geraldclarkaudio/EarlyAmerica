@@ -364,6 +364,61 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &257057102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 257057103}
+  - component: {fileID: 257057104}
+  m_Layer: 0
+  m_Name: BallPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &257057103
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257057102}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 533957387}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &257057104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257057102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caeaece8a58fe1644870584bd2c89a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToPool:
+  - {fileID: 4326419915267042660, guid: ef632bd2fb3e82e4e8bf93ec03f01587, type: 3}
+  - {fileID: 4326419915267042660, guid: 55c78faf0a7e1374aae2491e0dd7d5ed, type: 3}
+  amountToPool: 1
+  frenchBalls: []
+  britishBalls: []
+  loudMouthBalls: []
+  frenchSpawnTimer: 0
+  britishSpawnTimer: 0
+  spawnTimeRange: {x: 0.5, y: 4}
+  _canSpawn: 1
 --- !u!1 &259010224
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,6 +1091,38 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1997015230}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &533957386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 533957387}
+  m_Layer: 0
+  m_Name: Object Pools (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &533957387
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533957386}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 257057103}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &534196206
 GameObject:
@@ -3271,6 +3358,7 @@ GameObject:
   - component: {fileID: 1997015232}
   - component: {fileID: 1997015234}
   - component: {fileID: 1997015233}
+  - component: {fileID: 1997015237}
   - component: {fileID: 1997015235}
   - component: {fileID: 1997015236}
   m_Layer: 0
@@ -3418,8 +3506,9 @@ MonoBehaviour:
   teammateLayer:
     serializedVersion: 2
     m_Bits: 0
-  avoidRadius: 12
+  avoidRadius: 5.6
   _rb: {fileID: 1997015235}
+  hasBall: 0
 --- !u!50 &1997015235
 Rigidbody2D:
   serializedVersion: 4
@@ -3492,6 +3581,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1490148, y: 1.678832}
   m_EdgeRadius: 0
+--- !u!114 &1997015237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997015229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07183259779932b419afc3c8c54449a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 02f0271778a39f84fbc9d93d36fb30e4, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1997015234}
+        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+        m_MethodName: StopRandomThrowLoop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _dialoguePositionChangeResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1999036277
 GameObject:
   m_ObjectHideFlags: 0
@@ -3507,7 +3627,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1999036278
 Transform:
   m_ObjectHideFlags: 0
@@ -3776,8 +3896,9 @@ MonoBehaviour:
   teammateLayer:
     serializedVersion: 2
     m_Bits: 0
-  avoidRadius: 12
+  avoidRadius: 5.6
   _rb: {fileID: 8037132582350207123}
+  hasBall: 0
 --- !u!1 &3364328081959213228
 GameObject:
   m_ObjectHideFlags: 0
@@ -3791,6 +3912,7 @@ GameObject:
   - component: {fileID: 5701938896044427658}
   - component: {fileID: 3209856402983115811}
   - component: {fileID: 957284859}
+  - component: {fileID: 8037132582350207125}
   - component: {fileID: 8037132582350207123}
   - component: {fileID: 8037132582350207124}
   m_Layer: 0
@@ -3992,6 +4114,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3084449, y: 1.8081188}
   m_EdgeRadius: 0
+--- !u!114 &8037132582350207125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3364328081959213228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07183259779932b419afc3c8c54449a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 18b248c138146c247b9f8d1225621e61, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3209856402983115811}
+        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+        m_MethodName: StopRandomThrowLoop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _dialoguePositionChangeResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4004,6 +4157,7 @@ SceneRoots:
   - {fileID: 282299495}
   - {fileID: 720086573}
   - {fileID: 1999036278}
+  - {fileID: 533957387}
   - {fileID: 1341763301}
   - {fileID: 2102559404}
   - {fileID: 1935854348}

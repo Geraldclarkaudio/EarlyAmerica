@@ -7,14 +7,14 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameEvent throwBall;
     [SerializeField] private Animator _animator;
     [SerializeField] private float moveSpeed = 25f;
-    //[SerializeField] private float moveDuration = 1.5f;
     [SerializeField] private LayerMask teammateLayer;
     [SerializeField] private float avoidRadius = 1f;
     [SerializeField] private Rigidbody2D _rb;
 
     private Coroutine throwRoutine;
     private Coroutine moveRoutine;
-    private bool isThrowing = false;
+
+    [SerializeField] private bool hasBall = false;
 
     private void OnEnable()
     {
@@ -31,14 +31,36 @@ public class Enemy : MonoBehaviour
 
     public void StartRandomThrowLoop()
     {
+        if (hasBall) return;
+
+        hasBall = true;
+
+        if (moveRoutine != null)
+        {
+            StopCoroutine(moveRoutine);
+            moveRoutine = null;
+        }
+
         if (throwRoutine != null) StopCoroutine(throwRoutine);
+
+        _rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
 
         throwRoutine = StartCoroutine(RandomThrowLoop());
     }
 
+    public void StopRandomThrowLoop()
+    {
+        if (throwRoutine != null)
+        {
+            StopCoroutine(throwRoutine);
+            throwRoutine = null;
+        }
+    }
+
     private IEnumerator RandomThrowLoop()
     {
-        isThrowing = true;
+        //isThrowing = true;
+
         _rb.velocity = Vector2.zero;
 
         float waitTime = Random.Range(0.5f, 1.5f);
@@ -50,27 +72,25 @@ public class Enemy : MonoBehaviour
         throwRoutine = null;
 
         yield return new WaitForSeconds(0.5f);
-        isThrowing = false;
+
+        _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        moveRoutine = StartCoroutine(MovementLoop());
+        hasBall = false;
     }
+
+
 
     private IEnumerator MovementLoop()
     {
         while (true)
         {
-            if (!isThrowing)
-            {
-                Vector2 randomDir = Random.insideUnitCircle.normalized;
+            Vector2 randomDir = Random.insideUnitCircle.normalized;
 
-                // Avoid teammates
-                Collider2D hit = Physics2D.OverlapCircle(transform.position + (Vector3)randomDir * avoidRadius, avoidRadius, teammateLayer);
-                if (hit == null)
-                {
-                    _rb.velocity = randomDir * moveSpeed;
-                }
-                else
-                {
-                    _rb.velocity = Vector2.zero;
-                }
+            // Avoid teammates
+            Collider2D hit = Physics2D.OverlapCircle(transform.position + (Vector3)randomDir * avoidRadius, avoidRadius, teammateLayer);
+            if (hit == null)
+            {
+                _rb.velocity = randomDir * moveSpeed;
             }
             else
             {
@@ -81,8 +101,16 @@ public class Enemy : MonoBehaviour
         }
     }
 
+
+
     void PlayThrowAnimation()
     {
         _animator.SetTrigger("Throw");
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, avoidRadius);
     }
 }

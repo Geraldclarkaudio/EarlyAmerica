@@ -13,9 +13,11 @@ namespace PaperKiteStudio.Dangers
     public abstract class Ball : MonoBehaviour
     {
         [SerializeField] protected BallType ballType;
+        public BallType BallType => ballType;
         [SerializeField] protected float _speed;
         [SerializeField] protected GameObject _associatedCharacter;
         [SerializeField] private GameEvent ballEnabledEvent;
+        [SerializeField] private GameEvent ballDisabledEvent;
 
         protected Vector3 _targetDirection;
         protected Vector3 _targetObject;
@@ -38,6 +40,7 @@ namespace PaperKiteStudio.Dangers
 
         private void OnDisable()
         {
+            ballDisabledEvent.Raise();
             CancelInvoke();
         }
         private void OnTriggerEnter2D(Collider2D other)
