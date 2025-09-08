@@ -12,28 +12,33 @@ namespace PaperKiteStudio.Dangers
     }
     public abstract class Ball : MonoBehaviour
     {
-        [SerializeField]
-        protected BallType ballType;
-        [SerializeField]
-        protected float _speed;
-        [SerializeField]
-        protected GameObject _associatedCharacter;
+        [SerializeField] protected BallType ballType;
+        [SerializeField] protected float _speed;
+        [SerializeField] protected GameObject _associatedCharacter;
+        [SerializeField] private GameEvent ballEnabledEvent;
 
         protected Vector3 _targetDirection;
         protected Vector3 _targetObject;
+        private bool isThrown = false;
+        private bool hasBeenInitialized = false;
 
         public static event Action<BallType> onHitPlayer;
-        private void Start()
-        {
-            Invoke("Disable", 2.0f);
-        }
-
+ 
         private void OnEnable()
         {
-            transform.position = _associatedCharacter.transform.position;
+            if (!hasBeenInitialized)
+            {
+                hasBeenInitialized = true;
+                return;
+            }
+            ballEnabledEvent.Raise();
+            isThrown = false;
+            transform.position = _associatedCharacter.transform.GetChild(0).position;
+        }
 
-            _targetObject = GameObject.FindGameObjectWithTag("Player").transform.position;
-            _targetDirection = (_targetObject - transform.position).normalized;
+        private void OnDisable()
+        {
+            CancelInvoke();
         }
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -43,7 +48,7 @@ namespace PaperKiteStudio.Dangers
                 gameObject.SetActive(false);
             }
         }
-        private void Disable()
+        private void DisableBall()
         {
             gameObject.SetActive(false);
         }
@@ -53,10 +58,29 @@ namespace PaperKiteStudio.Dangers
             //update UI for scoreboard. 
             onHitPlayer?.Invoke(ballType);
         }
-    
+
+        public void Throw()
+        {
+            if (isThrown) return;
+
+            // Calculate direction at the moment of throw
+            _targetObject = GameObject.FindGameObjectWithTag("Player").transform.position;
+            _targetDirection = (_targetObject - transform.position).normalized;
+
+            isThrown = true;
+
+            // Schedule disable after 2 seconds
+            Invoke(nameof(DisableBall), 3f);
+        }
+
+
+
         public virtual void Update()
         {
-            transform.Translate(_targetDirection * _speed * Time.deltaTime, Space.World);
+            if (isThrown)
+            {
+                transform.Translate(_targetDirection * _speed * Time.deltaTime, Space.World);
+            }
         }
     }
 

@@ -24,18 +24,7 @@ public class Player_Test : MonoBehaviour
         float moveY = Input.GetAxisRaw("Vertical");
         _movement = new Vector2(moveX, moveY);
 
-
-        if (moveX != 0)
-            transform.localScale = new Vector3(originalScale.x * Mathf.Sign(moveX), originalScale.y, originalScale.z);
-
-        // Animation triggers
-        _animator.SetBool("isWalking", moveX != 0);
-
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //    _animator.SetBool("isDucking", true);
-        //else
-        //    _animator.SetBool("isDucking", false);
-
+        // Animation trigger
         if (Input.GetKeyDown(KeyCode.F))
             _animator.SetBool("isThrowing", true);
         else

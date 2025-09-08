@@ -10,14 +10,12 @@ namespace PaperKiteStudio.Dangers
         public GameObject[] objectToPool;
         public int amountToPool;
 
-        [SerializeField]
-        private float _spawnTimer;
-        [SerializeField]
-        private float _originalSpawnTime;
+        [SerializeField] private float _spawnTimer;
+        [SerializeField] private float _originalSpawnTime;
+        [SerializeField] private bool _canSpawn;
 
         DialogueManager _dialogueManger;
-        [SerializeField]
-        private bool _canSpawn;
+
         void Awake()
         {
             SharedInstance = this;
