@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 2996203106948394818}
   - component: {fileID: 2428782740151230376}
   - component: {fileID: 335932834101031698}
-  - component: {fileID: -3499452253619129434}
   - component: {fileID: -5934375098658119833}
+  - component: {fileID: -8562217546123651775}
   m_Layer: 0
-  m_Name: French_Ball 1
+  m_Name: Player_Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 182700173
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4196aa70f2b553147b6817955e6505c6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a4895252d12116e459d9bc94e699379d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -196,25 +196,6 @@ PolygonCollider2D:
       - {x: 1.1507444, y: -0.33020148}
       - {x: 1.1468009, y: 0.3223142}
   m_UseDelaunayMesh: 0
---- !u!114 &-3499452253619129434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4326419915267042660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2a27875695f55141886e5ecdf959737, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ballType: 0
-  _speed: 40
-  _associatedCharacter: {fileID: 0}
-  ballEnabledEvent: {fileID: 11400000, guid: d0cd4d61621ea604180275ca896a5493, type: 2}
-  ballDisabledEvent: {fileID: 11400000, guid: 02f0271778a39f84fbc9d93d36fb30e4, type: 2}
-  isThrown: 0
-  _collider: {fileID: 335932834101031698}
 --- !u!114 &-5934375098658119833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,11 +208,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07183259779932b419afc3c8c54449a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 3f6871c6bd3195d4eb6e8dd6aa2d0694, type: 2}
+  Event: {fileID: 11400000, guid: 984d434fa06e1394ab3ef826b6b58abb, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -3499452253619129434}
+      - m_Target: {fileID: -8562217546123651775}
         m_TargetAssemblyTypeName: PaperKiteStudio.Dangers.Ball, Assembly-CSharp
         m_MethodName: Throw
         m_Mode: 1
@@ -246,3 +227,22 @@ MonoBehaviour:
   _dialoguePositionChangeResponse:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-8562217546123651775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4326419915267042660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a63b9417a7eee44a30e03cccd0eb54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballType: 3
+  _speed: 40
+  _associatedCharacter: {fileID: 0}
+  ballEnabledEvent: {fileID: 11400000, guid: faae73ad0f308194db2ae93525ef5f7d, type: 2}
+  ballDisabledEvent: {fileID: 11400000, guid: dc407a04417246a45b106c43c914ce65, type: 2}
+  isThrown: 0
+  _collider: {fileID: 335932834101031698}

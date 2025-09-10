@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,14 +10,15 @@ namespace PaperKiteStudio.Dangers
 
         [SerializeField] private List<GameObject> frenchBalls = new();
         [SerializeField] private List<GameObject> britishBalls = new();
-        [SerializeField] private List<GameObject> loudMouthBalls = new();
+        [SerializeField] private List<GameObject> playerBalls = new();
+        [SerializeField] private List<GameObject> audienceBalls = new();
 
-        //[SerializeField] private float _spawnTimer;
         [SerializeField] private float frenchSpawnTimer;
         [SerializeField] private float britishSpawnTimer;
+        [SerializeField] private float playerSpawnTimer;
+        [SerializeField] private float audienceSpawnTimer;
 
         [SerializeField] private Vector2 spawnTimeRange = new Vector2(0.5f, 4f);
-        //[SerializeField] private float _originalSpawnTime = 3f;
         [SerializeField] private bool _canSpawn = true;
 
         private DialogueManager _dialogueManager;
@@ -28,8 +28,8 @@ namespace PaperKiteStudio.Dangers
             _dialogueManager = FindObjectOfType<DialogueManager>();
             frenchSpawnTimer = Random.Range(spawnTimeRange.x, spawnTimeRange.y);
             britishSpawnTimer = Random.Range(spawnTimeRange.x, spawnTimeRange.y);
-
-            //_spawnTimer = _originalSpawnTime;
+            playerSpawnTimer = Random.Range(spawnTimeRange.x, spawnTimeRange.y);
+            audienceSpawnTimer = Random.Range(spawnTimeRange.x, spawnTimeRange.y);
 
             foreach (GameObject ballPrefab in objectToPool)
             {
@@ -53,8 +53,11 @@ namespace PaperKiteStudio.Dangers
                         case BallType.British:
                             britishBalls.Add(tmp);
                             break;
-                        case BallType.LoudMouth:
-                            loudMouthBalls.Add(tmp);
+                        case BallType.Player:
+                            playerBalls.Add(tmp);
+                            break;
+                        case BallType.Audience:
+                            audienceBalls.Add(tmp);
                             break;
                     }
                 }
@@ -71,6 +74,8 @@ namespace PaperKiteStudio.Dangers
 
             frenchSpawnTimer -= Time.deltaTime;
             britishSpawnTimer -= Time.deltaTime;
+            playerSpawnTimer -= Time.deltaTime;
+            audienceSpawnTimer -= Time.deltaTime;
 
             if (frenchSpawnTimer <= 0)
             {
@@ -82,6 +87,18 @@ namespace PaperKiteStudio.Dangers
             {
                 TrySpawn(britishBalls);
                 britishSpawnTimer = Random.Range(spawnTimeRange.x, spawnTimeRange.y);
+            }
+
+            if (playerSpawnTimer <= 0)
+            {
+                TrySpawn(playerBalls);
+                playerSpawnTimer = Random.Range(spawnTimeRange.x, spawnTimeRange.y);
+            }
+
+            if (audienceSpawnTimer <= 0)
+            {
+                TrySpawn(audienceBalls);
+                audienceSpawnTimer = Random.Range(spawnTimeRange.x, spawnTimeRange.y);
             }
         }
 

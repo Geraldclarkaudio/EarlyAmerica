@@ -21,9 +21,11 @@ namespace PaperKiteStudio.Dangers
         private DialogueManager _dialogueManger;
         [SerializeField]
         private GamePhaseManager _gamePhaseManager;
+        private Dodgeball_Data data;
 
         private void Start()
         {
+            data = new();
             _gamePhaseManager = FindAnyObjectByType<GamePhaseManager>();    
             gameState = GameState.PreGame;
         }
