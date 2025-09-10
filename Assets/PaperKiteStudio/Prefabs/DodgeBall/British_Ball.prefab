@@ -146,10 +146,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballType: 1
-  _speed: 30
+  _speed: 40
   _associatedCharacter: {fileID: 0}
   ballEnabledEvent: {fileID: 11400000, guid: f466eea098c505c4cb50e87141be159e, type: 2}
   ballDisabledEvent: {fileID: 11400000, guid: 18b248c138146c247b9f8d1225621e61, type: 2}
+  isThrown: 0
+  _collider: {fileID: 335932834101031698}
 --- !u!60 &335932834101031698
 PolygonCollider2D:
   m_ObjectHideFlags: 0

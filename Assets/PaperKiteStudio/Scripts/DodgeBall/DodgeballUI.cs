@@ -6,18 +6,15 @@ namespace PaperKiteStudio.Dangers
 {
     public class DodgeballUI : MonoBehaviour
     {
-        [SerializeField]
-        private TMP_Text _frenchScoreText;
-        [SerializeField]
-        private TMP_Text _britishScoreText;
-        [SerializeField]
-        private TMP_Text _loudmouthScoreText;
-        [SerializeField]
-        private int frenchScore = 0;
-        [SerializeField]
-        private int britishScore = 0;
-        [SerializeField]
-        private int loudmouthScore = 0;
+        [SerializeField] private TMP_Text _frenchScoreText;
+        [SerializeField] private TMP_Text _britishScoreText;
+        //[SerializeField] private TMP_Text _loudmouthScoreText;
+        [SerializeField] private TMP_Text _playerScoreText;
+
+        [SerializeField] private int frenchScore = 0;
+        [SerializeField] private int britishScore = 0;
+        //[SerializeField] private int loudmouthScore = 0;
+        [SerializeField] private int playerScore = 0;
 
         private void OnEnable()
         {
@@ -41,8 +38,12 @@ namespace PaperKiteStudio.Dangers
                     _britishScoreText.text = britishScore.ToString();
                     break;
                 case BallType.LoudMouth:
-                    loudmouthScore++;
-                    _loudmouthScoreText.text = loudmouthScore.ToString();
+                    //loudmouthScore++;
+                    //_loudmouthScoreText.text = loudmouthScore.ToString();
+                    break;
+                case BallType.Player:
+                    playerScore++;
+                    _playerScoreText.text = playerScore.ToString();
                     break;
             }
         }

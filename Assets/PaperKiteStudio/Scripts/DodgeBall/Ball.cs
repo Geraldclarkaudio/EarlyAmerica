@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 namespace PaperKiteStudio.Dangers
 { 
@@ -8,7 +6,9 @@ namespace PaperKiteStudio.Dangers
     {
         French,
         British, 
-        LoudMouth
+        LoudMouth,
+        Player,
+        Audience
     }
     public abstract class Ball : MonoBehaviour
     {
@@ -21,13 +21,17 @@ namespace PaperKiteStudio.Dangers
 
         protected Vector3 _targetDirection;
         protected Vector3 _targetObject;
-        private bool isThrown = false;
+        [SerializeField] protected bool isThrown = false;
         private bool hasBeenInitialized = false;
 
+        [SerializeField] protected PolygonCollider2D _collider;
+
         public static event Action<BallType> onHitPlayer;
- 
+
         private void OnEnable()
         {
+            _collider.enabled = false;
+
             if (!hasBeenInitialized)
             {
                 hasBeenInitialized = true;
@@ -43,7 +47,7 @@ namespace PaperKiteStudio.Dangers
             ballDisabledEvent.Raise();
             CancelInvoke();
         }
-        private void OnTriggerEnter2D(Collider2D other)
+        protected virtual void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Player"))
             {
@@ -51,7 +55,7 @@ namespace PaperKiteStudio.Dangers
                 gameObject.SetActive(false);
             }
         }
-        private void DisableBall()
+        protected void DisableBall()
         {
             gameObject.SetActive(false);
         }
@@ -62,8 +66,10 @@ namespace PaperKiteStudio.Dangers
             onHitPlayer?.Invoke(ballType);
         }
 
-        public void Throw()
+        public virtual void Throw()
         {
+            _collider.enabled = true;
+
             if (isThrown) return;
 
             // Calculate direction at the moment of throw

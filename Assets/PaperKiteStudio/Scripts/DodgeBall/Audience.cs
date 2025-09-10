@@ -2,13 +2,10 @@ using System.Collections;
 using UnityEngine;
 using PaperKiteStudio.Dangers;
 
-public class Enemy : MonoBehaviour
+public class Audience : MonoBehaviour
 {
     [SerializeField] private GameEvent throwBall;
-    [SerializeField] private Animator _animator;
     [SerializeField] private float moveSpeed = 25f;
-    [SerializeField] private LayerMask teammateLayer;
-    [SerializeField] private float avoidRadius = 1f;
     [SerializeField] private Rigidbody2D _rb;
 
     private Coroutine throwRoutine;
@@ -63,44 +60,52 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
 
         throwBall.Raise();
-        PlayThrowAnimation();
 
         throwRoutine = null;
 
         yield return new WaitForSeconds(0.5f);
 
-        _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        _rb.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionY;
         moveRoutine = StartCoroutine(MovementLoop());
         hasBall = false;
     }
 
 
 
+    //private IEnumerator MovementLoop()
+    //{
+    //    while (true)
+    //    {
+    //        Vector2 randomDir = Random.insideUnitCircle.normalized;
+
+    //        // Avoid teammates
+    //        Collider2D hit = Physics2D.OverlapCircle(transform.position + (Vector3)randomDir * avoidRadius, avoidRadius, teammateLayer);
+    //        if (hit == null)
+    //        {
+    //            _rb.velocity = randomDir * moveSpeed;
+    //        }
+    //        else
+    //        {
+    //            _rb.velocity = Vector2.zero;
+    //        }
+
+    //        yield return new WaitForSeconds(Random.Range(1f, 2f));
+    //    }
+    //}
+
     private IEnumerator MovementLoop()
     {
         while (true)
         {
-            Vector2 randomDir = Random.insideUnitCircle.normalized;
+            // Choose a random direction: left or right
+            float xDir = Random.Range(0, 2) == 0 ? -1f : 1f;
+            Vector2 moveDir = new Vector2(xDir, 0f);
 
-            // Avoid teammates
-            Collider2D hit = Physics2D.OverlapCircle(transform.position + (Vector3)randomDir * avoidRadius, avoidRadius, teammateLayer);
-            if (hit == null)
-            {
-                _rb.velocity = randomDir * moveSpeed;
-            }
-            else
-            {
-                _rb.velocity = Vector2.zero;
-            }
+            _rb.velocity = moveDir * moveSpeed;
 
             yield return new WaitForSeconds(Random.Range(1f, 2f));
         }
     }
 
 
-
-    void PlayThrowAnimation()
-    {
-        _animator.SetTrigger("Throw");
-    }
 }
