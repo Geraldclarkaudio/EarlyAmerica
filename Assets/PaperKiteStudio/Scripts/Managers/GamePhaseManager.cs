@@ -45,26 +45,79 @@ namespace PaperKiteStudio.Dangers
             {
                 case "Init": // do nothing. 
                     return;
-                case "DodgeBall":
-                    switch (_gamePhase) // this can get pretty ganular depending on the game design
+                case "LevelSelect":
+
+                    switch (_gamePhase)
                     {
-                        case 1: // new game clicked OR continue clicked without having completed phase 1
+                        case 0: // intro dialogue
                             _dialogueManager.dialogueIndex = 0;
                             break;
-                        case 2: // clicked continue and has completed phase 1 / not finished phase 2 
-                            _dialogueManager.dialogueIndex = 1;
+
+                        case 1:
+                            // has played dodgeball game at least but hasnt bEAT IT.. 
+                            switch (_phaseStep)
+                            {
+                                case 1:
+                                    _dialogueManager.dialogueIndex = 2;
+                                    break;
+                                case 2:
+                                    _dialogueManager.dialogueIndex = 2;
+                                    break;
+                                case 3:
+                                    _dialogueManager.dialogueIndex = 2;
+                                    break;
+                            }
                             break;
-                        case 3://clicked continu and has completed phase 2 / not finished phase 3 
-                            _dialogueManager.dialogueIndex = 2;
+                        case 2: //has played part 2 but not beat it
+                            switch (_phaseStep)
+                            {
+                                case 0:
+                                    _dialogueManager.dialogueIndex = 3;
+                                    break;
+                                case 1:
+                                    break;
+                                case 2:
+                                    break;
+                                case 3:
+                                    break;
+                            }
                             break;
-                        case 4:
-                            break;
-                        case 5:
-                            _dialogueManager.dialogueIndex = 3;
+                        case 3:
+                            //played 3 not beat..etc 
                             break;
                     }
                     break;
-                case "Scene 2 name":
+
+                case "DodgeBall":
+                    if(_phaseStep == 0)
+                    {
+                        SetPhaseStep(1); // set phase step to 1 for first visit to this game. 
+                    }
+                    switch (_gamePhase) // this can get pretty ganular depending on the game design
+                    {
+                        case 1: // new game clicked OR continue clicked without having completed phase 1
+                            _dialogueManager.dialogueIndex = 1;
+                            break;
+                        case > 1:
+                            //dialogue like "we have already completed this but dodgeball is fun eh? 
+                            break;
+                    }
+                    break;
+                
+                case "XYZ":
+                    if (_phaseStep == 0)
+                    {
+                        SetPhaseStep(1); // set phase step to 1 for first visit to this game. 
+                    }
+                    switch (_gamePhase)
+                    {
+                        case 2: // clicked continue and has completed phase 1 / not finished phase 2 
+                            _dialogueManager.dialogueIndex = 4;
+                            break;
+                        case > 2:
+                            //already complete but have fun
+                            break;
+                    }
                     break;
             }
             // start a dialogue at the beginning of every scene load.
@@ -77,7 +130,7 @@ namespace PaperKiteStudio.Dangers
             _init.playerData.gamePhase = phase;
             _init.Save();
         }
-        public void SetPhaseStep(int step)
+        public void SetPhaseStep(int step) // call after each sub part of main.. example after each round of dodgeball, after xyz, after quasi etc. 
         {
             _phaseStep = step;
             _init.playerData.phaseStep = step;
@@ -86,6 +139,11 @@ namespace PaperKiteStudio.Dangers
         public void SetTempPhase(int temp)
         {
             _tempPhase = temp;
+
+            if (_tempPhase > _gamePhase)
+            {
+                SetGamePhase(temp);
+            }
         }
 
         public void IncrementGamePhase() // call when current phase is completed. 
@@ -97,20 +155,6 @@ namespace PaperKiteStudio.Dangers
             }
             SetGamePhase(_gamePhase);
             SetPhaseStep(0);
-            //if (GetTempPhase() < GetGamePhase())//intention with this is to allow the student to return to previous sections of the game without changing the actual game phase. 
-            //{
-
-            //}
-            //else
-            //{
-            //    _gamePhase++;
-            //    if(_gamePhase > 9)
-            //    {
-            //        _gamePhase = 10;
-            //    }
-            //    SetGamePhase(_gamePhase);
-            //    SetPhaseStep(0);
-            //}
         }
         public void IncrementPhaseStep()
         {
