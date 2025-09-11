@@ -5,6 +5,7 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
+using DG.Tweening;
 namespace PaperKiteStudio.Dangers
 {
     public class XYZHUD : MonoBehaviour
@@ -17,6 +18,23 @@ namespace PaperKiteStudio.Dangers
         public static event Action oncoinDeplete;
         [SerializeField]
         private GameObject _gameOverPanel;
+        [SerializeField]
+        private RectTransform _promptPanel;
+        [SerializeField]
+        private Sprite _paidSprite;
+        [SerializeField]
+        private Sprite _blockedSprite;
+
+        [SerializeField]
+        private XYZSpawner _spawner;
+
+        [SerializeField]
+        private float _screenShakeStrength;
+
+        [SerializeField]
+        private RectTransform _roundPanel;
+        [SerializeField]
+        private TMP_Text _roundText;
 
         private void Start()
         {
@@ -26,6 +44,36 @@ namespace PaperKiteStudio.Dangers
         private void OnDisable()
         {
             XYZ.onSteal -= UpdateCoinAmount;
+        }
+        public void DisplayRoundPanel() //displays after dialogue to initiate spawning. 
+        {
+            _roundPanel.DOScale(1, 0.5f).OnComplete(() => {
+                StartCoroutine(DisableRoundPrompt());
+            });
+        }
+        public void DisplayPaidPrompt() // displays when tribute is paid. 
+        {
+            _spawner.SetCanSpawnFalse();
+            _promptPanel.DOScale(1, 0.5f).OnComplete(() =>
+            {
+                //wait 1 seconds. Disappear
+                StartCoroutine(DisablePrompt());
+            });
+        }
+        IEnumerator DisableRoundPrompt()
+        {
+            yield return new WaitForSeconds(1.0f);
+            _roundPanel.DOScale(0, 0.5f);
+            _spawner.SetCanSpawnTrue(); // begins spawning enemies
+        }
+        IEnumerator DisablePrompt()
+        {
+            yield return new WaitForSeconds(1.0f);
+            _promptPanel.DOScale(0, 0.5f);
+            if(_coinAmount > 0)
+            {
+                _spawner.SetCanSpawnTrue();
+            }
         }
 
         private void UpdateCoinAmount()
@@ -38,8 +86,9 @@ namespace PaperKiteStudio.Dangers
                 oncoinDeplete?.Invoke();
                 _gameOverPanel.SetActive(true); // animate with DG.Twweening eventually
             }
-
+            DisplayPaidPrompt();
             UpdateCoinUI();
+            Camera.main.DOShakePosition(0.5f, _screenShakeStrength, 10, 90, true, ShakeRandomnessMode.Full);
         }
         private void UpdateCoinUI()
         {

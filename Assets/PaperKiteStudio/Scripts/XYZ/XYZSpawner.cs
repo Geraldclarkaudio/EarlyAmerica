@@ -19,7 +19,7 @@ namespace PaperKiteStudio.Dangers
 
         private void Start()
         {
-            _canSpawn = true;
+            _canSpawn = false; // flips to true through dialogue event
             _dialogueManager = FindAnyObjectByType<DialogueManager>();
             _spawnTimer = _originalSpawnTimer;
 
@@ -30,11 +30,14 @@ namespace PaperKiteStudio.Dangers
         {
             XYZHUD.oncoinDeplete -= SetCanSpawnFalse;   
         }
-        private void SetCanSpawnFalse()
+        public void SetCanSpawnFalse()
         {
             _canSpawn = false;
         }
-
+        public void SetCanSpawnTrue()
+        {
+            _canSpawn = true;
+        }
         private void Spawn()
         {
             if (_canSpawn)

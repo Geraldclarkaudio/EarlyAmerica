@@ -26,4 +26,4 @@ MonoBehaviour:
   _newUIEvents: []
   _dialoguePositionChanges: []
   _eventTriggers: []
-  _endDialogueEvent: {fileID: 0}
+  _endDialogueEvent: {fileID: 11400000, guid: aa518d9f6d6dd8b498e33c8c18f24f40, type: 2}
