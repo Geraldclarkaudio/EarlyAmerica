@@ -14,17 +14,35 @@ namespace PaperKiteStudio.Dangers
         [SerializeField]
         private float _originalSpawnTimer;
 
+        [SerializeField]
+        private bool _canSpawn;
+
         private void Start()
         {
+            _canSpawn = true;
             _dialogueManager = FindAnyObjectByType<DialogueManager>();
             _spawnTimer = _originalSpawnTimer;
+
+            XYZHUD.oncoinDeplete += SetCanSpawnFalse;
+        }
+
+        private void OnDisable()
+        {
+            XYZHUD.oncoinDeplete -= SetCanSpawnFalse;   
+        }
+        private void SetCanSpawnFalse()
+        {
+            _canSpawn = false;
         }
 
         private void Spawn()
         {
-            //grab a random character object and enable it. 
-            _xyzObjects[Random.Range(0, _xyzObjects.Length)].SetActive(true);
-            _spawnTimer = _originalSpawnTimer;
+            if (_canSpawn)
+            {
+                //grab a random character object and enable it. 
+                _xyzObjects[Random.Range(0, _xyzObjects.Length)].SetActive(true);
+                _spawnTimer = _originalSpawnTimer;
+            }
         }
         private void Update()
         {
@@ -32,13 +50,16 @@ namespace PaperKiteStudio.Dangers
             {
                 return;
             }
-            if (_spawnTimer > 0)
+            if (_canSpawn)
             {
-                _spawnTimer -= Time.deltaTime;
-
-                if(_spawnTimer < 0)
+                if (_spawnTimer > 0)
                 {
-                    Spawn();
+                    _spawnTimer -= Time.deltaTime;
+
+                    if (_spawnTimer < 0)
+                    {
+                        Spawn();
+                    }
                 }
             }
         }

@@ -75,10 +75,13 @@ namespace PaperKiteStudio.Dangers
                                     _dialogueManager.dialogueIndex = 3;
                                     break;
                                 case 1:
+                                    _dialogueManager.dialogueIndex = 3;
                                     break;
                                 case 2:
+                                    _dialogueManager.dialogueIndex = 3;
                                     break;
                                 case 3:
+                                    _dialogueManager.dialogueIndex = 3;
                                     break;
                             }
                             break;
