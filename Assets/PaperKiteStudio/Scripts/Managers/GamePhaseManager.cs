@@ -122,6 +122,26 @@ namespace PaperKiteStudio.Dangers
                             break;
                     }
                     break;
+                case "QuasiWar":
+                    if (_phaseStep == 0)
+                    {
+                        SetPhaseStep(1); // set phase step to 1 for first visit to this game. 
+                    }
+                    switch (_phaseStep)
+                    {
+                        case 1:
+                            _dialogueManager.dialogueIndex = 5;
+                            break;
+                        case 2:
+                            _dialogueManager.dialogueIndex = 5;
+
+                            break;
+                        case 3:
+                            _dialogueManager.dialogueIndex = 5;
+
+                            break;
+                    }
+                    break;
             }
             // start a dialogue at the beginning of every scene load.
             _dialogueManager.StartDialogue();
