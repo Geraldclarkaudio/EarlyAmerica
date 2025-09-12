@@ -21,10 +21,12 @@ namespace PaperKiteStudio.Dangers
         private void Start()
         {
             EnemyShip.onHitPlayer += DisplayGameOver;
+            CannonBall.onHitPlayer += DisplayGameOver;
         }
         private void OnDisable()
         {
             EnemyShip.onHitPlayer -= DisplayGameOver;
+            CannonBall.onHitPlayer-= DisplayGameOver;
         }
         private void DisplayGameOver()
         {

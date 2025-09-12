@@ -402,9 +402,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2136646470}
     - target: {fileID: 8671697254972025446, guid: a928678a7452af44da2b8ed6c1890ee2, type: 3}
+      propertyPath: _projectilePrefab
+      value: 
+      objectReference: {fileID: 7400112521769910460, guid: a3cd954ab67eaf54b92055e8fa66a753, type: 3}
+    - target: {fileID: 8671697254972025446, guid: a928678a7452af44da2b8ed6c1890ee2, type: 3}
       propertyPath: _quasiGameManager
       value: 
       objectReference: {fileID: 1936491437}
+    - target: {fileID: 8671697254972025446, guid: a928678a7452af44da2b8ed6c1890ee2, type: 3}
+      propertyPath: _originalFireTimer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8671697254972025446, guid: a928678a7452af44da2b8ed6c1890ee2, type: 3}
       propertyPath: _screenShakeStrength
       value: 1
@@ -2224,9 +2232,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2136646470}
     - target: {fileID: 8671697254972025446, guid: a928678a7452af44da2b8ed6c1890ee2, type: 3}
+      propertyPath: _projectilePrefab
+      value: 
+      objectReference: {fileID: 7400112521769910460, guid: a3cd954ab67eaf54b92055e8fa66a753, type: 3}
+    - target: {fileID: 8671697254972025446, guid: a928678a7452af44da2b8ed6c1890ee2, type: 3}
       propertyPath: _quasiGameManager
       value: 
       objectReference: {fileID: 1936491437}
+    - target: {fileID: 8671697254972025446, guid: a928678a7452af44da2b8ed6c1890ee2, type: 3}
+      propertyPath: _originalFireTimer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8671697254972025446, guid: a928678a7452af44da2b8ed6c1890ee2, type: 3}
       propertyPath: _screenShakeStrength
       value: 1
@@ -3066,6 +3082,67 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2136646476}
   m_SourcePrefab: {fileID: 100100000, guid: a9858b3a4e3167440a83af50d344404c, type: 3}
+--- !u!1001 &6055773696642950663
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 718814238758312987, guid: a3cd954ab67eaf54b92055e8fa66a753, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 718814238758312987, guid: a3cd954ab67eaf54b92055e8fa66a753, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 718814238758312987, guid: a3cd954ab67eaf54b92055e8fa66a753, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 718814238758312987, guid: a3cd954ab67eaf54b92055e8fa66a753, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 718814238758312987, guid: a3cd954ab67eaf54b92055e8fa66a753, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 718814238758312987, guid: a3cd954ab67eaf54b92055e8fa66a753, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 718814238758312987, guid: a3cd954ab67eaf54b92055e8fa66a753, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 718814238758312987, guid: a3cd954ab67eaf54b92055e8fa66a753, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 718814238758312987, guid: a3cd954ab67eaf54b92055e8fa66a753, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 718814238758312987, guid: a3cd954ab67eaf54b92055e8fa66a753, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7400112521769910460, guid: a3cd954ab67eaf54b92055e8fa66a753, type: 3}
+      propertyPath: m_Name
+      value: CannonBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7400112521769910460, guid: a3cd954ab67eaf54b92055e8fa66a753, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a3cd954ab67eaf54b92055e8fa66a753, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3085,3 +3162,4 @@ SceneRoots:
   - {fileID: 1295446611}
   - {fileID: 1936491438}
   - {fileID: 339985399}
+  - {fileID: 6055773696642950663}

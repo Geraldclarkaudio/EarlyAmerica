@@ -20,9 +20,17 @@ namespace PaperKiteStudio.Dangers
 
         public static event Action onHitPlayer;
 
+        [SerializeField]
+        private GameObject _projectilePrefab;
+        [SerializeField]
+        private float _fireTimer;
+        [SerializeField]
+        private float _originalFireTimer;
+
         private void Start()
         {
             _dialogueManager = FindAnyObjectByType<DialogueManager>();
+            _fireTimer = _originalFireTimer;
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -58,12 +66,26 @@ namespace PaperKiteStudio.Dangers
                         float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
                         transform.rotation = Quaternion.Euler(0, 0, -angle);
                     }
+
                     else // cannon? 
                     {
-
+                        if(_fireTimer> 0)
+                        {
+                            _fireTimer -= Time.deltaTime;
+                        }
+                        if (_fireTimer < 0)
+                        {
+                            _fireTimer = _originalFireTimer;
+                        Fire();
+                        }
                     }
                 
             }
+        }
+
+        private void Fire()
+        {
+            Instantiate(_projectilePrefab, transform.position, Quaternion.identity);
         }
     }
 }
