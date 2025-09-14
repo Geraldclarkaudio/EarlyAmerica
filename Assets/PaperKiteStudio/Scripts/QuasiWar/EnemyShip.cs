@@ -9,10 +9,7 @@ namespace PaperKiteStudio.Dangers
         private QuasiGameManager _quasiGameManager;
         [SerializeField]
         private DialogueManager _dialogueManager;
-        [SerializeField]
-        private bool _mover;
-        [SerializeField]
-        private GameObject _playerPos;
+
         [SerializeField]
         private float _speed;
         [SerializeField]
@@ -21,16 +18,17 @@ namespace PaperKiteStudio.Dangers
         public static event Action onHitPlayer;
 
         [SerializeField]
-        private GameObject _projectilePrefab;
+        private float _canFire;
         [SerializeField]
-        private float _fireTimer;
-        [SerializeField]
-        private float _originalFireTimer;
-
+        private float _fireRate;
+        private void OnEnable()
+        {
+            transform.position = new Vector2(UnityEngine.Random.Range(-9f, 9f), 8);
+        }
         private void Start()
         {
             _dialogueManager = FindAnyObjectByType<DialogueManager>();
-            _fireTimer = _originalFireTimer;
+            _quasiGameManager = FindAnyObjectByType<QuasiGameManager>();
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -53,39 +51,35 @@ namespace PaperKiteStudio.Dangers
             }
             if (!_quasiGameManager.gameOver)
             {
-        
-                    if (_mover) //chaser
-                    {
-                        // Direction from enemy to player
-                        Vector2 direction = (_playerPos.transform.position - transform.position).normalized;
-
-                        // Move toward player
-                        transform.position += (Vector3)(direction * _speed * Time.deltaTime);
-
-                        // Rotate so Y axis points toward player
-                        float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-                        transform.rotation = Quaternion.Euler(0, 0, -angle);
-                    }
-
-                    else // cannon? 
-                    {
-                        if(_fireTimer> 0)
-                        {
-                            _fireTimer -= Time.deltaTime;
-                        }
-                        if (_fireTimer < 0)
-                        {
-                            _fireTimer = _originalFireTimer;
-                        Fire();
-                        }
-                    }
-                
+                Movement();
+                Fire();
             }
         }
-
+        private void Movement()
+        {
+            transform.Translate(Vector2.up * _speed * Time.deltaTime);
+            if(transform.position.y < -6f)
+            {
+                gameObject.SetActive(false);
+            }
+        }
         private void Fire()
         {
-            Instantiate(_projectilePrefab, transform.position, Quaternion.identity);
+            if (Time.time > _canFire)
+            {
+                _fireRate = UnityEngine.Random.Range(3f, 7f);
+                _canFire = Time.time + _fireRate;
+                GameObject bullet = ProjectilePool.SharedInstance.GetPooledObject();
+                if (bullet != null)
+                {
+                    CannonBall projectile = bullet.GetComponent<CannonBall>();
+                    bullet.transform.position = transform.position; // can assign specific fire points if we get time. 
+                    bullet.transform.rotation = transform.rotation;
+                    bullet.SetActive(true);
+                }
+            }
+
+
         }
     }
 }

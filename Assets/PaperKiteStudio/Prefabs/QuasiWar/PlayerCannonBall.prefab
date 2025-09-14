@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9173600709945665675}
   - component: {fileID: 8860480273795823982}
   m_Layer: 0
-  m_Name: CannonBall
+  m_Name: PlayerCannonBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,6 +51,7 @@ MonoBehaviour:
   _speed: 5
   _activeTimer: 0
   _originalActiveTimer: 5
+  _playerCannonBall: 1
 --- !u!212 &9173600709945665675
 SpriteRenderer:
   m_ObjectHideFlags: 0

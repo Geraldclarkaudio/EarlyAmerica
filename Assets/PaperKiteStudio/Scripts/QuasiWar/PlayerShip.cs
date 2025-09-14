@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 namespace PaperKiteStudio.Dangers
 {
@@ -9,6 +10,18 @@ namespace PaperKiteStudio.Dangers
         private float _speed;
         [SerializeField]
         private DialogueManager _dialogueManager;
+        [SerializeField]
+        private GameObject _cannonBallPrefab;
+        [Header("Camera Shake Stuff")]
+        [SerializeField]
+        private float duration;
+        [SerializeField]
+        private float strength;
+        [SerializeField]
+        private int vibrato;
+        private float _canFire = -1;
+        [SerializeField]
+        private float _fireRate;
 
         private void Start()
         {
@@ -44,9 +57,20 @@ namespace PaperKiteStudio.Dangers
                     float angle = Mathf.Atan2(dir.x, dir.y) * Mathf.Rad2Deg;
                     transform.rotation = Quaternion.Euler(0, 0, -angle);
                 }
+
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    if(_canFire < Time.time)
+                    Fire();
+                }
             }
         }
-
+        private void Fire()
+        {
+            _canFire = Time.time + _fireRate;
+            Instantiate(_cannonBallPrefab, transform.position, Quaternion.identity);
+            Camera.main.DOShakePosition(duration, strength, vibrato, 45, true, ShakeRandomnessMode.Full);
+        }
         public void DisableMove()
         {
             canMove = false;

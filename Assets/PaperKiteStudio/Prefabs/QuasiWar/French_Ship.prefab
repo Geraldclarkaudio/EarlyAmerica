@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8671697254972025446}
   m_Layer: 0
   m_Name: French_Ship
-  m_TagString: Untagged
+  m_TagString: Frenchy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -183,5 +183,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 219a134d98b48bd408e21da8165278cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerPos: {fileID: 0}
-  _speed: 5
+  _quasiGameManager: {fileID: 0}
+  _dialogueManager: {fileID: 0}
+  _speed: 2
+  _screenShakeStrength: 1
+  _canFire: 0
+  _fireRate: 0
