@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 namespace PaperKiteStudio.Dangers
 {
     public class XYZSpawner : MonoBehaviour
@@ -16,6 +17,11 @@ namespace PaperKiteStudio.Dangers
 
         [SerializeField]
         private bool _canSpawn;
+
+        [SerializeField]
+        private GameObject[] _agentButtons;
+        [SerializeField]
+        private RectTransform _canvasRect;
 
         private void Start()
         {
@@ -40,19 +46,29 @@ namespace PaperKiteStudio.Dangers
         }
         private void Spawn()
         {
-            if (_canSpawn)
+            List<GameObject> inactiveAgents = new List<GameObject>();
+            Debug.Log("Inactive agents count: " + inactiveAgents.Count);
+
+            foreach (GameObject agent in _xyzObjects)
             {
-                //grab a random character object and enable it. 
-                _xyzObjects[Random.Range(0, _xyzObjects.Length)].SetActive(true);
-                _spawnTimer = _originalSpawnTimer;
+                if (!agent.activeInHierarchy)
+                {
+                    inactiveAgents.Add(agent);
+                }
+            }
+            if (inactiveAgents.Count > 0)
+            {
+                int INDEX = Random.Range(0, inactiveAgents.Count);
+                inactiveAgents[INDEX].SetActive(true);
             }
         }
+
         private void Update()
         {
-            if (_dialogueManager.dialogueIsActive)
-            {
-                return;
-            }
+            //if (_dialogueManager.dialogueIsActive) // commented out to prevent the need to start from init. 
+            //{
+            //    return;
+            //}
             if (_canSpawn)
             {
                 if (_spawnTimer > 0)
@@ -62,6 +78,7 @@ namespace PaperKiteStudio.Dangers
                     if (_spawnTimer < 0)
                     {
                         Spawn();
+                        _spawnTimer = _originalSpawnTimer;
                     }
                 }
             }

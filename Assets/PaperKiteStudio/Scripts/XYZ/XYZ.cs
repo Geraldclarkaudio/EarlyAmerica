@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using DG.Tweening;
 namespace PaperKiteStudio.Dangers
 {
     public class XYZ : MonoBehaviour
@@ -7,21 +8,41 @@ namespace PaperKiteStudio.Dangers
         [SerializeField]
         private float _speed;
 
+  
+        [SerializeField]
+        private GameObject _playerPos;
+        [SerializeField]
+        private GameObject _originalPosition;
+        [SerializeField]
+        private GameObject _associatedButton;
+
+
         public static event Action onSteal;
+
+
         private void OnEnable()
         {
-            //spawn at a random location
-            transform.position = new Vector2(0, 5);    
+            transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+            _associatedButton.SetActive(true); // random its position
+        }
+        private void OnDisable()
+        {
+
+            _associatedButton.SetActive(false); // random its position
         }
         private void Update()
         {
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(0,0), _speed *Time.deltaTime);
+            float distanceToPlayer = Vector2.Distance(transform.position, _playerPos.transform.position);
+            float duration = 2;
 
-            if(transform.position == Vector3.zero)
+            transform.DOMove(_playerPos.transform.position, duration).OnComplete(() => 
             {
-                onSteal?.Invoke();
+                transform.position = _originalPosition.transform.position;
                 gameObject.SetActive(false);
-            }
+            });
+            transform.DOScale(1, duration);
+
+
         }
     }
 }
