@@ -9,7 +9,7 @@ namespace PaperKiteStudio.Dangers
         [SerializeField]
         private DialogueManager _dialogueManager;
         [SerializeField]
-        private GameObject[] _xyzObjects;
+        private List<GameObject> _xyzObjects;
         [SerializeField]
         private float _spawnTimer;
         [SerializeField]
@@ -17,12 +17,6 @@ namespace PaperKiteStudio.Dangers
 
         [SerializeField]
         private bool _canSpawn;
-
-        [SerializeField]
-        private GameObject[] _agentButtons;
-        [SerializeField]
-        private RectTransform _canvasRect;
-
         private void Start()
         {
             _canSpawn = false; // flips to true through dialogue event
@@ -30,6 +24,7 @@ namespace PaperKiteStudio.Dangers
             _spawnTimer = _originalSpawnTimer;
 
             XYZHUD.oncoinDeplete += SetCanSpawnFalse;
+          //  StartCoroutine(SpawnRoutine());
         }
 
         private void OnDisable()
@@ -44,12 +39,26 @@ namespace PaperKiteStudio.Dangers
         {
             _canSpawn = true;
         }
+
+        private IEnumerator SpawnRoutine()
+        {
+            while (_canSpawn == true)
+            {
+                yield return new WaitForSeconds(_originalSpawnTimer);
+
+                Spawn();
+            }
+        }
+        public void BeginSpawn()
+        {
+            _canSpawn = true;
+            StartCoroutine(SpawnRoutine());
+        }
         private void Spawn()
         {
             List<GameObject> inactiveAgents = new List<GameObject>();
-            Debug.Log("Inactive agents count: " + inactiveAgents.Count);
 
-            foreach (GameObject agent in _xyzObjects)
+            foreach (GameObject agent in _xyzObjects) // loop through the xyzObject list 
             {
                 if (!agent.activeInHierarchy)
                 {
@@ -58,29 +67,13 @@ namespace PaperKiteStudio.Dangers
             }
             if (inactiveAgents.Count > 0)
             {
-                int INDEX = Random.Range(0, inactiveAgents.Count);
-                inactiveAgents[INDEX].SetActive(true);
+                int index = Random.Range(0, inactiveAgents.Count);
+                inactiveAgents[index].SetActive(true);
+                Debug.Log($"Spawned: {inactiveAgents[index].name} at {Time.time}");
             }
-        }
-
-        private void Update()
-        {
-            //if (_dialogueManager.dialogueIsActive) // commented out to prevent the need to start from init. 
-            //{
-            //    return;
-            //}
-            if (_canSpawn)
+            else
             {
-                if (_spawnTimer > 0)
-                {
-                    _spawnTimer -= Time.deltaTime;
-
-                    if (_spawnTimer < 0)
-                    {
-                        Spawn();
-                        _spawnTimer = _originalSpawnTimer;
-                    }
-                }
+                Debug.LogWarning("No inactive agents left to spawn.");
             }
         }
     }
