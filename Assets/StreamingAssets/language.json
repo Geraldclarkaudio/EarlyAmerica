@@ -36,6 +36,10 @@
     "Dodgeball_R2_Win": "Round 2 win",
     "Dodgeball_R3_Win": "Round 3 win. Now we go to xyz",
     "Dodgeball_R2_Intro": "This is round 2 now",
-    "Dodgeball_R3_intro": "This is round 3 now"
+    "Dodgeball_R3_intro": "This is round 3 now",
+    "XYZ_WinRound1": "You won round 1!",
+    "XYZ_WinRound2": "You won round 2!",
+    "XYZ_WinRound3": "You won round 3!"
+
   }
 }

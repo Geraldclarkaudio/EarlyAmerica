@@ -1108,6 +1108,8 @@ MonoBehaviour:
   - {fileID: 853800366}
   - {fileID: 1137064575}
   - {fileID: 326800549}
+  _gamePhaseManager: {fileID: 0}
+  _dialogueManager: {fileID: 0}
 --- !u!212 &520543020
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1333,6 +1335,8 @@ MonoBehaviour:
   - {fileID: 853800366}
   - {fileID: 1137064575}
   - {fileID: 326800549}
+  _gamePhaseManager: {fileID: 0}
+  _dialogueManager: {fileID: 0}
 --- !u!212 &726046563
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1772,6 +1776,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogueManager: {fileID: 0}
+  _gamePhaseManager: {fileID: 0}
+  canTick: 0
   _timer: 20
   _timerText: {fileID: 856700900}
 --- !u!114 &856700900
@@ -3003,6 +3009,8 @@ MonoBehaviour:
   - {fileID: 853800366}
   - {fileID: 1137064575}
   - {fileID: 326800549}
+  _gamePhaseManager: {fileID: 0}
+  _dialogueManager: {fileID: 0}
 --- !u!1 &1428919612
 GameObject:
   m_ObjectHideFlags: 0
@@ -3065,6 +3073,8 @@ MonoBehaviour:
   - {fileID: 853800366}
   - {fileID: 1137064575}
   - {fileID: 326800549}
+  _gamePhaseManager: {fileID: 0}
+  _dialogueManager: {fileID: 0}
 --- !u!212 &1428919615
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3586,6 +3596,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545250096}
   m_CullTransparentMesh: 1
+--- !u!1 &1556163057
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1556163058}
+  - component: {fileID: 1556163059}
+  m_Layer: 0
+  m_Name: XYZManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1556163058
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556163057}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1556163059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556163057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e60c1e5ce5482ff4a800973b88fba9c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
 --- !u!1 &1593891479
 GameObject:
   m_ObjectHideFlags: 0
@@ -4487,6 +4542,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2144736882}
   - component: {fileID: 2144736881}
+  - component: {fileID: 2144736883}
   m_Layer: 0
   m_Name: GameEventListeners
   m_TagString: Untagged
@@ -4552,6 +4608,49 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2144736883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144736880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07183259779932b419afc3c8c54449a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 437828e67ff07054fa661ada585db63b, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 502668341}
+        m_TargetAssemblyTypeName: PaperKiteStudio.Dangers.XYZSpawner, Assembly-CSharp
+        m_MethodName: BeginSpawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 856700899}
+        m_TargetAssemblyTypeName: PaperKiteStudio.Dangers.XYZTimer, Assembly-CSharp
+        m_MethodName: ResetTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _dialoguePositionChangeResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4567,3 +4666,4 @@ SceneRoots:
   - {fileID: 622791227}
   - {fileID: 1593891480}
   - {fileID: 2036278718}
+  - {fileID: 1556163058}

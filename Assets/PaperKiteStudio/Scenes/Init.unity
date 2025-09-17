@@ -266,7 +266,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -130}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 160, y: 65.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &311732386
 MonoBehaviour:
@@ -288,8 +288,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: c8545308151f2f04aac85e488c101d3f, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -461,8 +461,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -559,7 +559,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -202.99998}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 160, y: 65.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1244628859
 MonoBehaviour:
@@ -581,8 +581,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: c8545308151f2f04aac85e488c101d3f, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -987,8 +987,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1146,9 +1146,17 @@ PrefabInstance:
       propertyPath: _toggleOffSprite
       value: 
       objectReference: {fileID: 21300000, guid: f50d5117f889a46ca8065d0265e01dc1, type: 3}
+    - target: {fileID: 577608301160115363, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7d341234dbc2e854caec9cdeb02f9ed3, type: 3}
+    - target: {fileID: 913447498461102951, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 932875196045897375, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
       propertyPath: dialogues.Array.size
-      value: 12
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 932875196045897375, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
       propertyPath: dialogues.Array.data[5]
@@ -1178,6 +1186,22 @@ PrefabInstance:
       propertyPath: dialogues.Array.data[11]
       value: 
       objectReference: {fileID: 11400000, guid: 4fb387fc0111c1642a27ee8d10e2f18f, type: 2}
+    - target: {fileID: 932875196045897375, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: dialogues.Array.data[12]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4fb387fc0111c1642a27ee8d10e2f18f, type: 2}
+    - target: {fileID: 932875196045897375, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: dialogues.Array.data[13]
+      value: 
+      objectReference: {fileID: 11400000, guid: e1aae9e420c51f14180bde5640a8a841, type: 2}
+    - target: {fileID: 932875196045897375, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: dialogues.Array.data[14]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1e6a4349c6075434f81a9cc9b652b060, type: 2}
+    - target: {fileID: 932875196045897375, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: dialogues.Array.data[15]
+      value: 
+      objectReference: {fileID: 11400000, guid: 081670feebceea44ba177eddf5a633b5, type: 2}
     - target: {fileID: 1002832277598218874, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
       propertyPath: m_Name
       value: Persistent Objects
@@ -1330,6 +1354,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 6c972a3cf1d514adfbb95337a9e527f3, type: 3}
+    - target: {fileID: 3612971294746108986, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: aa3486721137ee14abe340bfd0f92534, type: 2}
+    - target: {fileID: 3612971294746108986, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 5854800614558525207, guid: aa3486721137ee14abe340bfd0f92534, type: 2}
+    - target: {fileID: 3612971294746108986, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3791452026007135610, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 17.125803
@@ -1466,6 +1502,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: f0bbee4261dff4cb7bcae5c218b4e05f, type: 3}
+    - target: {fileID: 9098315644428999763, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 0737e08c29bfa5246a776d7a94445a36, type: 2}
+    - target: {fileID: 9098315644428999763, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -9156744012009105135, guid: 0737e08c29bfa5246a776d7a94445a36, type: 2}
+    - target: {fileID: 9098315644428999763, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9202406915346798113, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
       propertyPath: m_Value
       value: 1

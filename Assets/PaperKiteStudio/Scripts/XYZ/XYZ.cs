@@ -25,10 +25,13 @@ namespace PaperKiteStudio.Dangers
 
         [SerializeField]
         private GamePhaseManager _gamePhaseManager;
+        [SerializeField]
+        private DialogueManager _dialogueManager;
 
         private void Start()
         {
-            _gamePhaseManager = FindAnyObjectByType<GamePhaseManager>();    
+            _gamePhaseManager = FindAnyObjectByType<GamePhaseManager>();
+            _dialogueManager = FindAnyObjectByType<DialogueManager>();
         }
 
         private void OnEnable()
@@ -56,8 +59,14 @@ namespace PaperKiteStudio.Dangers
 
         private void Update()
         {
+            if (_dialogueManager.dialogueIsActive)
+            {
+                StopAgent();
+            }
+
             float distanceToPlayer = Vector2.Distance(transform.position, _playerPos.transform.position);
             float duration = 0;
+
             if (_gamePhaseManager.GetGamePhase() == _gamePhaseManager.GetTempPhase())
             {
                 switch (_gamePhaseManager.GetPhaseStep())

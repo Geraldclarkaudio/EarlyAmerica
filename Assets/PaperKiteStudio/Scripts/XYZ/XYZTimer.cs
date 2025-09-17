@@ -61,14 +61,14 @@ namespace PaperKiteStudio.Dangers
                 switch (_gamePhaseManager.GetPhaseStep())
                 {
                     case 1: // good job you beat round 1
-                        _dialogueManager.dialogueIndex = 0;
+                        _dialogueManager.dialogueIndex = 13;
                         break;
                     case 2: // you beat round 2 
-                        _dialogueManager.dialogueIndex = 1;
+                        _dialogueManager.dialogueIndex = 14;
 
                         break;
                     case 3: // you beat round 3
-                        _dialogueManager.dialogueIndex = 2;
+                        _dialogueManager.dialogueIndex = 15;
                         break;
                 }
 
@@ -82,23 +82,6 @@ namespace PaperKiteStudio.Dangers
             _timerText.text = "0:00";
             onTimeOut?.Invoke();
 
-            if(_gamePhaseManager.GetGamePhase() == _gamePhaseManager.GetTempPhase())
-            {
-                switch (_gamePhaseManager.GetPhaseStep())
-                {
-                    case 1: // good job you beat round 1
-                        _dialogueManager.dialogueIndex = 10;
-                        break;
-                    case 2: // you beat round 2 
-                        _dialogueManager.dialogueIndex = 11;
-
-                        break;
-                    case 3: // you beat round 3
-                        _dialogueManager.dialogueIndex = 12;
-                        break;
-                }
-            }
-
             canTick = false;
         }
 
@@ -107,6 +90,12 @@ namespace PaperKiteStudio.Dangers
             int minutes = Mathf.FloorToInt(time / 60);
             int seconds = Mathf.FloorToInt(time % 60);
             _timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        }
+
+        public void ResetTimer()
+        {
+            _timer = 20f;
+            canTick = true;
         }
     }
 }

@@ -125,5 +125,10 @@ namespace PaperKiteStudio.Dangers
                     break;
             }
         }
+
+        public void IncrementTempPhase()
+        {
+            _gamePhaseManager.SetTempPhase(2);
+        }
     }
 }

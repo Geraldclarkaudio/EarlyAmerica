@@ -25,14 +25,14 @@ namespace PaperKiteStudio.Dangers
             _spawnTimer = _originalSpawnTimer;
 
             XYZHUD.oncoinDeplete += SetCanSpawnFalse;
-            XYZTimer.onTimeOut += SetCanSpawnFalse;
+            XYZTimer.onTimeOut += StopSpawn;
             //  StartCoroutine(SpawnRoutine());
         }
 
         private void OnDisable()
         {
             XYZHUD.oncoinDeplete -= SetCanSpawnFalse;
-            XYZTimer.onTimeOut -= SetCanSpawnFalse;
+            XYZTimer.onTimeOut -= StopSpawn;
         }
         public void SetCanSpawnFalse()
         {
@@ -56,6 +56,12 @@ namespace PaperKiteStudio.Dangers
         {
             _canSpawn = true;
             StartCoroutine(SpawnRoutine());
+        }
+
+        public void StopSpawn()
+        {
+            _canSpawn = false;
+            StopAllCoroutines();
         }
 
         private void Spawn()
