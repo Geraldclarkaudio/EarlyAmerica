@@ -22,6 +22,7 @@ namespace PaperKiteStudio.Dangers
         [SerializeField] private bool _canSpawn = true;
 
         private DialogueManager _dialogueManager;
+        [SerializeField] private DodgeBallManager dodgeballManager;
 
         void Start()
         {
@@ -66,6 +67,11 @@ namespace PaperKiteStudio.Dangers
 
         private void Update()
         {
+            if (dodgeballManager.gameState == DodgeBallManager.GameState.Playing)
+                ResumeSpawn();
+            else
+                StopSpawn();
+
             if (_dialogueManager != null && _dialogueManager.dialogueIsActive)
                 return;
 
@@ -123,5 +129,22 @@ namespace PaperKiteStudio.Dangers
 
         public void StopSpawn() => _canSpawn = false;
         public void ResumeSpawn() => _canSpawn = true;
+
+        public void ResetPool()
+        {
+            foreach (GameObject ball in frenchBalls)
+                ball.SetActive(false);
+            foreach (GameObject ball in britishBalls)
+                ball.SetActive(false);
+            foreach (GameObject ball in playerBalls)
+                ball.SetActive(false);
+            foreach (GameObject ball in audienceBalls)
+                ball.SetActive(false);
+
+            frenchSpawnTimer = Random.Range(spawnTimeRange.x, spawnTimeRange.y);
+            britishSpawnTimer = Random.Range(spawnTimeRange.x, spawnTimeRange.y);
+            playerSpawnTimer = Random.Range(spawnTimeRange.x, spawnTimeRange.y);
+            audienceSpawnTimer = Random.Range(spawnTimeRange.x, spawnTimeRange.y);
+        }
     }
 }
