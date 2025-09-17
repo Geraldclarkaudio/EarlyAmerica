@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using PaperKiteStudio.Dangers;
 
 namespace PaperKiteStudio.Dangers
 {
