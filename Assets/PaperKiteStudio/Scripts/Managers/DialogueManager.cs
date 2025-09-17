@@ -101,7 +101,14 @@ namespace PaperKiteStudio.Dangers
             //tts
             if (_ttsToggle.GetTTSToggle() == true)
             {
-                LOLSDK.Instance.SpeakText(currentDialogue.key[keyIndex]);
+                //hopefully speaks the tts key instead of the key with encoding
+                if (currentDialogue.ttsKey[keyIndex] != null)
+                    LOLSDK.Instance.SpeakText(currentDialogue.ttsKey[keyIndex]);
+                else
+                    LOLSDK.Instance.SpeakText(currentDialogue.key[keyIndex]);
+
+                //original code
+                //LOLSDK.Instance.SpeakText(currentDialogue.key[keyIndex]);
             }
         }
 
@@ -154,7 +161,14 @@ namespace PaperKiteStudio.Dangers
                     //speak text
                     if (_ttsToggle.GetTTSToggle() == true)
                     {
-                        LOLSDK.Instance.SpeakText(currentDialogue.key[keyIndex]);
+                        //hopefully speaks the tts key instead of the key with encoding
+                        if (currentDialogue.ttsKey[keyIndex] != null)
+                            LOLSDK.Instance.SpeakText(currentDialogue.ttsKey[keyIndex]);
+                        else
+                            LOLSDK.Instance.SpeakText(currentDialogue.key[keyIndex]);
+
+                        //original code
+                        //LOLSDK.Instance.SpeakText(currentDialogue.key[keyIndex]);
                     }
                 }
                 else if (keyIndex >= currentDialogue.key.Length - 1) // at the end of the keys

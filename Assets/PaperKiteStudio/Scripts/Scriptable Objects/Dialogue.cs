@@ -7,6 +7,7 @@ namespace PaperKiteStudio.Dangers
     {
         public int dialogueID;
         public string[] key;
+        public string[] ttsKey;
         public Sprite[] icons;
         public string[] _speakerName;
         public string[] _animations; // animator for the player character. 
