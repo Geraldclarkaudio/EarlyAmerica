@@ -1,61 +1,64 @@
 using PaperKiteStudio.Dangers;
 using UnityEngine;
 
-public class Player_Test : MonoBehaviour
+namespace PaperKiteStudio.Dangers
 {
-    [SerializeField] private Animator _animator;
-    [SerializeField] private float moveSpeed = 10f;
-    [SerializeField] private GameEvent throwBall;
-    [SerializeField] private DodgeBallManager dodgeBallManager;
-    private Rigidbody2D _rb;
-    private Vector3 originalScale;
-    private Vector2 _movement;
-    public bool _isDucking;
-
-    void Start()
+    public class Player_Test : MonoBehaviour
     {
-        _rb = GetComponent<Rigidbody2D>();
-        originalScale = transform.localScale;
-    }
+        [SerializeField] private Animator _animator;
+        [SerializeField] private float moveSpeed = 10f;
+        [SerializeField] private GameEvent throwBall;
+        [SerializeField] private DodgeBallManager dodgeBallManager;
+        private Rigidbody2D _rb;
+        private Vector3 originalScale;
+        private Vector2 _movement;
+        public bool _isDucking;
 
-    void Update()
-    {
-        if (dodgeBallManager.gameState == DodgeBallManager.GameState.Playing)
+        void Start()
         {
-            // Movement input
-            float moveX = Input.GetAxisRaw("Horizontal");
-            float moveY = Input.GetAxisRaw("Vertical");
-            _movement = new Vector2(moveX, moveY);
+            _rb = GetComponent<Rigidbody2D>();
+            originalScale = transform.localScale;
+        }
 
-            // Animation trigger
-            if (Input.GetKeyDown(KeyCode.Space))
+        void Update()
+        {
+            if (dodgeBallManager.gameState == DodgeBallManager.GameState.Playing)
             {
-                _animator.SetBool("isThrowing", true);
-                throwBall.Raise();
+                // Movement input
+                float moveX = Input.GetAxisRaw("Horizontal");
+                float moveY = Input.GetAxisRaw("Vertical");
+                _movement = new Vector2(moveX, moveY);
+
+                // Animation trigger
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    _animator.SetBool("isThrowing", true);
+                    throwBall.Raise();
+                }
+
+                else
+                    _animator.SetBool("isThrowing", false);
+
+                // Get animation bools
+                _isDucking = _animator.GetBool("isDucking");
+            }
+        }
+
+        void FixedUpdate()
+        {
+            if (dodgeBallManager.gameState == DodgeBallManager.GameState.Playing)
+            {
+                AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+
+                bool isInDuckingState = stateInfo.IsName("Duck");
+
+                if (!isInDuckingState)
+                    _rb.velocity = _movement.normalized * moveSpeed;
+                else
+                    _rb.velocity = Vector2.zero;
             }
 
-            else
-                _animator.SetBool("isThrowing", false);
-
-            // Get animation bools
-            _isDucking = _animator.GetBool("isDucking");
+            else _rb.velocity = Vector2.zero;
         }
-    }
-
-    void FixedUpdate()
-    {
-        if (dodgeBallManager.gameState == DodgeBallManager.GameState.Playing)
-        {
-            AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
-
-            bool isInDuckingState = stateInfo.IsName("Duck");
-
-            if (!isInDuckingState)
-                _rb.velocity = _movement.normalized * moveSpeed;
-            else
-                _rb.velocity = Vector2.zero;
-        }
-
-        else _rb.velocity = Vector2.zero;
     }
 }
