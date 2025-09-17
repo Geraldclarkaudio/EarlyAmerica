@@ -129,6 +129,7 @@ namespace PaperKiteStudio.Dangers
                             _dialogueManager.dialogueIndex = 4;
                             break;
                         case > 2:
+                            _dialogueManager.dialogueIndex = 4;
                             //already complete but have fun
                             break;
                     }
