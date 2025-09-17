@@ -1148,12 +1148,36 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: f50d5117f889a46ca8065d0265e01dc1, type: 3}
     - target: {fileID: 932875196045897375, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
       propertyPath: dialogues.Array.size
-      value: 6
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 932875196045897375, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
       propertyPath: dialogues.Array.data[5]
       value: 
       objectReference: {fileID: 11400000, guid: f81d3e6c0093f474eaff62282ef590a9, type: 2}
+    - target: {fileID: 932875196045897375, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: dialogues.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: d3feb4c0ca6b8a14d89e83b5569a46c6, type: 2}
+    - target: {fileID: 932875196045897375, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: dialogues.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: d1801c0fa905b974483401be78c8ca99, type: 2}
+    - target: {fileID: 932875196045897375, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: dialogues.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8615118018b737640aea033cdc2a273e, type: 2}
+    - target: {fileID: 932875196045897375, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: dialogues.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: bce98344cf1dd134a860a572f9592558, type: 2}
+    - target: {fileID: 932875196045897375, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: dialogues.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: 88ca62d3fc810524daa0024ceda37ee9, type: 2}
+    - target: {fileID: 932875196045897375, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: dialogues.Array.data[11]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4fb387fc0111c1642a27ee8d10e2f18f, type: 2}
     - target: {fileID: 1002832277598218874, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
       propertyPath: m_Name
       value: Persistent Objects

@@ -99,9 +99,20 @@ namespace PaperKiteStudio.Dangers
                     switch (_gamePhase) // this can get pretty ganular depending on the game design
                     {
                         case 1: // new game clicked OR continue clicked without having completed phase 1
-                            _dialogueManager.dialogueIndex = 1;
+                            switch (_phaseStep)
+                            {
+                                case 1:
+                                    _dialogueManager.dialogueIndex = 1;
+                                    break;
+                                case 2:
+                                    _dialogueManager.dialogueIndex = 8;
+                                    break;
+                                case 3:
+                                    _dialogueManager.dialogueIndex = 9;
+                                    break;
+                            }
                             break;
-                        case > 1:
+                        case 2:
                             //dialogue like "we have already completed this but dodgeball is fun eh? 
                             break;
                     }
@@ -181,6 +192,11 @@ namespace PaperKiteStudio.Dangers
         public void IncrementPhaseStep()
         {
             _phaseStep++;
+            int step = _phaseStep;
+            Debug.Log(step);
+            // added this so that if i a player quits after the phase was completed it will save
+            _init.playerData.phaseStep = step;
+            _init.Save();
 
             if(_phaseStep > 3)
             {

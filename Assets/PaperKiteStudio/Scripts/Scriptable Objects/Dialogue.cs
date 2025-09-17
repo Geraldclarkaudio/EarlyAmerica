@@ -14,5 +14,6 @@ namespace PaperKiteStudio.Dangers
         public GameEvent[] _dialoguePositionChanges;
         public GameEvent[] _eventTriggers;
         public GameEvent _endDialogueEvent;
+        public GameEvent _postDialogEvent;
     }
 }

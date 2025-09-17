@@ -10,23 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0368cd5f494b8dd4cab4883467603c5b, type: 3}
-  m_Name: DB_Intro
+  m_Name: Dball_Win_R3
   m_EditorClassIdentifier: 
   dialogueID: 0
   key:
-  - Guide_Bot_01
-  - Guide_Bot_02
-  - Guide_Bot_03
+  - Dodgeball_R3_Win
   icons:
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
-  - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
-  - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
   _speakerName:
-  - Guide Bot
-  - Guide Bot
-  - Guide Bot
+  - Guidebot
   _animations: []
   _newUIEvents: []
   _dialoguePositionChanges: []
   _eventTriggers: []
-  _endDialogueEvent: {fileID: 11400000, guid: 3f42df9bcfa68e741835d17291117e75, type: 2}
+  _endDialogueEvent: {fileID: 11400000, guid: fe0f6dbd3efc12f458501371b9560b60, type: 2}

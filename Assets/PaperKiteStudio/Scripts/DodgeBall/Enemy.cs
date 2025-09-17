@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private LayerMask teammateLayer;
     [SerializeField] private float avoidRadius = 1f;
     [SerializeField] private Rigidbody2D _rb;
+    [SerializeField] private DodgeBallManager dodgeballManager;
 
     private Coroutine throwRoutine;
     private Coroutine moveRoutine;
@@ -18,7 +19,7 @@ public class Enemy : MonoBehaviour
 
     private void OnEnable()
     {
-        moveRoutine = StartCoroutine(MovementLoop());
+        //moveRoutine = StartCoroutine(MovementLoop());
     }
 
     private void OnDisable()
@@ -57,6 +58,11 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator RandomThrowLoop()
     {
+        while (dodgeballManager.gameState != DodgeBallManager.GameState.Playing)
+        {
+            yield return null;
+        }
+
         _rb.velocity = Vector2.zero;
 
         float waitTime = Random.Range(0.5f, 1.5f);
@@ -80,6 +86,11 @@ public class Enemy : MonoBehaviour
     {
         while (true)
         {
+            while (dodgeballManager.gameState != DodgeBallManager.GameState.Playing)
+            {
+                yield return null;
+            }
+
             Vector2 randomDir = Random.insideUnitCircle.normalized;
 
             // Avoid teammates
@@ -102,5 +113,10 @@ public class Enemy : MonoBehaviour
     void PlayThrowAnimation()
     {
         _animator.SetTrigger("Throw");
+    }
+
+    public void StartMovementLoop()
+    {
+        moveRoutine = StartCoroutine(MovementLoop());
     }
 }

@@ -45,6 +45,7 @@ namespace PaperKiteStudio.Dangers
         public static event Action onEndDialogue;
         public void StartDialogue() // called when button is clicked or specific event happens. 
         {
+            Debug.Log("start dialog called");
             onBeginDialogue?.Invoke();
 
             _thisCanvas.enabled = true;
@@ -167,6 +168,11 @@ namespace PaperKiteStudio.Dangers
                     dialogueIsActive = false;
                     _thisCanvas.enabled = false;
                     onEndDialogue?.Invoke(); // can cause problems if more than one thing subs to this in each scene..
+
+                    if (currentDialogue._postDialogEvent != null)
+                    {
+                        currentDialogue._postDialogEvent.Raise();
+                    }
                 }
             }
         }

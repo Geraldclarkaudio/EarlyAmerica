@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0368cd5f494b8dd4cab4883467603c5b, type: 3}
+  m_Name: Dball_Win_R2
+  m_EditorClassIdentifier: 
+  dialogueID: 0
+  key:
+  - Dodgeball_R2_Win
+  icons:
+  - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
+  _speakerName:
+  - Guide Bot
+  _animations: []
+  _newUIEvents: []
+  _dialoguePositionChanges: []
+  _eventTriggers: []
+  _endDialogueEvent: {fileID: 0}
+  _postDialogEvent: {fileID: 11400000, guid: 6c284af45ef4af34c8f243efc661f5b4, type: 2}
