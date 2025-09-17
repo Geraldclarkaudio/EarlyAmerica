@@ -7,8 +7,6 @@ namespace PaperKiteStudio.Dangers
     {
         [SerializeField]
         private float _speed;
-
-  
         [SerializeField]
         private GameObject _playerPos;
         [SerializeField]
@@ -22,28 +20,75 @@ namespace PaperKiteStudio.Dangers
         [SerializeField]
         private GameObject[] _buttonPositions;
 
+        private Tween moveTween;
+        private Tween scaleTween;
+
+        [SerializeField]
+        private GamePhaseManager _gamePhaseManager;
+
+        private void Start()
+        {
+            _gamePhaseManager = FindAnyObjectByType<GamePhaseManager>();    
+        }
+
         private void OnEnable()
         {
+            XYZTimer.onTimeOut += StopAgent;
+
             transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
             _associatedButton.SetActive(true); // random its position
             _associatedButton.transform.position = _buttonPositions[UnityEngine.Random.Range(0, _buttonPositions.Length)].transform.position;
+        }
+        private void OnDisable()
+        {
+            XYZTimer.onTimeOut -= StopAgent;
+        }
+
+        public void StopAgent()
+        {
+            moveTween?.Kill();
+            scaleTween?.Kill();
+
+            transform.position = _originalPosition.transform.position;
+            _associatedButton.SetActive(false); // random its position
+            gameObject.SetActive(false);
         }
 
         private void Update()
         {
             float distanceToPlayer = Vector2.Distance(transform.position, _playerPos.transform.position);
-            float duration = 2;
-
-            transform.DOMove(_playerPos.transform.position, duration).OnComplete(() => 
+            float duration = 0;
+            if (_gamePhaseManager.GetGamePhase() == _gamePhaseManager.GetTempPhase())
             {
-                transform.position = _originalPosition.transform.position;
-                _associatedButton.SetActive(false); // random its position
+                switch (_gamePhaseManager.GetPhaseStep())
+                {
+                    case 1:
+                        duration = 3;
+                        break;
+                    case 2:
+                        duration = 2;
+                        break;
+                    case 3:
+                        duration = 1.5f;
+                        break;
+                }
+            }
 
-                gameObject.SetActive(false);
-            });
-            transform.DOScale(1, duration);
-
-
+            if(moveTween == null || !moveTween.IsActive())
+            {
+                moveTween = transform.DOMove(_playerPos.transform.position, duration).OnComplete(() =>
+                {
+                    transform.position = _originalPosition.transform.position;
+                    _associatedButton.SetActive(false); // random its position
+                    gameObject.SetActive(false);
+                    //get points removed. 
+                    onSteal?.Invoke();
+                });
+            }
+            if (scaleTween == null || !scaleTween.IsActive())
+            {
+                transform.DOScale(1, duration);
+            }
         }
     }
 }

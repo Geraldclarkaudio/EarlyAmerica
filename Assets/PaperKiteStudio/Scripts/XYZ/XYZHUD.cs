@@ -45,6 +45,8 @@ namespace PaperKiteStudio.Dangers
         {
             XYZ.onSteal -= UpdateCoinAmount;
         }
+
+        #region PROMPT
         public void DisplayRoundPanel() //displays after dialogue to initiate spawning. 
         {
             _roundPanel.DOScale(1, 0.5f).OnComplete(() => {
@@ -75,6 +77,7 @@ namespace PaperKiteStudio.Dangers
                 _spawner.SetCanSpawnTrue();
             }
         }
+        #endregion 
 
         private void UpdateCoinAmount()
         {
@@ -88,7 +91,7 @@ namespace PaperKiteStudio.Dangers
             }
             DisplayPaidPrompt();
             UpdateCoinUI();
-            Camera.main.DOShakePosition(0.5f, _screenShakeStrength, 10, 90, true, ShakeRandomnessMode.Full);
+            Camera.main.DOShakePosition(0.15f, _screenShakeStrength, 10, 90, true, ShakeRandomnessMode.Full);
         }
         private void UpdateCoinUI()
         {

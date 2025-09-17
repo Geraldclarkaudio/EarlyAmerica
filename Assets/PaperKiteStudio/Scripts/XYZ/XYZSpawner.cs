@@ -19,17 +19,20 @@ namespace PaperKiteStudio.Dangers
         private bool _canSpawn;
         private void Start()
         {
+           
             _canSpawn = false; // flips to true through dialogue event
             _dialogueManager = FindAnyObjectByType<DialogueManager>();
             _spawnTimer = _originalSpawnTimer;
 
             XYZHUD.oncoinDeplete += SetCanSpawnFalse;
-          //  StartCoroutine(SpawnRoutine());
+            XYZTimer.onTimeOut += SetCanSpawnFalse;
+            //  StartCoroutine(SpawnRoutine());
         }
 
         private void OnDisable()
         {
-            XYZHUD.oncoinDeplete -= SetCanSpawnFalse;   
+            XYZHUD.oncoinDeplete -= SetCanSpawnFalse;
+            XYZTimer.onTimeOut -= SetCanSpawnFalse;
         }
         public void SetCanSpawnFalse()
         {
@@ -54,6 +57,7 @@ namespace PaperKiteStudio.Dangers
             _canSpawn = true;
             StartCoroutine(SpawnRoutine());
         }
+
         private void Spawn()
         {
             List<GameObject> inactiveAgents = new List<GameObject>();
