@@ -761,6 +761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f42e55f641f3f43904e484ff7c8f31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stateMachine: {fileID: 1346718742}
   _coinAmount: 5
   _loadSceneEvent:
     m_PersistentCalls:
@@ -942,6 +943,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 492817361}
+        m_TargetAssemblyTypeName: PaperKiteStudio.Dangers.XYZButton, Assembly-CSharp
+        m_MethodName: InvokeReflexAction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &492817359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -992,7 +1005,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f27027771b698074eb6c6f30bbeaa1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _agent: {fileID: 1383742025}
+  stateMachine: {fileID: 1346718742}
+  _agent: {fileID: 1383742026}
 --- !u!1 &502668340
 GameObject:
   m_ObjectHideFlags: 0
@@ -1075,11 +1089,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfa73cdd5276a714b8ea92d8b7f55da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stateMachine: {fileID: 1346718742}
   gamePhaseManager: {fileID: 0}
-  spawner: {fileID: 502668341}
+  spawner: {fileID: 1299721981}
   timer: {fileID: 856700899}
   hud: {fileID: 419974511}
-  gameState: 0
+  dialog: {fileID: 557735301}
 --- !u!4 &508745313
 Transform:
   m_ObjectHideFlags: 0
@@ -1092,7 +1107,9 @@ Transform:
   m_LocalPosition: {x: 552, y: 310.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 574394731}
+  - {fileID: 557735302}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &520543017
@@ -1241,8 +1258,98 @@ MonoBehaviour:
   - {fileID: 853800366}
   - {fileID: 1137064575}
   - {fileID: 326800549}
+  stateMachine: {fileID: 1346718742}
   _gamePhaseManager: {fileID: 0}
   _dialogueManager: {fileID: 0}
+--- !u!1 &557735300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 557735302}
+  - component: {fileID: 557735301}
+  m_Layer: 0
+  m_Name: Dialog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &557735301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557735300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bff2c7173a92fe49914069d0de66afc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &557735302
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557735300}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 508745313}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &574394730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 574394731}
+  - component: {fileID: 574394732}
+  m_Layer: 0
+  m_Name: Helper Functions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &574394731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574394730}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 508745313}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &574394732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574394730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2011bff66d7762242b4ddf9ce344c1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateMachine: {fileID: 1346718742}
 --- !u!1 &622791226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,6 +1607,7 @@ MonoBehaviour:
   - {fileID: 853800366}
   - {fileID: 1137064575}
   - {fileID: 326800549}
+  stateMachine: {fileID: 1346718742}
   _gamePhaseManager: {fileID: 0}
   _dialogueManager: {fileID: 0}
 --- !u!1 &740525664
@@ -1597,6 +1705,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 740525669}
+        m_TargetAssemblyTypeName: PaperKiteStudio.Dangers.XYZButton, Assembly-CSharp
+        m_MethodName: InvokeReflexAction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &740525667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1647,7 +1767,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f27027771b698074eb6c6f30bbeaa1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _agent: {fileID: 520543019}
+  stateMachine: {fileID: 1346718742}
+  _agent: {fileID: 520543021}
 --- !u!1 &799878225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1743,6 +1864,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 799878230}
+        m_TargetAssemblyTypeName: PaperKiteStudio.Dangers.XYZButton, Assembly-CSharp
+        m_MethodName: InvokeReflexAction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &799878228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1793,7 +1926,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f27027771b698074eb6c6f30bbeaa1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _agent: {fileID: 1428919614}
+  stateMachine: {fileID: 1346718742}
+  _agent: {fileID: 1428919616}
 --- !u!1 &853800366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1888,7 +2022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ed068c077ecb541b80150bf2a04d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueManager: {fileID: 0}
+  stateMachine: {fileID: 1346718742}
   _gamePhaseManager: {fileID: 0}
   canTick: 0
   _timer: 20
@@ -2869,15 +3003,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f41bab5c2d92945826517e76fdeef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueManager: {fileID: 0}
   _xyzObjects:
   - {fileID: 1383742022}
   - {fileID: 520543017}
   - {fileID: 1428919612}
   - {fileID: 726046560}
-  _spawnTimer: 0
-  _originalSpawnTimer: 2
-  _canSpawn: 1
 --- !u!4 &1299721982
 Transform:
   m_ObjectHideFlags: 0
@@ -2967,6 +3097,50 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1593891480}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1346718741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1346718743}
+  - component: {fileID: 1346718742}
+  m_Layer: 0
+  m_Name: State Machine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1346718742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346718741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc409e49f1a2dcb44be63d47787595e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1346718743
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346718741}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 552, y: 310.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1358149006
 GameObject:
@@ -3208,6 +3382,7 @@ MonoBehaviour:
   - {fileID: 853800366}
   - {fileID: 1137064575}
   - {fileID: 326800549}
+  stateMachine: {fileID: 1346718742}
   _gamePhaseManager: {fileID: 0}
   _dialogueManager: {fileID: 0}
 --- !u!1 &1428919612
@@ -3356,6 +3531,7 @@ MonoBehaviour:
   - {fileID: 853800366}
   - {fileID: 1137064575}
   - {fileID: 326800549}
+  stateMachine: {fileID: 1346718742}
   _gamePhaseManager: {fileID: 0}
   _dialogueManager: {fileID: 0}
 --- !u!1 &1435029579
@@ -4712,6 +4888,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2142955385}
+        m_TargetAssemblyTypeName: PaperKiteStudio.Dangers.XYZButton, Assembly-CSharp
+        m_MethodName: InvokeReflexAction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2142955383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4762,7 +4950,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f27027771b698074eb6c6f30bbeaa1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _agent: {fileID: 726046562}
+  stateMachine: {fileID: 1346718742}
+  _agent: {fileID: 726046564}
 --- !u!1 &2144736880
 GameObject:
   m_ObjectHideFlags: 0
@@ -4774,6 +4963,7 @@ GameObject:
   - component: {fileID: 2144736882}
   - component: {fileID: 2144736881}
   - component: {fileID: 2144736883}
+  - component: {fileID: 2144736884}
   m_Layer: 0
   m_Name: GameEventListeners
   m_TagString: Untagged
@@ -4788,7 +4978,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144736880}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07183259779932b419afc3c8c54449a9, type: 3}
   m_Name: 
@@ -4867,9 +5057,9 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 502668341}
-        m_TargetAssemblyTypeName: PaperKiteStudio.Dangers.XYZSpawner, Assembly-CSharp
-        m_MethodName: BeginSpawn
+      - m_Target: {fileID: 574394732}
+        m_TargetAssemblyTypeName: PaperKiteStudio.Dangers.XYZ_Helper, Assembly-CSharp
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4879,9 +5069,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 856700899}
-        m_TargetAssemblyTypeName: PaperKiteStudio.Dangers.XYZTimer, Assembly-CSharp
-        m_MethodName: ResetTimer
+  _dialoguePositionChangeResponse:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2144736884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144736880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07183259779932b419afc3c8c54449a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: aa518d9f6d6dd8b498e33c8c18f24f40, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 574394732}
+        m_TargetAssemblyTypeName: PaperKiteStudio.Dangers.XYZ_Helper, Assembly-CSharp
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4912,3 +5121,4 @@ SceneRoots:
   - {fileID: 1556163058}
   - {fileID: 508745313}
   - {fileID: 1299721982}
+  - {fileID: 1346718743}

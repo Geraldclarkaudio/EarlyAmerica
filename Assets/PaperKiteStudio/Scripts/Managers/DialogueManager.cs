@@ -45,7 +45,6 @@ namespace PaperKiteStudio.Dangers
         public static event Action onEndDialogue;
         public void StartDialogue() // called when button is clicked or specific event happens. 
         {
-            Debug.Log("start dialog called");
             onBeginDialogue?.Invoke();
 
             _thisCanvas.enabled = true;
