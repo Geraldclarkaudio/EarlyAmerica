@@ -16,6 +16,7 @@ namespace PaperKiteStudio.Dangers
 
 
         public static event Action onSteal;
+        public static event Action DisplayTribute;
 
         [SerializeField]
         private GameObject[] _buttonPositions;
@@ -92,6 +93,7 @@ namespace PaperKiteStudio.Dangers
                     gameObject.SetActive(false);
                     //get points removed. 
                     onSteal?.Invoke();
+                    DisplayTribute?.Invoke();
                 });
             }
             if (scaleTween == null || !scaleTween.IsActive())

@@ -36,14 +36,24 @@ namespace PaperKiteStudio.Dangers
         [SerializeField]
         private TMP_Text _roundText;
 
+        public static event Action SetPlaying;
+
         private void Start()
         {
             UpdateCoinUI();
+            //XYZ_V2.onSteal += UpdateCoinAmount;
             XYZ.onSteal += UpdateCoinAmount;
+            XYZ_V2.onSteal += UpdateCoinAmount;
+            XYZ.DisplayTribute += DisplayPaidPrompt;
+            XYZ_V2.DisplayTribute += DisplayPaidPrompt;
         }
         private void OnDisable()
         {
+            //XYZ_V2.onSteal -= UpdateCoinAmount;
             XYZ.onSteal -= UpdateCoinAmount;
+            XYZ_V2.onSteal -= UpdateCoinAmount;
+            XYZ.DisplayTribute -= DisplayPaidPrompt;
+            XYZ_V2.DisplayTribute -= DisplayPaidPrompt;
         }
 
         #region PROMPT
@@ -55,6 +65,7 @@ namespace PaperKiteStudio.Dangers
         }
         public void DisplayPaidPrompt() // displays when tribute is paid. 
         {
+            _spawner.StopSpawn();
             _spawner.SetCanSpawnFalse();
             _promptPanel.DOScale(1, 0.5f).OnComplete(() =>
             {
@@ -75,6 +86,7 @@ namespace PaperKiteStudio.Dangers
             if(_coinAmount > 0)
             {
                 _spawner.SetCanSpawnTrue();
+                SetPlaying?.Invoke();
             }
         }
         #endregion 
@@ -89,7 +101,7 @@ namespace PaperKiteStudio.Dangers
                 oncoinDeplete?.Invoke();
                 _gameOverPanel.SetActive(true); // animate with DG.Twweening eventually
             }
-            DisplayPaidPrompt();
+            //DisplayPaidPrompt();
             UpdateCoinUI();
             Camera.main.DOShakePosition(0.15f, _screenShakeStrength, 10, 90, true, ShakeRandomnessMode.Full);
         }

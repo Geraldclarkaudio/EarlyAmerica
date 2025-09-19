@@ -15,6 +15,9 @@ namespace PaperKiteStudio.Dangers
         [SerializeField]
         private TMP_Text _timerText;
         [SerializeField] GameEvent roundEnd;
+        [SerializeField] Enemy french;
+        [SerializeField] Enemy british;
+        [SerializeField] Audience audience;
 
         private bool _isPlaying = false;
 
@@ -22,23 +25,21 @@ namespace PaperKiteStudio.Dangers
         {
             //set timer to 60 or however many seconds we want the player to play the game. 
 
-            _timer = 60f;
+            _timer = 30f;
         }
 
         private void Update()
         {
-            if (Input.GetKeyUp(KeyCode.K))
-            {
-                _dodgeBallManager.gameState = DodgeBallManager.GameState.Playing;
-            }
-
             if (_dodgeBallManager.gameState == DodgeBallManager.GameState.PreGame)
-                _timer = 60f;
+                _timer = 30f;
 
             if (_isPlaying)
             {
                 if (_dodgeBallManager.gameState != DodgeBallManager.GameState.Playing)
                 {
+                    french.StopAllCoroutines();
+                    british.StopAllCoroutines();
+                    audience.StopAllCoroutines();
                     return;
                 }
 

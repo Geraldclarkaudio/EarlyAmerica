@@ -19,6 +19,8 @@ namespace PaperKiteStudio.Dangers
         [SerializeField]
         private TMP_Text _timerText;
 
+        [SerializeField] XYZ_Manager_V2 manager;
+
 
         public static event Action onTimeOut;
 
@@ -33,23 +35,26 @@ namespace PaperKiteStudio.Dangers
 
         private void Update()
         {
-            if (_dialogueManager.dialogueIsActive)
+            if (manager.gameState == XYZ_Manager_V2.GameState.Playing)
             {
-                return;
-            }
-            if (canTick)
-            {
-                if (_timer > 0)
+                if (_dialogueManager.dialogueIsActive)
                 {
-                    _timer -= Time.deltaTime;
-                    UpdateClock(_timer);
+                    return;
                 }
-                if (_timer <= 0)
+                if (canTick)
                 {
-                    WinRound();
-                    BeginNewDialogue();
+                    if (_timer > 0)
+                    {
+                        _timer -= Time.deltaTime;
+                        UpdateClock(_timer);
+                    }
+                    if (_timer <= 0)
+                    {
+                        WinRound();
+                        BeginNewDialogue();
 
-                    _gamePhaseManager.IncrementPhaseStep();
+                        _gamePhaseManager.IncrementPhaseStep();
+                    }
                 }
             }
         }

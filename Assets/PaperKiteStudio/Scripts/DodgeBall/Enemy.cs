@@ -5,120 +5,135 @@ namespace PaperKiteStudio.Dangers
 {
     public class Enemy : MonoBehaviour
     {
+        public enum EnemyState { Idle, Moving, Throwing }
+
         [SerializeField] private GameEvent throwBall;
         [SerializeField] private Animator _animator;
         [SerializeField] private float moveSpeed = 25f;
         [SerializeField] private LayerMask teammateLayer;
-        [SerializeField] private float avoidRadius = 1f;
+        [SerializeField] private float avoidRadius = 5.6f;
         [SerializeField] private Rigidbody2D _rb;
         [SerializeField] private DodgeBallManager dodgeballManager;
 
         private Coroutine throwRoutine;
         private Coroutine moveRoutine;
-
-        [SerializeField] private bool hasBall = false;
-
-        private void OnEnable()
-        {
-            //moveRoutine = StartCoroutine(MovementLoop());
-        }
+        private EnemyState currentState = EnemyState.Idle;
 
         private void OnDisable()
         {
-            if (moveRoutine != null) StopCoroutine(moveRoutine);
-            if (throwRoutine != null) StopCoroutine(throwRoutine);
+            StopCoroutineIfRunning(ref moveRoutine);
+            StopCoroutineIfRunning(ref throwRoutine);
         }
 
         public void StartRandomThrowLoop()
         {
-            if (hasBall) return;
+            if (currentState == EnemyState.Throwing) return;
 
-            hasBall = true;
-
-            if (moveRoutine != null)
-            {
-                StopCoroutine(moveRoutine);
-                moveRoutine = null;
-            }
-
-            if (throwRoutine != null) StopCoroutine(throwRoutine);
-
-            _rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
-
-            throwRoutine = StartCoroutine(RandomThrowLoop());
+            SetEnemyState(EnemyState.Throwing);
         }
 
         public void StopRandomThrowLoop()
         {
-            if (throwRoutine != null)
+            StopCoroutineIfRunning(ref throwRoutine);
+            SetEnemyState(EnemyState.Idle);
+        }
+
+        public void StartMovementLoop()
+        {
+            SetEnemyState(EnemyState.Moving);
+        }
+        private void SetEnemyState(EnemyState newState)
+        {
+            if (currentState == newState) return;
+
+            currentState = newState;
+            ApplyConstraints(newState);
+
+            switch (newState)
             {
-                StopCoroutine(throwRoutine);
-                throwRoutine = null;
+                case EnemyState.Moving:
+                    StartNewRoutine(ref moveRoutine, MovementLoop());
+                    break;
+                case EnemyState.Throwing:
+                    StopCoroutineIfRunning(ref moveRoutine);
+                    StartNewRoutine(ref throwRoutine, RandomThrowLoop());
+                    break;
+                case EnemyState.Idle:
+                    StopCoroutineIfRunning(ref moveRoutine);
+                    StopCoroutineIfRunning(ref throwRoutine);
+                    break;
+            }
+        }
+
+        private void ApplyConstraints(EnemyState state)
+        {
+            switch (state)
+            {
+                case EnemyState.Throwing:
+                    _rb.constraints = RigidbodyConstraints2D.FreezePositionX |
+                                      RigidbodyConstraints2D.FreezePositionY |
+                                      RigidbodyConstraints2D.FreezeRotation;
+                    break;
+                case EnemyState.Moving:
+                    _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+                    break;
+                default:
+                    _rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                    break;
+            }
+        }
+
+        private void StartNewRoutine(ref Coroutine routine, IEnumerator method)
+        {
+            StopCoroutineIfRunning(ref routine);
+            routine = StartCoroutine(method);
+        }
+
+        private void StopCoroutineIfRunning(ref Coroutine routine)
+        {
+            if (routine != null)
+            {
+                StopCoroutine(routine);
+                routine = null;
             }
         }
 
         private IEnumerator RandomThrowLoop()
         {
             while (dodgeballManager.gameState != DodgeBallManager.GameState.Playing)
-            {
                 yield return null;
-            }
 
             _rb.velocity = Vector2.zero;
 
-            float waitTime = Random.Range(0.5f, 1.5f);
-            yield return new WaitForSeconds(waitTime);
+            yield return new WaitForSeconds(Random.Range(0.5f, 1.5f));
 
             throwBall.Raise();
             PlayThrowAnimation();
 
-            throwRoutine = null;
-
             yield return new WaitForSeconds(0.5f);
 
-            _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-            moveRoutine = StartCoroutine(MovementLoop());
-            hasBall = false;
+            SetEnemyState(EnemyState.Moving);
         }
-
-
 
         private IEnumerator MovementLoop()
         {
-            while (true)
+            while (dodgeballManager.gameState == DodgeBallManager.GameState.Playing)
             {
-                while (dodgeballManager.gameState != DodgeBallManager.GameState.Playing)
-                {
-                    yield return null;
-                }
-
                 Vector2 randomDir = Random.insideUnitCircle.normalized;
+                Vector3 checkPosition = transform.position + (Vector3)randomDir * avoidRadius;
 
-                // Avoid teammates
-                Collider2D hit = Physics2D.OverlapCircle(transform.position + (Vector3)randomDir * avoidRadius, avoidRadius, teammateLayer);
-                if (hit == null)
-                {
-                    _rb.velocity = randomDir * moveSpeed;
-                }
-                else
-                {
-                    _rb.velocity = Vector2.zero;
-                }
+                Collider2D hit = Physics2D.OverlapCircle(checkPosition, avoidRadius, teammateLayer);
+                bool isBlocked = hit != null && hit.gameObject != gameObject;
+
+                _rb.velocity = isBlocked ? Vector2.zero : randomDir * moveSpeed;
 
                 yield return new WaitForSeconds(Random.Range(1f, 2f));
             }
         }
 
-
-
         void PlayThrowAnimation()
         {
             _animator.SetTrigger("Throw");
-        }
-
-        public void StartMovementLoop()
-        {
-            moveRoutine = StartCoroutine(MovementLoop());
         }
     }
 }

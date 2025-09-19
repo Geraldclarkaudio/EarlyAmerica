@@ -520,7 +520,6 @@ MonoBehaviour:
   moveSpeed: 15
   _rb: {fileID: 231713253}
   dodgeballManager: {fileID: 1776005291}
-  hasBall: 0
 --- !u!114 &231713260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4622,11 +4621,10 @@ MonoBehaviour:
   moveSpeed: 15
   teammateLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   avoidRadius: 5.6
   _rb: {fileID: 1997015235}
   dodgeballManager: {fileID: 1776005291}
-  hasBall: 0
 --- !u!50 &1997015235
 Rigidbody2D:
   serializedVersion: 4
@@ -5027,9 +5025,12 @@ MonoBehaviour:
   _dodgeBallManager: {fileID: 1776005291}
   dodgeballUI: {fileID: 1341763302}
   ballPool: {fileID: 257057104}
-  _timer: 60
+  _timer: 15
   _timerText: {fileID: 1104812032}
   roundEnd: {fileID: 11400000, guid: f154a0e4f15396a41b359c96ba08f820, type: 2}
+  french: {fileID: 1997015234}
+  british: {fileID: 3209856402983115811}
+  audience: {fileID: 231713259}
 --- !u!1 &2144228044
 GameObject:
   m_ObjectHideFlags: 0
@@ -5122,11 +5123,10 @@ MonoBehaviour:
   moveSpeed: 15
   teammateLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   avoidRadius: 5.6
   _rb: {fileID: 8037132582350207123}
   dodgeballManager: {fileID: 1776005291}
-  hasBall: 0
 --- !u!1 &3364328081959213228
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ namespace PaperKiteStudio.Dangers
         private DialogueManager _dialogueManger;
         private GamePhaseManager _gamePhaseManager;
 
-        public enum GameState // only controls whether the timer is going or not right now.. 
+        public enum GameState
          {
                 PreGame,
                 Playing,
@@ -55,7 +55,6 @@ namespace PaperKiteStudio.Dangers
         }
         public void LoseGame()
         {
-            Debug.Log("lose game called");
             gameState = GameState.LoseGame;
             _dialogueManger.dialogueIndex = 7;
             _dialogueManger.StartDialogue();
@@ -86,9 +85,6 @@ namespace PaperKiteStudio.Dangers
         {
             if (gameState == GameState.WinGame)
             {
-                //int currentPhase = _gamePhaseManager._phaseStep;
-                //int step = currentPhase + 1;
-                //_gamePhaseManager.SetPhaseStep(step);
                 _gamePhaseManager.IncrementPhaseStep();
                 gameState = GameState.PreGame;
             }
@@ -97,19 +93,12 @@ namespace PaperKiteStudio.Dangers
             {
                 gameState = GameState.PreGame;
             }
-
-            //else
-            //{
-            //    _gamePhaseManager.IncrementGamePhase();
-            //}
         }
 
         public void StartIntroDialog()
         {
-            Debug.Log("Start intro dialog");
             _dialogueManger.dialogueIndex = 8;
             _dialogueManger.StartDialogue();
-            Debug.Log("Dialog should be started");
 
             switch (_gamePhaseManager._phaseStep)
             {

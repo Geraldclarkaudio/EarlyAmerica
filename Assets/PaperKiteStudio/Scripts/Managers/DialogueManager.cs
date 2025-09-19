@@ -102,7 +102,8 @@ namespace PaperKiteStudio.Dangers
             if (_ttsToggle.GetTTSToggle() == true)
             {
                 //hopefully speaks the tts key instead of the key with encoding
-                if (currentDialogue.ttsKey[keyIndex] != null)
+                //if (currentDialogue.ttsKey[keyIndex] != null)
+                if (currentDialogue.ttsKey != null && keyIndex < currentDialogue.ttsKey.Length && currentDialogue.ttsKey[keyIndex] != null)
                     LOLSDK.Instance.SpeakText(currentDialogue.ttsKey[keyIndex]);
                 else
                     LOLSDK.Instance.SpeakText(currentDialogue.key[keyIndex]);
@@ -162,8 +163,9 @@ namespace PaperKiteStudio.Dangers
                     if (_ttsToggle.GetTTSToggle() == true)
                     {
                         //hopefully speaks the tts key instead of the key with encoding
-                        if (currentDialogue.ttsKey[keyIndex] != null)
-                            LOLSDK.Instance.SpeakText(currentDialogue.ttsKey[keyIndex]);
+                        //if (currentDialogue.ttsKey[keyIndex] != null)
+                        if (currentDialogue.ttsKey != null && keyIndex < currentDialogue.ttsKey.Length && currentDialogue.ttsKey[keyIndex] != null)
+                                LOLSDK.Instance.SpeakText(currentDialogue.ttsKey[keyIndex]);
                         else
                             LOLSDK.Instance.SpeakText(currentDialogue.key[keyIndex]);
 

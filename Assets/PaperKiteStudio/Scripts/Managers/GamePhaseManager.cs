@@ -193,7 +193,7 @@ namespace PaperKiteStudio.Dangers
         {
             _phaseStep++;
             int step = _phaseStep;
-            Debug.Log(step);
+
             // added this so that if i a player quits after the phase was completed it will save
             _init.playerData.phaseStep = step;
             _init.Save();

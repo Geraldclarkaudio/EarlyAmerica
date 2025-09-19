@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 namespace PaperKiteStudio.Dangers
 {
-    public class XYZSpawner : MonoBehaviour
+    public class XYZ_Spawner_V2 : MonoBehaviour
     {
         [SerializeField]
         private DialogueManager _dialogueManager;
@@ -21,14 +21,13 @@ namespace PaperKiteStudio.Dangers
         private Coroutine _spawnRoutine;
         private void Start()
         {
-           
+
             _canSpawn = false; // flips to true through dialogue event
             _dialogueManager = FindAnyObjectByType<DialogueManager>();
             _spawnTimer = _originalSpawnTimer;
 
             XYZHUD.oncoinDeplete += SetCanSpawnFalse;
-            XYZTimer.onTimeOut += StopSpawn;
-            XYZ_Manager_V2.StopSpawn += StopSpawn;
+            XYZ_Manager_V2.StartSpawn += Spawn;
             //  StartCoroutine(SpawnRoutine());
         }
 
@@ -63,6 +62,7 @@ namespace PaperKiteStudio.Dangers
 
         public void BeginSpawn()
         {
+            Debug.Log("begin spawn called");
             _canSpawn = true;
             if (_spawnRoutine == null)
                 _spawnRoutine = StartCoroutine(SpawnRoutine());
@@ -76,6 +76,7 @@ namespace PaperKiteStudio.Dangers
 
         public void StopSpawn()
         {
+            Debug.Log("stop spawn called");
             _canSpawn = false;
             if (_spawnRoutine != null)
             {
@@ -86,6 +87,8 @@ namespace PaperKiteStudio.Dangers
 
         private void Spawn()
         {
+            Debug.Log("spawn an agent");
+
             List<GameObject> inactiveAgents = new List<GameObject>();
 
             foreach (GameObject agent in _xyzObjects) // loop through the xyzObject list 

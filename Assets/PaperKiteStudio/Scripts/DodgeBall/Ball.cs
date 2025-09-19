@@ -16,7 +16,7 @@ namespace PaperKiteStudio.Dangers
         public BallType BallType => ballType;
         [SerializeField] protected float _speed;
         [SerializeField] protected GameObject _associatedCharacter;
-        [SerializeField] private GameEvent ballEnabledEvent;
+        public GameEvent ballEnabledEvent;
         [SerializeField] private GameEvent ballDisabledEvent;
 
         protected Vector3 _targetDirection;
