@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using DG.Tweening;
 
@@ -12,15 +11,13 @@ namespace PaperKiteStudio.Dangers
         [SerializeField] private GameObject _associatedButton;
         [SerializeField] private GameObject[] _buttonPositions;
 
+        [SerializeField] GameStateMachine stateMachine;
         [SerializeField] private GamePhaseManager _gamePhaseManager;
         [SerializeField] private DialogueManager _dialogueManager;
 
         private Tween moveTween;
         private Tween scaleTween;
         private bool hasStartedTweens = false;
-
-        public static event Action onSteal;
-        public static event Action DisplayTribute;
 
         private void Start()
         {
@@ -30,18 +27,11 @@ namespace PaperKiteStudio.Dangers
 
         private void OnEnable()
         {
-            XYZTimer.onTimeOut += StopAgent;
-
             transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
             _associatedButton.SetActive(true);
             _associatedButton.transform.position = _buttonPositions[UnityEngine.Random.Range(0, _buttonPositions.Length)].transform.position;
 
             hasStartedTweens = false;
-        }
-
-        private void OnDisable()
-        {
-            XYZTimer.onTimeOut -= StopAgent;
         }
 
         public void StopAgent()
@@ -81,12 +71,10 @@ namespace PaperKiteStudio.Dangers
         {
             moveTween = transform.DOMove(_playerPos.transform.position, duration).OnComplete(() =>
             {
-                Debug.Log("Tween completed — invoking onSteal");
+                stateMachine.SetState(GameStateMachine.GameState.Paused);
                 transform.position = _originalPosition.transform.position;
                 _associatedButton.SetActive(false);
-                DisplayTribute?.Invoke();
                 gameObject.SetActive(false);
-                onSteal?.Invoke();
             }).SetAutoKill(true);
 
             scaleTween = transform.DOScale(1, duration).SetAutoKill(true);

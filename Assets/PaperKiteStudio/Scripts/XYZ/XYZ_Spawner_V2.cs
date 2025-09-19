@@ -1,94 +1,14 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 namespace PaperKiteStudio.Dangers
 {
     public class XYZ_Spawner_V2 : MonoBehaviour
     {
         [SerializeField]
-        private DialogueManager _dialogueManager;
-        [SerializeField]
         private List<GameObject> _xyzObjects;
-        [SerializeField]
-        private float _spawnTimer;
-        [SerializeField]
-        private float _originalSpawnTimer;
 
-        [SerializeField]
-        private bool _canSpawn;
-
-        private Coroutine _spawnRoutine;
-        private void Start()
+        public void Spawn()
         {
-
-            _canSpawn = false; // flips to true through dialogue event
-            _dialogueManager = FindAnyObjectByType<DialogueManager>();
-            _spawnTimer = _originalSpawnTimer;
-
-            XYZHUD.oncoinDeplete += SetCanSpawnFalse;
-            XYZ_Manager_V2.StartSpawn += Spawn;
-            //  StartCoroutine(SpawnRoutine());
-        }
-
-        private void OnDisable()
-        {
-            XYZHUD.oncoinDeplete -= SetCanSpawnFalse;
-            XYZTimer.onTimeOut -= StopSpawn;
-        }
-        public void SetCanSpawnFalse()
-        {
-            _canSpawn = false;
-        }
-        public void SetCanSpawnTrue()
-        {
-            _canSpawn = true;
-        }
-
-        private IEnumerator SpawnRoutine()
-        {
-            while (_canSpawn == true)
-            {
-                yield return new WaitForSeconds(_originalSpawnTimer);
-
-                Spawn();
-            }
-        }
-        //public void BeginSpawn()
-        //{
-        //    _canSpawn = true;
-        //    StartCoroutine(SpawnRoutine());
-        //}
-
-        public void BeginSpawn()
-        {
-            Debug.Log("begin spawn called");
-            _canSpawn = true;
-            if (_spawnRoutine == null)
-                _spawnRoutine = StartCoroutine(SpawnRoutine());
-        }
-
-        //public void StopSpawn()
-        //{
-        //    _canSpawn = false;
-        //    StopAllCoroutines();
-        //}
-
-        public void StopSpawn()
-        {
-            Debug.Log("stop spawn called");
-            _canSpawn = false;
-            if (_spawnRoutine != null)
-            {
-                StopCoroutine(_spawnRoutine);
-                _spawnRoutine = null;
-            }
-        }
-
-        private void Spawn()
-        {
-            Debug.Log("spawn an agent");
-
             List<GameObject> inactiveAgents = new List<GameObject>();
 
             foreach (GameObject agent in _xyzObjects) // loop through the xyzObject list 
@@ -102,7 +22,6 @@ namespace PaperKiteStudio.Dangers
             {
                 int index = Random.Range(0, inactiveAgents.Count);
                 inactiveAgents[index].SetActive(true);
-                //Debug.Log($"Spawned: {inactiveAgents[index].name} at {Time.time}");
             }
             else
             {
