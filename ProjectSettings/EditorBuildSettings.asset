@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/PaperKiteStudio/Scenes/QuasiWar.unity
     guid: bd32f9b94883fbf44b89324ee04909b4
+  - enabled: 1
+    path: Assets/PaperKiteStudio/Scenes/TEST.unity
+    guid: 9ae7d74bf9c24434da1524ebecafe053
   m_configObjects: {}

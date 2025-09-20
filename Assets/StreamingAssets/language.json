@@ -46,7 +46,9 @@
     "Quasi_PopUp_Ally3": "Survive the storm. Peace talks are on the horizon!",
     "Quasi_PopUp_Enemy1": "No tribute? Then no mercy!",
     "Quasi_PopUp_Enemy2": "Neutrality is cowardice! Choose a side!",
-    "Quasi_PopUp_Enemy3": "We are not pirates! We are justice on the sea!"
+    "Quasi_PopUp_Enemy3": "We are not pirates! We are justice on the sea!",
+    "QuasiCutscene_Arrival1": "Welcome to France. Our goal is to establish peace.",
+    "QuasiCutscene_Arrival2": "Lets be peaceful and stuff"
 
   }
 }

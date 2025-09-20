@@ -15,7 +15,6 @@ namespace PaperKiteStudio.Dangers
         private float _originalSpawnTime;
 
         DialogueManager _dialogueManger;
-        GamePhaseManager _gamePhaseManager;
         [SerializeField]
         private bool _canSpawn;
         void Awake()
@@ -24,7 +23,6 @@ namespace PaperKiteStudio.Dangers
         }
         void Start()
         {
-            _gamePhaseManager = FindAnyObjectByType<GamePhaseManager>();
             _dialogueManger = FindAnyObjectByType<DialogueManager>();
             _originalSpawnTime = 3;
             _spawnTimer = _originalSpawnTime;
