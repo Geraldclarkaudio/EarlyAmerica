@@ -59,7 +59,7 @@ namespace PaperKiteStudio.Dangers
                 obstacle.SetActive(true);
             }
 
-            _originalSpawnTime = Random.Range(1, 5);
+            _originalSpawnTime = Random.Range(1, 3);
         }
 
         private void StopSpawn()

@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System.Collections;
 using UnityEngine;
 namespace PaperKiteStudio.Dangers
 {
@@ -22,7 +23,13 @@ namespace PaperKiteStudio.Dangers
         private float _canFire = -1;
         [SerializeField]
         private float _fireRate;
+        [SerializeField]
+        private GameObject _leftFire;
+        [SerializeField]
+        private GameObject _rightFire;
 
+        bool isfacingleft;
+        bool isfacingright;
         private void Start()
         {
             _dialogueManager = FindAnyObjectByType<DialogueManager>();
@@ -45,6 +52,10 @@ namespace PaperKiteStudio.Dangers
 
                 Vector2 dir = new Vector2(hor, vert);
 
+                float zRot = transform.eulerAngles.z;
+                if(zRot > 180) zRot -= 360f;
+                isfacingleft = zRot > 0;
+                isfacingright = zRot < 0;
                 if (dir.sqrMagnitude > 0.001f)
                 {
                     // Normalize to prevent faster diagonal movement
@@ -67,9 +78,26 @@ namespace PaperKiteStudio.Dangers
         }
         private void Fire()
         {
+            //if facing left 
+            if (isfacingleft)
+            {
+                StartCoroutine(VFX(_rightFire));
+            }
+            else if (isfacingright)
+            {
+                //if facing right 
+                StartCoroutine(VFX(_leftFire));
+            }
+ 
             _canFire = Time.time + _fireRate;
             Instantiate(_cannonBallPrefab, transform.position, Quaternion.identity);
             Camera.main.DOShakePosition(duration, strength, vibrato, 45, true, ShakeRandomnessMode.Full);
+        }
+        IEnumerator VFX(GameObject dirFire)
+        {
+            dirFire.SetActive(true);
+            yield return new WaitForSeconds(0.3f);
+            dirFire.SetActive(false);
         }
         public void DisableMove()
         {

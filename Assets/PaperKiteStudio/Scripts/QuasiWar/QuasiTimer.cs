@@ -13,14 +13,21 @@ namespace PaperKiteStudio.Dangers
 
         [SerializeField]
         private GameObject _cutScene;
+        [SerializeField]
+        private DialogueManager _dialogueManager;
 
         private void Start()
         {
-            _timer = 10f;
+            _dialogueManager = FindAnyObjectByType<DialogueManager>();
+            _timer = 60f;
         }
 
         private void Update()
         {
+            if (_dialogueManager.dialogueIsActive)
+            {
+                return;
+            }
             //if (stateMachine.CurrentState == GameStateMachine.GameState.Playing)
             //{
                 if (_timer > 0)
@@ -30,7 +37,7 @@ namespace PaperKiteStudio.Dangers
                 }
                 if (_timer <= 0)
                 {
-                    ResetTimer();
+                _timer = 0;
                     WinRound();
                 _cutScene.SetActive(true);
               //      stateMachine.SetState(GameStateMachine.GameState.Win);
@@ -48,11 +55,6 @@ namespace PaperKiteStudio.Dangers
             int minutes = Mathf.FloorToInt(time / 60);
             int seconds = Mathf.FloorToInt(time % 60);
             _timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-        }
-
-        public void ResetTimer()
-        {
-            _timer = 10f;
         }
     }
 }

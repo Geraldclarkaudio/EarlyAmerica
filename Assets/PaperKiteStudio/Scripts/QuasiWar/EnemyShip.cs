@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System;
+using System.Collections;
 using UnityEngine;
 namespace PaperKiteStudio.Dangers
 {
@@ -21,6 +22,9 @@ namespace PaperKiteStudio.Dangers
         private float _canFire;
         [SerializeField]
         private float _fireRate;
+        [SerializeField]
+        private GameObject _fireVFX;
+
         private void OnEnable()
         {
             transform.position = new Vector2(UnityEngine.Random.Range(-9f, 9f), 8);
@@ -58,7 +62,7 @@ namespace PaperKiteStudio.Dangers
         private void Movement()
         {
             transform.Translate(Vector2.up * _speed * Time.deltaTime);
-            if(transform.position.y < -6f)
+            if (transform.position.y < -6f)
             {
                 gameObject.SetActive(false);
             }
@@ -76,10 +80,22 @@ namespace PaperKiteStudio.Dangers
                     bullet.transform.position = transform.position; // can assign specific fire points if we get time. 
                     bullet.transform.rotation = transform.rotation;
                     bullet.SetActive(true);
+
+                    StartCoroutine(VFX());
                 }
             }
+        }
+        IEnumerator VFX()
+        {
+            _fireVFX.SetActive(true);
+            yield return new WaitForSeconds(0.3f);
+            _fireVFX.SetActive(false);
+        }
 
-
+        public void Damage()
+        {
+            //instantiate some kind of damage vfx 
+            gameObject.SetActive(false);
         }
     }
 }
