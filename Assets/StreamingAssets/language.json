@@ -41,12 +41,16 @@
     "XYZ_WinRound1": "You won round 1!",
     "XYZ_WinRound2": "You won round 2!",
     "XYZ_WinRound3": "You won round 3!",
+    "XYZ_LoseRound1": "You lost round 1!",
+    "XYZ_LoseRound2": "You lost round 2!",
+    "XYZ_LoseRound3": "You lost round 3!",
     "Quasi_PopUp_Ally1": "Millions for defense, not one cent for tribute!",
     "Quasi_PopUp_Ally2": "President Adams gave us a Navy. Lets show him it was worth it!",
     "Quasi_PopUp_Ally3": "Survive the storm. Peace talks are on the horizon!",
     "Quasi_PopUp_Enemy1": "No tribute? Then no mercy!",
     "Quasi_PopUp_Enemy2": "Neutrality is cowardice! Choose a side!",
-    "Quasi_PopUp_Enemy3": "We are not pirates! We are justice on the sea!"
+    "Quasi_PopUp_Enemy3": "We are not pirates! We are justice on the sea!",
+    "Embargo_Intro": "Embargo Act"
 
   }
 }

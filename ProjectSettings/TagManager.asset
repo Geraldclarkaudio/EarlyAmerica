@@ -53,3 +53,6 @@ TagManager:
   - name: Balls
     uniqueID: 182700173
     locked: 0
+  - name: Crate
+    uniqueID: 3363121001
+    locked: 0

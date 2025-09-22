@@ -10,11 +10,11 @@ namespace PaperKiteStudio.Dangers
         [SerializeField] GameStateMachine stateMachine;
         [SerializeField]
         int _coinAmount;
+        [SerializeField]
+        int roundStartCoinAmount;
         public UnityEvent _loadSceneEvent;
         [SerializeField]
         private TMP_Text _coinText;
-        //[SerializeField]
-        //private GameObject _gameOverPanel;
         [SerializeField]
         private RectTransform _promptPanel;
         [SerializeField]
@@ -59,26 +59,45 @@ namespace PaperKiteStudio.Dangers
             _promptPanel.DOScale(0, 0.5f);
             if(_coinAmount > 0)
             {
-                stateMachine.SetState(GameStateMachine.GameState.Playing);
+                if (stateMachine.Is(GameStateMachine.GameState.Paused))
+                    stateMachine.SetState(GameStateMachine.GameState.Playing);
             }
         }
-        #endregion 
+        #endregion
 
         public void UpdateCoinAmount()
         {
             _coinAmount--;
-            
-            if(_coinAmount <= 0)
+
+            if (_coinAmount <= 0)
             {
                 stateMachine.SetState(GameStateMachine.GameState.Lose);
                 //_gameOverPanel.SetActive(true); // animate with DG.Twweening eventually
             }
-            UpdateCoinUI();
+            if (!stateMachine.Is(GameStateMachine.GameState.Lose))
+            {
+                UpdateCoinUI();
+            }
             Camera.main.DOShakePosition(0.15f, _screenShakeStrength, 10, 90, true, ShakeRandomnessMode.Full);
         }
-        private void UpdateCoinUI()
+
+        public void UpdateCoinUI()
         {
             _coinText.text = _coinAmount.ToString();
+            Debug.Log("coin ui updated");
+        }
+
+        public void SetRoundStartCoinAmount()
+        {
+            roundStartCoinAmount = _coinAmount;
+            UpdateCoinUI();
+        }
+
+        public void SetCoinAmount()
+        {
+            _coinText.text = 0.ToString();
+            Debug.Log("coin text set to 0");
+            _coinAmount = roundStartCoinAmount;
         }
     }
 }

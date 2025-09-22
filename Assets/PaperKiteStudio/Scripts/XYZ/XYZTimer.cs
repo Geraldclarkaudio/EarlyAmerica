@@ -29,13 +29,13 @@ namespace PaperKiteStudio.Dangers
                 if (_timer <= 0)
                 {
                     ResetTimer();
-                    WinRound();
+                    EndRound();
                     stateMachine.SetState(GameStateMachine.GameState.Win);
                 }
             }
         }
 
-        private void WinRound()
+        public void EndRound()
         {
             _timerText.text = "0:00";
         }

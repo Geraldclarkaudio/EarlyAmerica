@@ -13,6 +13,7 @@ namespace PaperKiteStudio.Dangers
             Win,
             Lose,
             AdvanceRound,
+            CutScente
         }
 
         public GameState CurrentState { get; private set; } = GameState.Pregame;

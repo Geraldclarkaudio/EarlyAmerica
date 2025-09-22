@@ -62,16 +62,34 @@ namespace PaperKiteStudio.Dangers
                 3 => 1.5f,
                 _ => 0f
             };
-
-            StartTweens(duration);
+            if (stateMachine.CurrentState != GameStateMachine.GameState.Lose)
+            {
+                StartTweens(duration);
+            }
             hasStartedTweens = true;
         }
 
+        //private void StartTweens(float duration)
+        //{
+        //    moveTween = transform.DOMove(_playerPos.transform.position, duration).OnComplete(() =>
+        //    {
+        //        stateMachine.SetState(GameStateMachine.GameState.Paused);
+        //        transform.position = _originalPosition.transform.position;
+        //        _associatedButton.SetActive(false);
+        //        gameObject.SetActive(false);
+        //    }).SetAutoKill(true);
+
+        //    scaleTween = transform.DOScale(1, duration).SetAutoKill(true);
+        //}
         private void StartTweens(float duration)
         {
             moveTween = transform.DOMove(_playerPos.transform.position, duration).OnComplete(() =>
             {
-                stateMachine.SetState(GameStateMachine.GameState.Paused);
+                if (stateMachine.CurrentState != GameStateMachine.GameState.Lose)
+                {
+                    stateMachine.SetState(GameStateMachine.GameState.Paused);
+                }
+
                 transform.position = _originalPosition.transform.position;
                 _associatedButton.SetActive(false);
                 gameObject.SetActive(false);

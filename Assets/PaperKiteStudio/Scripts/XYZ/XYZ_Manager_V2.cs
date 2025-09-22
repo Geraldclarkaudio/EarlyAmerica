@@ -32,6 +32,7 @@ namespace PaperKiteStudio.Dangers
             switch (state)
             {
                 case GameStateMachine.GameState.Playing:
+                    hud.UpdateCoinUI();
                     spawner.Spawn();
                     break;
 
@@ -40,11 +41,15 @@ namespace PaperKiteStudio.Dangers
                     hud.DisplayPaidPrompt();
                     break;
                 case GameStateMachine.GameState.Win:
+                    hud.SetRoundStartCoinAmount();
                     dialog.StartWinDialog();
                     gamePhaseManager.IncrementPhaseStep();                    
                     break;
                 case GameStateMachine.GameState.Lose:
-                    //repeat round
+                    timer.EndRound();
+                    hud.SetCoinAmount();
+                    timer.ResetTimer();
+                    dialog.StartLoseDialog();
                     break;
                 case GameStateMachine.GameState.AdvanceRound:
                     gamePhaseManager.IncrementPhaseStep();

@@ -1095,6 +1095,22 @@ PrefabInstance:
       propertyPath: continueButton
       value: 
       objectReference: {fileID: 1244628861}
+    - target: {fileID: 932875196045897375, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: dialogues.Array.size
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 932875196045897375, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: dialogues.Array.data[16]
+      value: 
+      objectReference: {fileID: 11400000, guid: d83c0a86783611e4c8206ac4bfce6ea2, type: 2}
+    - target: {fileID: 932875196045897375, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: dialogues.Array.data[17]
+      value: 
+      objectReference: {fileID: 11400000, guid: f5ef55d7c565720439b096f0be1e114d, type: 2}
+    - target: {fileID: 932875196045897375, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: dialogues.Array.data[18]
+      value: 
+      objectReference: {fileID: 11400000, guid: a90c66fc09a045143b858e28b51f39d3, type: 2}
     - target: {fileID: 1002832277598218874, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
       propertyPath: m_Name
       value: Persistent Objects
