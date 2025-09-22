@@ -10,6 +10,8 @@ namespace PaperKiteStudio.Dangers
     public class PopUpDialogue : MonoBehaviour
     {
         [SerializeField]
+        private DialogueManager _dialogueManager;
+        [SerializeField]
         private float _moveSpeed;
         [Header("Current Panel")]
         [SerializeField]
@@ -59,6 +61,7 @@ namespace PaperKiteStudio.Dangers
         private void Start()
         {
             _init = FindAnyObjectByType<Initializer>();
+            _dialogueManager = FindAnyObjectByType<DialogueManager>();
             _popUpTimer = _originalTimer;
             SetGuideBot();
         }
@@ -91,6 +94,10 @@ namespace PaperKiteStudio.Dangers
 
         private void Update()
         {
+            if (_dialogueManager.dialogueIsActive)
+            {
+                return;
+            }
             if (_hasSpawned == false)
             {
                 _popUpTimer -= Time.deltaTime;

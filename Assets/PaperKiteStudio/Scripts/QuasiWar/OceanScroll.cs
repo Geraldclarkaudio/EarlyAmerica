@@ -20,5 +20,9 @@ namespace PaperKiteStudio.Dangers
             offset.y += scrollSpeed * Time.deltaTime;
             rend.material.mainTextureOffset = offset;
         }
+        public void StopScroll()
+        {
+            scrollSpeed = 0;
+        }
     }
 }

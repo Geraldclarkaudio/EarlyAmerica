@@ -64,21 +64,28 @@ namespace PaperKiteStudio.Dangers
                 {
                     return;
                 }
-
+                gameObject.SetActive(false);    
                 PlayerShip player = collision.GetComponent<PlayerShip>();
                 player.DisableMove();
-                Camera.main.DOShakePosition(0.5f, 1, 10, 90, true, ShakeRandomnessMode.Full);
+                Camera.main.DOShakePosition(0.5f, 0.5f, 10, 90, true, ShakeRandomnessMode.Full);
                 onHitPlayer?.Invoke();
                 _gameManager.gameOver = true;
             }
 
             if (collision.CompareTag("Frenchy"))
             {
+                if (_playerCannonBall)
+                {
+                    gameObject.SetActive(false);
+
+                    EnemyShip enemy = collision.GetComponent<EnemyShip>();
+                    enemy.Damage();
+                    Camera.main.DOShakePosition(0.5f, 0.25f, 10, 90, true, ShakeRandomnessMode.Full);
+                }
                 if (!_playerCannonBall)
                 {
                     return;
                 }
-                Debug.Log("Hit z' Enemy");
             }
         }
 
