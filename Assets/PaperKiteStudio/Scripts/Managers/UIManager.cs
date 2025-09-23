@@ -38,6 +38,8 @@ namespace PaperKiteStudio.Dangers
 
         [SerializeField]
         private DialogueManager _dialogueManager;
+        [SerializeField]
+        private JournalManager _journalManager;
 
 
         private void OnEnable()
@@ -89,6 +91,7 @@ namespace PaperKiteStudio.Dangers
                 {
                     state = UIState.Journal;
                     _journalCanvas.enabled = true;
+                    _journalManager.TurnOnJournal();
                 }
                 else
                 {

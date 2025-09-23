@@ -16,17 +16,19 @@ namespace PaperKiteStudio.Dangers
         private void Start()
         {
             _gamePhaseManager = FindAnyObjectByType<GamePhaseManager>();
-            UnlockLevelButtons(_gamePhaseManager.GetGamePhase());
+          //  UnlockLevelButtons(_gamePhaseManager.GetGamePhase()); 
+          //this is now being called as a game vent after the dialogue when loading into the level select scene. 
         }
 
-        public void UnlockLevelButtons(int phase) //planet buttons are enabled/disabled according to current GamePhase. 
+        public void UnlockLevelButtons() //planet buttons are enabled/disabled according to current GamePhase. 
         {
+            //Debug.Log("UNLOCK BUTTONS");
             for (int i = 0; i < _levelButtons.Count; i++)
             {
-                _levelButtons[i].interactable = i < phase;
+                _levelButtons[i].interactable = i < _gamePhaseManager.GetGamePhase();
             }
 
-            if(phase == 0)
+            if(_gamePhaseManager.GetGamePhase() == 0)
             {
                 _levelButtons[0].interactable = true;
             }

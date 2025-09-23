@@ -15,6 +15,7 @@ MonoBehaviour:
   dialogueID: 0
   key:
   - LevelSelect_DodgeBall1
+  ttsKey: []
   icons:
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
   _speakerName:
@@ -23,4 +24,5 @@ MonoBehaviour:
   _newUIEvents: []
   _dialoguePositionChanges: []
   _eventTriggers: []
-  _endDialogueEvent: {fileID: 0}
+  _endDialogueEvent: {fileID: 11400000, guid: e847262bd8a50df4bbd8986705eb4b63, type: 2}
+  _postDialogEvent: {fileID: 0}

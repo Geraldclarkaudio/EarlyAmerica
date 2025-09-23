@@ -36,9 +36,14 @@ namespace PaperKiteStudio.Dangers
             _currentPageNumber = 0;
             //set page to page 1 every time. 
             _currentPage = allPages[_currentPageNumber];
-            PopulatePageData(_currentPage);
+          //  PopulatePageData(_currentPage);
 
             _instructionText.text = _initializer.GetText("JournalInstruction");
+        }
+
+        public void TurnOnJournal()
+        {
+            PopulatePageData(_currentPage);
         }
 
         public void TurnPage(int forwardBack)
@@ -66,13 +71,46 @@ namespace PaperKiteStudio.Dangers
         }
         private void PopulatePageData(Page newPage)
         {
+            if (_gamePhaseManager.GetGamePhase() == 0)
+            {
+                _titleText.text = "???";
+                _pageNumberText.text = "???";
+                for (int i = 0; i < _updateTexts.Length; i++)
+                {
+                    _updateTexts[i].text = "???";
+                }
+                return; // Skip the rest of the method
+            }
+
             _titleText.text = _initializer.GetText(_currentPage.titleKey);
             _pageNumberText.text = _currentPage.pageNumber.ToString();            //check if the update text has actually been enabled (if that phase step was complete or not.) 
             //for now 
-            for (int i = 0; i < _updateTexts.Length; i++)
+            if (_currentPage.associatedGamePhase < _gamePhaseManager.GetGamePhase()) // if the associated game phase value is less than the current game phase enable all the entries because they wouldnt be there otherwise. 
             {
-                _updateTexts[i].text = _initializer.GetText(newPage.updateTextKeys[i]);
+                for (int i = 0; i < _updateTexts.Length; i++)
+                {
+                    _updateTexts[i].text = _initializer.GetText(newPage.updateTextKeys[i]);
+                }
             }
+            else if (_currentPage.associatedGamePhase == _gamePhaseManager.GetGamePhase())
+            {
+                int currentPhaseStep = _gamePhaseManager.GetPhaseStep(); // check the phase step
+
+                for (int i = 0; i < _updateTexts.Length; i++)
+                {
+                    if (i < currentPhaseStep -1) 
+                    {
+                        _updateTexts[i].text = _initializer.GetText(newPage.updateTextKeys[i]);
+                        //pdateTexts[i].gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        _updateTexts[i].text = "???";
+                       //updateTexts[i].gameObject.SetActive(false); // Optional: hide incomplete entries
+                    }
+                }
+            }
+
             //grab the data from the currentpage. currentPage should = the page number..
         }
         public void SelectPage(int pageNumber)

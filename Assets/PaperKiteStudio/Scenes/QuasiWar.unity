@@ -347,6 +347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dialogueManager: {fileID: 0}
   _cutsceneDirector: {fileID: 107994923}
+  _gamePhaseManager: {fileID: 0}
 --- !u!4 &113046868
 Transform:
   m_ObjectHideFlags: 0
@@ -379,6 +380,7 @@ MonoBehaviour:
     m_Signals:
     - {fileID: 11400000, guid: d044a1d9a2d61484b8da493bc67f5718, type: 2}
     - {fileID: 11400000, guid: acab4f6f94f7b4f40a4397f9be1c653f, type: 2}
+    - {fileID: 11400000, guid: 24800dcee07afda4fa9c5f580f375be4, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -399,6 +401,20 @@ MonoBehaviour:
         - m_Target: {fileID: 1236835907}
           m_TargetAssemblyTypeName: PaperKiteStudio.Dangers.SceneLoader, Assembly-CSharp
           m_MethodName: LoadScene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 113046867}
+          m_TargetAssemblyTypeName: PaperKiteStudio.Dangers.Cutscene, Assembly-CSharp
+          m_MethodName: IndrementGamePhase
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

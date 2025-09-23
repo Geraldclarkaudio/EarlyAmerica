@@ -86,7 +86,28 @@ namespace PaperKiteStudio.Dangers
                             }
                             break;
                         case 3:
+                            switch (_phaseStep)
+                            {
+                                case 0:
+                                    _dialogueManager.dialogueIndex = 16;
+                                    break;
+                                case > 0: // hasnt beat it but has played it?
+                                    _dialogueManager.dialogueIndex = 17;
+                                    break;
+                            }
                             //played 3 not beat..etc 
+                            break;
+                        case 4:
+                            switch(_phaseStep)
+                            {
+                                case 0:
+                                    _dialogueManager.dialogueIndex = 19;
+                                    break;
+                                case > 0:
+                                    _dialogueManager.dialogueIndex= 20;
+                                    break;
+
+                            }
                             break;
                     }
                     break;

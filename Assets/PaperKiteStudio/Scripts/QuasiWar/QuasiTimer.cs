@@ -39,7 +39,7 @@ namespace PaperKiteStudio.Dangers
                 {
                 _timer = 0;
                     WinRound();
-                _cutScene.SetActive(true);
+                    _cutScene.SetActive(true);
               //      stateMachine.SetState(GameStateMachine.GameState.Win);
               // }
             }

@@ -8,5 +8,6 @@ namespace PaperKiteStudio.Dangers
         public string titleKey;
         public int pageNumber;
         public string[] updateTextKeys;
+        public int associatedGamePhase;
     }
 }

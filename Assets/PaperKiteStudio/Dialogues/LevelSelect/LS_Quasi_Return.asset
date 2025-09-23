@@ -10,20 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0368cd5f494b8dd4cab4883467603c5b, type: 3}
-  m_Name: TestDialogue
+  m_Name: LS_Quasi_Return
   m_EditorClassIdentifier: 
   dialogueID: 0
   key:
-  - Test1
-  - Test2
+  - LevelSelect_Quasi_Return1
+  ttsKey: []
   icons:
-  - {fileID: 21300000, guid: 473d16f3cc5e1154aa27e7fffdc57b5f, type: 3}
-  - {fileID: 21300000, guid: 78ca8aa0f509aa24a9c3a93760838529, type: 3}
+  - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
   _speakerName:
-  - George Washington
-  - Hildalgo
+  - Guide Bot
   _animations: []
   _newUIEvents: []
   _dialoguePositionChanges: []
   _eventTriggers: []
-  _endDialogueEvent: {fileID: 11400000, guid: b99c8142045ee5b439dfe135979b531a, type: 2}
+  _endDialogueEvent: {fileID: 11400000, guid: e847262bd8a50df4bbd8986705eb4b63, type: 2}
+  _postDialogEvent: {fileID: 0}

@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/PaperKiteStudio/Scenes/QuasiWar.unity
     guid: bd32f9b94883fbf44b89324ee04909b4
   - enabled: 1
-    path: Assets/PaperKiteStudio/Scenes/TEST.unity
-    guid: 9ae7d74bf9c24434da1524ebecafe053
+    path: Assets/PaperKiteStudio/Scenes/BarbaryWars.unity
+    guid: 825c363f60f03354aa52b7f940fdd489
+  - enabled: 1
+    path: Assets/PaperKiteStudio/Scenes/Embargo.unity
+    guid: a92526a11548b4444b733d7a3eb5f29b
   m_configObjects: {}
