@@ -4085,7 +4085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c45cce381adc534d9e8d82ec0ae74d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneToLoadIndex: 3
+  _sceneToLoadIndex: 1
   _uiManager: {fileID: 0}
 --- !u!4 &1835280950
 Transform:

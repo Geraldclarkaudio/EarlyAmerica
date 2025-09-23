@@ -37,8 +37,6 @@ namespace PaperKiteStudio.Dangers
             //set page to page 1 every time. 
             _currentPage = allPages[_currentPageNumber];
           //  PopulatePageData(_currentPage);
-
-            _instructionText.text = _initializer.GetText("JournalInstruction");
         }
 
         public void TurnOnJournal()

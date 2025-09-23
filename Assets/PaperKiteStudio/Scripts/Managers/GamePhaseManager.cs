@@ -212,8 +212,18 @@ namespace PaperKiteStudio.Dangers
         }
         public void IncrementPhaseStep()
         {
+     
             _phaseStep++;
             int step = _phaseStep;
+
+            if (_gamePhase > _tempPhase)
+            {
+                if(_phaseStep > 3)
+                {
+                    _phaseStep = 0;
+                }
+                return;
+            }
 
             // added this so that if i a player quits after the phase was completed it will save
             _init.playerData.phaseStep = step;

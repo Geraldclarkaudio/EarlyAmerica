@@ -17,12 +17,21 @@ MonoBehaviour:
   - LevelSelect_BarbaryWars_Intro1
   - LevelSelect_BarbaryWars_Intro2
   - LevelSelect_BarbaryWars_Intro3
+  - LevelSelect_BarbaryWars_Intro4
+  - LevelSelect_BarbaryWars_Intro5
+  - LevelSelect_BarbaryWars_Intro6
   ttsKey: []
   icons:
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
+  - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
+  - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
+  - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
   _speakerName:
+  - Guide Bot
+  - Guide Bot
+  - Guide Bot
   - Guide Bot
   - Guide Bot
   - Guide Bot

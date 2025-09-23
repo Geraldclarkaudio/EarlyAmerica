@@ -15,6 +15,7 @@ MonoBehaviour:
   dialogueID: 0
   key:
   - XYZ_WinRound3
+  ttsKey: []
   icons:
   - {fileID: 0}
   _speakerName:
@@ -24,4 +25,4 @@ MonoBehaviour:
   _dialoguePositionChanges: []
   _eventTriggers: []
   _endDialogueEvent: {fileID: 11400000, guid: 437828e67ff07054fa661ada585db63b, type: 2}
-  _postDialogEvent: {fileID: 0}
+  _postDialogEvent: {fileID: 11400000, guid: fe0f6dbd3efc12f458501371b9560b60, type: 2}

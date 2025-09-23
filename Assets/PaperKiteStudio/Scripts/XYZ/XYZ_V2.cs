@@ -52,7 +52,7 @@ namespace PaperKiteStudio.Dangers
                 return;
             }
 
-            if (_gamePhaseManager.GetGamePhase() != _gamePhaseManager.GetTempPhase()) return;
+           // if (_gamePhaseManager.GetGamePhase() != _gamePhaseManager.GetTempPhase()) return; // breaking stuff
             if (hasStartedTweens) return;
 
             float duration = _gamePhaseManager.GetPhaseStep() switch
