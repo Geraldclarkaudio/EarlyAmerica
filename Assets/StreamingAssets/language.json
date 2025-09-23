@@ -33,14 +33,18 @@
     "Page1_Update1": "...the duty and interest of the United States require, that they should with sincerity and good faith adopt and pursue a conduct friendly and impartial toward the belligerent powers...",
     "Page1_Update2": "...to terminate all differences and to establish a firm and lasting peace and friendship between His Majesty and the United States.",
     "Page1_Update3": "I am influenced by no diminution of zeal for your future interest… but retire from the great theater of action.",
-    "Page2_Title": "A Quest For Peace With France",
-    "Page2_Update1": "Im an update and stuff.",
-    "Page2_Update2": "George Washington has dope hair.",
-    "Page2_Update3": "And so do I",
-    "Page3_Title": "Chapter 3 stuff",
-    "Page3_Update1": "Super cool page 3 updater",
-    "Page3_Update2": "BDNNNNNNS",
-    "Page3_Update3": "AHHHHHHHHHHHHHHHHHHHHHHHH",
+    "Page2_Title": "Adams' Letter to Congress (1797)'",
+    "Page2_Update1": "We attempted peace, but France wanted bribes.",
+    "Page2_Update2": "If trouble is coming, we will face it with courage.",
+    "Page2_Update3": "America stands for fairness and freedom. We will not be pushed around!",
+    "Page3_Title": "Quasi War",
+    "Page3_Update1": "Congress gave us a Navy, and now we're fighting back at sea! - The Naval Act of 1798",
+    "Page3_Update2": "We didn't declare war, but our ships are in battle! - Secretary of State Timothy Pickering's report to Congress",
+    "Page3_Update3": "The enemy struck her colors after a spirited engagement. The American Flag was victorious! - Truxtun's offical battle report, 1799",
+    "Page4_Title": "Barbary Wars",
+    "Page4_Update1": "The style of the demand admitted but one answer. I sent a small squadron of frigates... - Thomas Jefferson's message to Congress 1801",
+    "Page4_Update2": "Tonight I watched Lieutenant Stephan Decatur lead a daring raid to burn the captured USS Philadelphia. The most bold and daring act of the age. - Admiral Horatio Nelson",
+    "Page4_Update3": "The United States shall not be required to pay any further tribute. - Treaty of Peace and Amity with Tripoli, 1805",
     "JournalInstruction": "Swipe left or right to turn pages, or press the appropriate page turn button.",
     "Guide_Bot_04": "Congrtulations! George Washington was able to maintain neutrality.",
     "Guide_Bot_05": "You have unlocked the <u>Proclamation of Neutrality</u> in your journal.",
@@ -68,7 +72,8 @@
     "LevelSelect_SceneButton3": "Quasi War",
     "LevelSelect_SceneButton5": "Embargo Act",
     "LevelSelect_SceneButton4": "Barbary Wars",
-    "LevelSelect_SceneButton6": "1812"
+    "LevelSelect_SceneButton6": "1812",
+    "USSPhil": "1804: decatur leads a raid to burn the USS Philadelphia in Tripoli Harbor"
 
   }
 }

@@ -1419,6 +1419,14 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9078649384276876043, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: _instructionText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078649384276876043, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: allPages.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 07234976eeff208448885e463ef5fdba, type: 2}
     - target: {fileID: 9098315644428999763, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
       propertyPath: m_fontSize
       value: 22
