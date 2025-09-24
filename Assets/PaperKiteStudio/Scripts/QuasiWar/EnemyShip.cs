@@ -24,10 +24,16 @@ namespace PaperKiteStudio.Dangers
         private float _fireRate;
         [SerializeField]
         private GameObject _fireVFX;
+        [SerializeField]
+        private Animator _anim;
+        [SerializeField]
+        private bool isHit;
 
         private void OnEnable()
         {
             transform.position = new Vector2(UnityEngine.Random.Range(-9f, 9f), 8);
+            isHit = false;
+            _anim.Play("Move");
         }
         private void Start()
         {
@@ -55,12 +61,17 @@ namespace PaperKiteStudio.Dangers
             }
             if (!_quasiGameManager.gameOver)
             {
-                Movement();
-                Fire();
+                if(isHit == false)
+                {
+                    Movement();
+                    Fire();
+                }
+
             }
         }
         private void Movement()
         {
+            _anim.SetBool("moving", true);
             transform.Translate(Vector2.up * _speed * Time.deltaTime);
             if (transform.position.y < -6f)
             {
@@ -94,7 +105,14 @@ namespace PaperKiteStudio.Dangers
 
         public void Damage()
         {
-            //instantiate some kind of damage vfx 
+            isHit = true;
+            _anim.SetTrigger("Sink");
+            StartCoroutine(ResetGO());
+        }
+
+        IEnumerator ResetGO()
+        {
+            yield return new WaitForSeconds(1.15f);
             gameObject.SetActive(false);
         }
     }

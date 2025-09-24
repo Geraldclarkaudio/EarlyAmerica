@@ -191,6 +191,7 @@ MonoBehaviour:
   _canFire: 0
   _fireRate: 0
   _fireVFX: {fileID: 8943906305750909464}
+  _anim: {fileID: 4829470812460038098}
 --- !u!1 &8943906305750909464
 GameObject:
   m_ObjectHideFlags: 0

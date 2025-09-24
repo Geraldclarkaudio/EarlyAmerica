@@ -82,7 +82,7 @@ namespace PaperKiteStudio.Dangers
 
             _titleText.text = _initializer.GetText(_currentPage.titleKey);
             _pageNumberText.text = _currentPage.pageNumber.ToString();            //check if the update text has actually been enabled (if that phase step was complete or not.) 
-            //for now 
+      
             if (_currentPage.associatedGamePhase < _gamePhaseManager.GetGamePhase()) // if the associated game phase value is less than the current game phase enable all the entries because they wouldnt be there otherwise. 
             {
                 for (int i = 0; i < _updateTexts.Length; i++)

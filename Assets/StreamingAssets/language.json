@@ -73,7 +73,11 @@
     "LevelSelect_SceneButton5": "Embargo Act",
     "LevelSelect_SceneButton4": "Barbary Wars",
     "LevelSelect_SceneButton6": "1812",
-    "USSPhil": "1804: decatur leads a raid to burn the USS Philadelphia in Tripoli Harbor"
+    "USSPhil": "1804: decatur leads a raid to burn the USS Philadelphia in Tripoli Harbor",
+    "Barbary_Intro1": "You sail these waters without tribute? Then you sail into fire!",
+    "Barbary_Intro2": "Your flag means nothing here! Pay or perish!",
+    "Barbary_Intro3": "We don't pay pirates. We fight them!",
+    "Barbary_Intro4": "This ship stands for freedom. You'll find we don't scare easy!"
 
   }
 }

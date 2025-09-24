@@ -181,13 +181,13 @@ namespace PaperKiteStudio.Dangers
                     switch (_phaseStep)
                     {
                         case 1:
-                            _dialogueManager.dialogueIndex = 5;
+                            _dialogueManager.dialogueIndex = 21;
                             break;
                         case 2:
-                            _dialogueManager.dialogueIndex = 5;
+                            _dialogueManager.dialogueIndex = 21;
                             break;
                         case 3:
-                            _dialogueManager.dialogueIndex = 5;
+                            _dialogueManager.dialogueIndex = 21;
                             break;
                     }
                     break;
