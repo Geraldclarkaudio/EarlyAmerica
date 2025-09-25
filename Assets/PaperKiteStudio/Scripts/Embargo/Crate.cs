@@ -4,14 +4,24 @@ namespace PaperKiteStudio.Dangers
 {
     public class Crate : MovingObject
     {
-        private void Start()
-        {
-            StartMoving();
-        }
+        [SerializeField] private ScoreManager scoreManager;
+
+
+        //private void Start()
+        //{
+        //    StartMoving();
+        //}
 
         protected override void OnTargetCollision(Collider2D other)
         {
-            Debug.Log($"{name} hit {other.name} and will now self-destruct.");
+            if (CompareTag("Foreign"))
+            {
+                if (TryGetComponent<CrateScoreTrigger>(out var trigger))
+                {
+                    trigger.ApplyScore();
+                }
+            }
+
             gameObject.SetActive(false);
         }
     }

@@ -37,8 +37,10 @@ namespace PaperKiteStudio.Dangers
 
         protected virtual void OnEnable()
         {
-            isMoving = false;
+            //isMoving = false;
+            //CalculateDirection();
             CalculateDirection();
+            StartMoving();
         }
 
         protected virtual void Update()
