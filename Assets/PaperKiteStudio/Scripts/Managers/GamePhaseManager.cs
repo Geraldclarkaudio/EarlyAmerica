@@ -109,6 +109,9 @@ namespace PaperKiteStudio.Dangers
 
                             }
                             break;
+                        case 5: // embargo
+                            _dialogueManager.dialogueIndex = 23;
+                            break;
                     }
                     break;
 
@@ -181,13 +184,13 @@ namespace PaperKiteStudio.Dangers
                     switch (_phaseStep)
                     {
                         case 1:
-                            _dialogueManager.dialogueIndex = 21;
+                            _dialogueManager.dialogueIndex = 21; // sneak time
                             break;
                         case 2:
-                            _dialogueManager.dialogueIndex = 21;
+                            _dialogueManager.dialogueIndex = 23; // ship battle time
                             break;
                         case 3:
-                            _dialogueManager.dialogueIndex = 21;
+                            _dialogueManager.dialogueIndex = 21; // probably wont exist. we'll just increment the GP after phase 2 here. 
                             break;
                     }
                     break;

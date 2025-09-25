@@ -42,8 +42,8 @@
     "Page3_Update2": "We didn't declare war, but our ships are in battle! - Secretary of State Timothy Pickering's report to Congress",
     "Page3_Update3": "The enemy struck her colors after a spirited engagement. The American Flag was victorious! - Truxtun's offical battle report, 1799",
     "Page4_Title": "Barbary Wars",
-    "Page4_Update1": "The style of the demand admitted but one answer. I sent a small squadron of frigates... - Thomas Jefferson's message to Congress 1801",
-    "Page4_Update2": "Tonight I watched Lieutenant Stephan Decatur lead a daring raid to burn the captured USS Philadelphia. The most bold and daring act of the age. - Admiral Horatio Nelson",
+    "Page4_Update2": "The style of the demand admitted but one answer. I sent a small squadron of frigates... - Thomas Jefferson's message to Congress 1801",
+    "Page4_Update1": "Tonight I watched Lieutenant Stephan Decatur lead a daring raid to burn the captured USS Philadelphia. The most bold and daring act of the age. - Admiral Horatio Nelson",
     "Page4_Update3": "The United States shall not be required to pay any further tribute. - Treaty of Peace and Amity with Tripoli, 1805",
     "JournalInstruction": "Swipe left or right to turn pages, or press the appropriate page turn button.",
     "Guide_Bot_04": "Congrtulations! George Washington was able to maintain neutrality.",
@@ -74,10 +74,24 @@
     "LevelSelect_SceneButton4": "Barbary Wars",
     "LevelSelect_SceneButton6": "1812",
     "USSPhil": "1804: decatur leads a raid to burn the USS Philadelphia in Tripoli Harbor",
+    "Barbary_Phil1": "Here we are. Lieutenant Decatur is already making his way to the Philadelphia.",
+    "Barbary_Phil2": "Lets help him make it up here so he can set fire to the ship rendering it useless to the enemy!",
+    "Barbary_Phil3": "Be careful to not be seen.",
+    "Barbary_Phil4": "Lets go!",
     "Barbary_Intro1": "You sail these waters without tribute? Then you sail into fire!",
     "Barbary_Intro2": "Your flag means nothing here! Pay or perish!",
     "Barbary_Intro3": "We don't pay pirates. We fight them!",
-    "Barbary_Intro4": "This ship stands for freedom. You'll find we don't scare easy!"
+    "Barbary_Intro4": "This ship stands for freedom. You'll find we don't scare easy!",
+    "USSCaught": "You have been caught! Your stealth was no match for their watchful eyes. The USS Philadelphia sails on...without you.",
+    "ShipBurn1": "Boom! Thats one less ship in enemy hands.",
+    "ShipBurn2": "The Philadelphia is destroyed and your daring act echoes through time.",
+    "ShipBurn3": "A rip in the Space-Time Continuum has just occured...",
+    "ShipBurn4": "We need to travel to 1805 and settle this once and for all.",
+    "ShipBurn5": "It looks like we will be helping William Eaton raise the American flag at a Tripolitan city, Derna.",
+    "LevelSelect_Embargo1": "With the Philadelphia in flames and tensions rising, the fight shifts from cannon fire to commerce.",
+    "LevelSelect_Embargo2": "In 1807 President Thomas Jefferson signed the Embargo Act.",
+    "LevelSelect_Embargo3": "This halted all US. exports and blocked ALL imports from foreign countries!",
+    "LevelSelect_Embargo4": "Lets travel to 1807 and help Jefferson keep all foreign imports out!"
 
   }
 }
