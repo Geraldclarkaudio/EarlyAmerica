@@ -183,8 +183,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quasi War
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e1980d03e94584c2b8bf7986c994fd3a, type: 2}
-  m_sharedMaterial: {fileID: -403277894513911722, guid: e1980d03e94584c2b8bf7986c994fd3a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a9d2808177451fa4a8333070d1dedd81, type: 2}
+  m_sharedMaterial: {fileID: -3412082352850219531, guid: a9d2808177451fa4a8333070d1dedd81, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -673,7 +673,7 @@ GameObject:
   - component: {fileID: 355413146}
   - component: {fileID: 355413145}
   m_Layer: 5
-  m_Name: 1812_Button
+  m_Name: Impressment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -711,7 +711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c45cce381adc534d9e8d82ec0ae74d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneToLoadIndex: 3
+  _sceneToLoadIndex: 7
   _uiManager: {fileID: 0}
 --- !u!114 &355413146
 MonoBehaviour:
@@ -776,7 +776,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -879,8 +879,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: XYZ
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e1980d03e94584c2b8bf7986c994fd3a, type: 2}
-  m_sharedMaterial: {fileID: -403277894513911722, guid: e1980d03e94584c2b8bf7986c994fd3a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a9d2808177451fa4a8333070d1dedd81, type: 2}
+  m_sharedMaterial: {fileID: -3412082352850219531, guid: a9d2808177451fa4a8333070d1dedd81, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1401,8 +1401,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Monroe Doctrine
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e1980d03e94584c2b8bf7986c994fd3a, type: 2}
-  m_sharedMaterial: {fileID: -403277894513911722, guid: e1980d03e94584c2b8bf7986c994fd3a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a9d2808177451fa4a8333070d1dedd81, type: 2}
+  m_sharedMaterial: {fileID: -3412082352850219531, guid: a9d2808177451fa4a8333070d1dedd81, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1426,7 +1426,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.9
+  m_fontSize: 22.6
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2343,10 +2343,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1812
+  m_text: Impressment
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e1980d03e94584c2b8bf7986c994fd3a, type: 2}
-  m_sharedMaterial: {fileID: -403277894513911722, guid: e1980d03e94584c2b8bf7986c994fd3a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a9d2808177451fa4a8333070d1dedd81, type: 2}
+  m_sharedMaterial: {fileID: -3412082352850219531, guid: a9d2808177451fa4a8333070d1dedd81, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2370,10 +2370,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 29.05
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -2434,7 +2434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _init: {fileID: 0}
   _textComponent: {fileID: 981351395}
-  _key: LevelSelect_SceneButton5
+  _key: LevelSelect_SceneButton6
 --- !u!1 &1062929187
 GameObject:
   m_ObjectHideFlags: 0
@@ -2696,8 +2696,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Treaty of Ghent
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e1980d03e94584c2b8bf7986c994fd3a, type: 2}
-  m_sharedMaterial: {fileID: -403277894513911722, guid: e1980d03e94584c2b8bf7986c994fd3a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a9d2808177451fa4a8333070d1dedd81, type: 2}
+  m_sharedMaterial: {fileID: -3412082352850219531, guid: a9d2808177451fa4a8333070d1dedd81, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2846,8 +2846,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Proclamation of Neutrality
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e1980d03e94584c2b8bf7986c994fd3a, type: 2}
-  m_sharedMaterial: {fileID: -403277894513911722, guid: e1980d03e94584c2b8bf7986c994fd3a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a9d2808177451fa4a8333070d1dedd81, type: 2}
+  m_sharedMaterial: {fileID: -3412082352850219531, guid: a9d2808177451fa4a8333070d1dedd81, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2871,7 +2871,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 20
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3663,8 +3663,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Embargo Act
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e1980d03e94584c2b8bf7986c994fd3a, type: 2}
-  m_sharedMaterial: {fileID: -403277894513911722, guid: e1980d03e94584c2b8bf7986c994fd3a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a9d2808177451fa4a8333070d1dedd81, type: 2}
+  m_sharedMaterial: {fileID: -3412082352850219531, guid: a9d2808177451fa4a8333070d1dedd81, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3688,7 +3688,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23.45
+  m_fontSize: 30.25
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3813,8 +3813,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Barabary Wars
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e1980d03e94584c2b8bf7986c994fd3a, type: 2}
-  m_sharedMaterial: {fileID: -403277894513911722, guid: e1980d03e94584c2b8bf7986c994fd3a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a9d2808177451fa4a8333070d1dedd81, type: 2}
+  m_sharedMaterial: {fileID: -3412082352850219531, guid: a9d2808177451fa4a8333070d1dedd81, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3838,7 +3838,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 19.95
+  m_fontSize: 26
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1

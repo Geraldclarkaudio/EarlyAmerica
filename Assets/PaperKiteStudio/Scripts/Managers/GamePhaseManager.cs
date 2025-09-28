@@ -46,7 +46,6 @@ namespace PaperKiteStudio.Dangers
                 case "Init": // do nothing. 
                     return;
                 case "LevelSelect":
-
                     switch (_gamePhase)
                     {
                         case 0: // intro dialogue
@@ -111,6 +110,9 @@ namespace PaperKiteStudio.Dangers
                             break;
                         case 5: // embargo
                             _dialogueManager.dialogueIndex = 23;
+                            break;
+                        case 6: // impressment
+                            _dialogueManager.dialogueIndex = 25; 
                             break;
                     }
                     break;
