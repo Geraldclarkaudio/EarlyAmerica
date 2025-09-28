@@ -16,7 +16,9 @@ namespace PaperKiteStudio.Dangers
             CutScente
         }
 
-        public GameState CurrentState { get; private set; } = GameState.Pregame;
+        [Header("Current Game State")]
+        [SerializeField] private GameState currentState = GameState.Pregame;
+        public GameState CurrentState => currentState;
 
         public static event Action<GameState> OnStateChanged;
 
@@ -24,7 +26,7 @@ namespace PaperKiteStudio.Dangers
         {
             if (newState == CurrentState) return;
 
-            CurrentState = newState;
+            currentState = newState;
             Debug.Log($"GameState changed to: {newState}");
             OnStateChanged?.Invoke(newState);
         }

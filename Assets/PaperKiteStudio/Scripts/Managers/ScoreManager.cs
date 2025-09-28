@@ -24,6 +24,7 @@ namespace PaperKiteStudio.Dangers
         {
             currentScore += amount;
             ScoreChanged?.Invoke(currentScore);
+            currentScore = Mathf.Max(currentScore, minScore);
 
             if (useLossCondition && currentScore <= minScore)
             {

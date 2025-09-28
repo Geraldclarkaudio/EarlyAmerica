@@ -194,6 +194,25 @@ namespace PaperKiteStudio.Dangers
                             break;
                     }
                     break;
+
+                case "Embargo":
+                    if (_phaseStep == 0)
+                    {
+                        SetPhaseStep(1); // set phase step to 1 for first visit to this game. 
+                    }
+                    switch (_phaseStep)
+                    {
+                        case 1:
+                            _dialogueManager.dialogueIndex = 24; // sneak time
+                            break;
+                        //case 2:
+                        //    _dialogueManager.dialogueIndex = 23; // ship battle time
+                        //    break;
+                        //case 3:
+                        //    _dialogueManager.dialogueIndex = 21; // probably wont exist. we'll just increment the GP after phase 2 here. 
+                        //    break;
+                    }
+                    break;
             }
             // start a dialogue at the beginning of every scene load.
             _dialogueManager.StartDialogue();

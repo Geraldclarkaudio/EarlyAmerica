@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using PaperKiteStudio.Dangers;
@@ -14,7 +15,6 @@ namespace PaperKiteStudio.Dangers
         {
             gamePhaseManager = FindAnyObjectByType<GamePhaseManager>();
             scoreManager.ScoreDepleted += HandleScoreDepleted;
-
         }
 
         protected override void HandleStateChange(GameStateMachine.GameState state)

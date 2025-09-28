@@ -91,7 +91,8 @@
     "LevelSelect_Embargo1": "With the Philadelphia in flames and tensions rising, the fight shifts from cannon fire to commerce.",
     "LevelSelect_Embargo2": "In 1807 President Thomas Jefferson signed the Embargo Act.",
     "LevelSelect_Embargo3": "This halted all US. exports and blocked ALL imports from foreign countries!",
-    "LevelSelect_Embargo4": "Lets travel to 1807 and help Jefferson keep all foreign imports out!"
+    "LevelSelect_Embargo4": "Lets travel to 1807 and help Jefferson keep all foreign imports out!",
+    "Embargo_Intro": "Embargo intro."
 
   }
 }
