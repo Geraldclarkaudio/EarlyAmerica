@@ -95,7 +95,14 @@
     "LevelSelect_Embargo2": "In 1807 President Thomas Jefferson signed the Embargo Act.",
     "LevelSelect_Embargo3": "This halted all US. exports and blocked ALL imports from foreign countries!",
     "LevelSelect_Embargo4": "Lets travel to 1807 and help Jefferson keep all foreign imports out!",
-    "Embargo_Intro": "Embargo intro."
+    "LevelSelect_Embargo5": "Click on foriegn crates to reject them. Be careful not to click any American crates!",
+    "Embargo_Intro": "Embargo intro.",
+    "Embargo_Win_01": "Won round 1",
+    "Embargo_Win_02": "Won round 2",
+    "Embargo_Win_03": "Won round 3",
+    "Embargo_Lose_01": "lost round 1",
+    "Embargo_Lose_02": "lost round 2",
+    "Embargo_Lose_03": "lost round 3"
 
   }
 }

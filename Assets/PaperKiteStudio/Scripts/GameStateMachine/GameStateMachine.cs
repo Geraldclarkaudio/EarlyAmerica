@@ -32,5 +32,15 @@ namespace PaperKiteStudio.Dangers
         }
 
         public bool Is(GameState state) => CurrentState == state;
+
+        public void SetToPregame() => SetState(GameState.Pregame);
+        public void SetToPlaying() => SetState(GameState.Playing);
+        public void SetToPaused() => SetState(GameState.Paused);
+        public void SetToWin() => SetState(GameState.Win);
+        public void SetToLose() => SetState(GameState.Lose);
+        public void SetToAdvanceRound() => SetState(GameState.AdvanceRound);
+        public void SetToCutScene() => SetState(GameState.CutScente);
+
+
     }
 }

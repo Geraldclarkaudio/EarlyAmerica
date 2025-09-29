@@ -205,14 +205,14 @@ namespace PaperKiteStudio.Dangers
                     switch (_phaseStep)
                     {
                         case 1:
-                            _dialogueManager.dialogueIndex = 24; // sneak time
+                            _dialogueManager.dialogueIndex = 24;
                             break;
-                        //case 2:
-                        //    _dialogueManager.dialogueIndex = 23; // ship battle time
-                        //    break;
-                        //case 3:
-                        //    _dialogueManager.dialogueIndex = 21; // probably wont exist. we'll just increment the GP after phase 2 here. 
-                        //    break;
+                        case 2:
+                            _dialogueManager.dialogueIndex = 24;
+                            break;
+                        case 3:
+                            _dialogueManager.dialogueIndex = 24;
+                            break;
                     }
                     break;
             }

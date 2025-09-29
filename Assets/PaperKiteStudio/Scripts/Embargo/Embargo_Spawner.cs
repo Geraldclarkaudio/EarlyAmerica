@@ -23,6 +23,7 @@ namespace PaperKiteStudio.Dangers
         private Dictionary<GameObject, Queue<GameObject>> objectPools = new();
         private Dictionary<GameObject, Vector3> scaleMap = new();
         private Dictionary<GameObject, Vector2> intervalMap = new();
+        private Dictionary<GameObject, int> sortingOrderMap = new();
 
         private bool playing = false;
 
@@ -61,8 +62,13 @@ namespace PaperKiteStudio.Dangers
             // Map scale and interval settings
             for (int i = 0; i < spawnPoints.Length; i++)
             {
-                scaleMap[spawnPoints[i]] = spawnScales[i];
+                GameObject point = spawnPoints[i];
+                scaleMap[point] = spawnScales[i];
                 intervalMap[spawnPoints[i]] = spawnIntervals[i];
+
+                int baseOrder = (spawnPoints.Length - 1 - i) * 2 + 1;
+                sortingOrderMap[point] = baseOrder;
+
                 StartCoroutine(SpawnLoop(spawnPoints[i]));
             }
         }
@@ -79,17 +85,49 @@ namespace PaperKiteStudio.Dangers
             }
         }
 
+        //void SpawnCrateAt(GameObject spawnPoint)
+        //{
+        //    GameObject cratePrefab = cratePrefabs[Random.Range(0, cratePrefabs.Length)];
+        //    GameObject crate = GetFromPool(cratePrefab);
+        //    if (crate == null) return;
+
+        //    crate.transform.SetParent(null); // Ensure world position
+        //    crate.transform.position = spawnPoint.transform.position;
+        //    crate.transform.localScale = scaleMap.ContainsKey(spawnPoint) ? scaleMap[spawnPoint] : Vector3.one;
+        //    crate.SetActive(true);
+        //}
+
         void SpawnCrateAt(GameObject spawnPoint)
         {
             GameObject cratePrefab = cratePrefabs[Random.Range(0, cratePrefabs.Length)];
             GameObject crate = GetFromPool(cratePrefab);
             if (crate == null) return;
 
-            crate.transform.SetParent(null); // Ensure world position
+            crate.transform.SetParent(null);
             crate.transform.position = spawnPoint.transform.position;
             crate.transform.localScale = scaleMap.ContainsKey(spawnPoint) ? scaleMap[spawnPoint] : Vector3.one;
             crate.SetActive(true);
+
+            if (sortingOrderMap.TryGetValue(spawnPoint, out int baseOrder))
+            {
+                SpriteRenderer crateSR = crate.GetComponent<SpriteRenderer>();
+                if (crateSR != null)
+                {
+                    crateSR.sortingOrder = baseOrder;
+                }
+
+                if (crate.transform.childCount > 0)
+                {
+                    SpriteRenderer childSR = crate.transform.GetChild(0).GetComponent<SpriteRenderer>();
+                    if (childSR != null)
+                    {
+                        childSR.sortingOrder = baseOrder + 1;
+                    }
+                }
+            }
         }
+
+
 
         GameObject GetFromPool(GameObject prefab)
         {
@@ -112,6 +150,22 @@ namespace PaperKiteStudio.Dangers
             {
                 playing = true;
                 StartSpawning();
+            }
+
+            if (newState == GameStateMachine.GameState.Lose || newState == GameStateMachine.GameState.Win)
+            {
+                playing = false;
+                StopAllCoroutines();
+
+                // Deactivate all crates in all pools
+                foreach (var pool in objectPools.Values)
+                {
+                    foreach (var crate in pool)
+                    {
+                        if (crate.activeInHierarchy)
+                            crate.SetActive(false);
+                    }
+                }
             }
         }
 

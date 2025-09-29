@@ -10,14 +10,28 @@ namespace PaperKiteStudio.Dangers
         [SerializeField] private bool useLossCondition = true;
 
         [SerializeField] private int currentScore;
+        private int roundStartScore = 50;
 
         public event Action<int> ScoreChanged;
         public event Action ScoreDepleted;
+
+        private GameStateMachine gameStateMachine;
+
+        private void OnEnable()
+        {
+            GameStateMachine.OnStateChanged += HandleGameStateChanged;
+        }
+
+        private void OnDisable()
+        {
+            GameStateMachine.OnStateChanged -= HandleGameStateChanged;
+        }
 
         void Awake()
         {
             currentScore = startingScore;
             ScoreChanged?.Invoke(currentScore);
+            gameStateMachine = FindAnyObjectByType<GameStateMachine>();
         }
 
         public void ModifyScore(int amount)
@@ -29,15 +43,8 @@ namespace PaperKiteStudio.Dangers
             if (useLossCondition && currentScore <= minScore)
             {
                 ScoreDepleted?.Invoke();
+                gameStateMachine.SetState(GameStateMachine.GameState.Lose);
             }
-        }
-
-        public int GetScore() => currentScore;
-
-        // may get rid of
-        public void TriggerGameOver()
-        {
-            Debug.Log("Score reached 0");
         }
 
         public void ApplyScoreEffect(ScoreEffect effect)
@@ -49,9 +56,22 @@ namespace PaperKiteStudio.Dangers
             if (useLossCondition && effect.triggersLossOnDepletion && currentScore <= minScore)
             {
                 ScoreDepleted?.Invoke();
+                gameStateMachine.SetState(GameStateMachine.GameState.Lose);
             }
         }
 
-
+        private void HandleGameStateChanged(GameStateMachine.GameState newState)
+        {
+            switch (newState)
+            {
+                case GameStateMachine.GameState.Playing:
+                    currentScore = roundStartScore;
+                    ScoreChanged?.Invoke(currentScore);
+                    break;
+                case GameStateMachine.GameState.Win:
+                    roundStartScore = currentScore;
+                    break;
+            }
+        }
     }
 }
