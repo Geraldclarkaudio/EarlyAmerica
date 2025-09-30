@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueID: 0
   key:
-  - Guide_Bot_04
-  - Guide_Bot_05
+  - Dodge_Win_1
+  - Dodge_Win_2
+  ttsKey: []
   icons:
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
