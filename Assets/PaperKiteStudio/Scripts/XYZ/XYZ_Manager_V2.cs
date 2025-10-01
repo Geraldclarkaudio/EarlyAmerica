@@ -35,11 +35,6 @@ namespace PaperKiteStudio.Dangers
                     hud.UpdateCoinUI();
                     spawner.Spawn();
                     break;
-
-                case GameStateMachine.GameState.Paused:
-                    hud.UpdateCoinAmount();
-                    hud.DisplayPaidPrompt();
-                    break;
                 case GameStateMachine.GameState.Win:
                     hud.SetRoundStartCoinAmount();
                     dialog.StartWinDialog();

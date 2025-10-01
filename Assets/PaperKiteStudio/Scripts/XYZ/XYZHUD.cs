@@ -8,38 +8,45 @@ namespace PaperKiteStudio.Dangers
     public class XYZHUD : MonoBehaviour
     {
         [SerializeField] GameStateMachine stateMachine;
-        [SerializeField]
-        int _coinAmount;
-        [SerializeField]
-        int roundStartCoinAmount;
+        [SerializeField] int _coinAmount;
+        [SerializeField] int roundStartCoinAmount;
+        [SerializeField] private TMP_Text _coinText;
+        [SerializeField] private RectTransform _promptPanel;
+        [SerializeField] private Sprite _paidSprite;
+        [SerializeField] private Sprite _blockedSprite;
+        [SerializeField] private float _screenShakeStrength;
+        [SerializeField] private RectTransform _roundPanel;
+        [SerializeField] private TMP_Text _roundText;
+
         public UnityEvent _loadSceneEvent;
-        [SerializeField]
-        private TMP_Text _coinText;
-        [SerializeField]
-        private RectTransform _promptPanel;
-        [SerializeField]
-        private Sprite _paidSprite;
-        [SerializeField]
-        private Sprite _blockedSprite;
-        [SerializeField]
-        private float _screenShakeStrength;
-        [SerializeField]
-        private RectTransform _roundPanel;
-        [SerializeField]
-        private TMP_Text _roundText;
+
+        private void OnEnable()
+        {
+            GameStateMachine.OnStateChanged += HandleStateChange;
+        }
+
+        private void OnDisable()
+        {
+            GameStateMachine.OnStateChanged -= HandleStateChange;
+        }
 
         private void Start()
         {
             UpdateCoinUI();
         }
 
+        private void HandleStateChange(GameStateMachine.GameState newState)
+        {
+            switch (newState)
+            {
+                case GameStateMachine.GameState.Paused:
+                    UpdateCoinAmount();
+                    DisplayPaidPrompt();
+                    break;
+            }
+        }
+
         #region PROMPT
-        //public void DisplayRoundPanel() //displays after dialogue to initiate spawning. 
-        //{
-        //    _roundPanel.DOScale(1, 0.5f).OnComplete(() => {
-        //        StartCoroutine(DisableRoundPrompt());
-        //    });
-        //}
         public void DisplayPaidPrompt()
         {
             _promptPanel.DOScale(1, 0.5f).OnComplete(() =>
@@ -47,12 +54,7 @@ namespace PaperKiteStudio.Dangers
                 StartCoroutine(DisablePrompt());
             });
         }
-        //IEnumerator DisableRoundPrompt()
-        //{
-        //    yield return new WaitForSeconds(1.0f);
-        //    _roundPanel.DOScale(0, 0.5f);
-        //    stateMachine.SetState(GameStateMachine.GameState.Playing);
-        //}
+
         IEnumerator DisablePrompt()
         {
             yield return new WaitForSeconds(1.0f);

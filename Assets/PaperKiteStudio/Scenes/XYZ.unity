@@ -764,6 +764,13 @@ MonoBehaviour:
   stateMachine: {fileID: 1346718742}
   _coinAmount: 5
   roundStartCoinAmount: 5
+  _coinText: {fileID: 2105751906}
+  _promptPanel: {fileID: 986848609}
+  _paidSprite: {fileID: 21300000, guid: ce696151aa73f4aa8a47d5b00a32bed0, type: 3}
+  _blockedSprite: {fileID: 21300000, guid: a0865d818466447edb9f7324a23a37c9, type: 3}
+  _screenShakeStrength: 0.2
+  _roundPanel: {fileID: 681291307}
+  _roundText: {fileID: 187334803}
   _loadSceneEvent:
     m_PersistentCalls:
       m_Calls:
@@ -779,13 +786,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _coinText: {fileID: 2105751906}
-  _promptPanel: {fileID: 986848609}
-  _paidSprite: {fileID: 21300000, guid: ce696151aa73f4aa8a47d5b00a32bed0, type: 3}
-  _blockedSprite: {fileID: 21300000, guid: a0865d818466447edb9f7324a23a37c9, type: 3}
-  _screenShakeStrength: 0.2
-  _roundPanel: {fileID: 681291307}
-  _roundText: {fileID: 187334803}
 --- !u!114 &419974512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4592,7 +4592,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20.2
+  m_fontSize: 20.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4810,7 +4810,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2144736882}
-  - component: {fileID: 2144736881}
   - component: {fileID: 2144736883}
   - component: {fileID: 2144736884}
   - component: {fileID: 2144736885}
@@ -4821,61 +4820,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2144736881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2144736880}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07183259779932b419afc3c8c54449a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: aa518d9f6d6dd8b498e33c8c18f24f40, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 419974511}
-        m_TargetAssemblyTypeName: PaperKiteStudio.Dangers.XYZHUD, Assembly-CSharp
-        m_MethodName: DisplayRoundPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PaperKiteStudio.Dangers.XYZSpawner, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 508745312}
-        m_TargetAssemblyTypeName: PaperKiteStudio.Dangers.XYZ_Manager_V2, Assembly-CSharp
-        m_MethodName: SetStatePlaying
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _dialoguePositionChangeResponse:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!4 &2144736882
 Transform:
   m_ObjectHideFlags: 0
