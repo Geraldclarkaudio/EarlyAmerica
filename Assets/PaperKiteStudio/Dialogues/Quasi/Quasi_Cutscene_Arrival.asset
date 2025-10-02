@@ -16,12 +16,24 @@ MonoBehaviour:
   key:
   - QuasiCutscene_Arrival1
   - QuasiCutscene_Arrival2
+  - QuasiCutscene_Arrival3
+  - QuasiCutscene_Arrival4
+  - QuasiCutscene_Arrival5
+  - QuasiCutscene_Arrival6
   ttsKey: []
   icons:
-  - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
-  - {fileID: 21300000, guid: 6843589246c40774f99cabc3cbb1ce33, type: 3}
+  - {fileID: 21300000, guid: e9366bd912d6fff4ab1f41ace494ed1d, type: 3}
+  - {fileID: 21300000, guid: 335de48c459547a4b9560ada62aaa2e7, type: 3}
+  - {fileID: 21300000, guid: e9366bd912d6fff4ab1f41ace494ed1d, type: 3}
+  - {fileID: 21300000, guid: 335de48c459547a4b9560ada62aaa2e7, type: 3}
+  - {fileID: 21300000, guid: e9366bd912d6fff4ab1f41ace494ed1d, type: 3}
+  - {fileID: 21300000, guid: e9366bd912d6fff4ab1f41ace494ed1d, type: 3}
   _speakerName:
-  - GuideBot
+  - Napoleon Bonaparte
+  - John Adams
+  - Napoleon Bonaparte
+  - John Adams
+  - Napoleon Bonaparte
   - Napoleon Bonaparte
   _animations: []
   _newUIEvents: []

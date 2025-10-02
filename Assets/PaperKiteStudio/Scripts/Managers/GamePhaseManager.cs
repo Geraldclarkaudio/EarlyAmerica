@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 namespace PaperKiteStudio.Dangers
 {
-
     public class GamePhaseManager : MonoBehaviour
     {
         [SerializeField]
@@ -244,6 +243,11 @@ namespace PaperKiteStudio.Dangers
 
         public void IncrementGamePhase() // call when current phase is completed. 
         {
+            if(_tempPhase < _gamePhase)
+            {
+         
+                return; // dont increment it if we are replayying a level... 
+            }
             _gamePhase++;
             if (_gamePhase > 9)
             {
@@ -254,7 +258,6 @@ namespace PaperKiteStudio.Dangers
         }
         public void IncrementPhaseStep()
         {
-     
             _phaseStep++;
             int step = _phaseStep;
 

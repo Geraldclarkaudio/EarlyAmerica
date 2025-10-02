@@ -15,12 +15,26 @@ MonoBehaviour:
   dialogueID: 0
   key:
   - Quasi_Intro1
+  - Quasi_Intro2
+  - Quasi_Intro3
+  - Quasi_Intro4
+  - Quasi_Intro5
+  ttsKey: []
   icons:
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
+  - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
+  - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
+  - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
+  - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
   _speakerName:
+  - Guide Bot
+  - Guide Bot
+  - Guide Bot
+  - Guide Bot
   - Guide Bot
   _animations: []
   _newUIEvents: []
   _dialoguePositionChanges: []
   _eventTriggers: []
   _endDialogueEvent: {fileID: 11400000, guid: 4fddb481447ff254a8b991280a4e8db4, type: 2}
+  _postDialogEvent: {fileID: 0}
