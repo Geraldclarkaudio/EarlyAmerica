@@ -13,22 +13,25 @@ public class PlayerMoveImpress : MonoBehaviour
     [SerializeField]
     private bool canMove;
 
-
     private void Start()
     {
-        //_dialogueManager = FindAnyObjectByType<DialogueManager>();
+        canMove = false;
+        ImpressmentMiniGameUI.onPerfectClick += EnableMovement;
+    }
+    private void OnDisable()
+    {
+        ImpressmentMiniGameUI.onPerfectClick -= EnableMovement;
+    }
+    public void EnableMovement()
+    {
+        canMove = true;
+    }
+    public void DisableMovement()
+    {
+        canMove = false;
     }
     void Update()
     {
-        //if (_dialogueManager.dialogueIsActive)
-        //{
-        //    canMove = false;
-        //}
-        //else
-        //{
-        //    canMove = true;
-        //}
-
         if (canMove)
         {
             float hor = Input.GetAxisRaw("Horizontal");

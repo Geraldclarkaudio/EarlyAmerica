@@ -214,6 +214,13 @@ namespace PaperKiteStudio.Dangers
                             break;
                     }
                     break;
+                case "Impressment":
+                    if (_phaseStep == 0)
+                    {
+                        SetPhaseStep(1);
+                    }
+                    _dialogueManager.dialogueIndex = 32;
+                    break;
             }
             // start a dialogue at the beginning of every scene load.
             _dialogueManager.StartDialogue();

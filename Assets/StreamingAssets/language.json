@@ -109,14 +109,27 @@
     "LevelSelect_Embargo2": "In 1807 President Thomas Jefferson signed the Embargo Act.",
     "LevelSelect_Embargo3": "This halted all US. exports and blocked ALL imports from foreign countries!",
     "LevelSelect_Embargo4": "Lets travel to 1807 and help Jefferson keep all foreign imports out!",
-    "LevelSelect_Embargo5": "Click on foriegn crates to reject them. Be careful not to click any American crates!",
-    "Embargo_Intro": "Embargo intro.",
+    "Embargo_Intro1": "We've landed at Baltimore Harbor in 1807.",
+    "Embargo_Intro2": "President Jefferson's Embargo Act is in full swing. No foreign goods in or out.",
+    "Embargo_Intro3": "Lets sort these packages out so that ONLY American goods are being traded domestically.",
+    "Embargo_Intro4": "Click on foriegn crates to reject them. Be careful not to click any American crates!",
     "Embargo_Win_01": "Won round 1",
     "Embargo_Win_02": "Won round 2",
     "Embargo_Win_03": "Won round 3",
     "Embargo_Lose_01": "lost round 1",
     "Embargo_Lose_02": "lost round 2",
-    "Embargo_Lose_03": "lost round 3"
+    "Embargo_Lose_03": "lost round 3",
+    "Impressment_Guard1": "You claim to be American? Prove it before I prove otherwise.",
+    "Impressment_Guard2": "Impressment is lawful. Resistance is not.",
+    "Impressment_Guard3": "You will find the King's service less forgiving than your merchant's",
+    "Impressment_Guard4": "Speak up boy. The sea doesn't wait for cowards.",
+    "Impressment_Guard5": "Your accent is slippery. Not quite colonial, not quite honest.",
+    "Impressment_Guard6": "No papers? No protection. That makes you ours, lad.",
+    "Impressment_Guard7": "You have the look of a deserter. Come with me now.",
+    "Impressment_Guard8": "We have quotas to fill. Your story better be air tight.",
+    "Impressment_Intro1": "Welcome to 1811. British naval commanders are on the look out for any able-bodied men they can illegally recruit into their navy.",
+    "Impressment_Intro2": "Lets help this American get home over here without getting impressed!",
+    "Impressment_Intro3": "Lets go!"
 
   }
 }

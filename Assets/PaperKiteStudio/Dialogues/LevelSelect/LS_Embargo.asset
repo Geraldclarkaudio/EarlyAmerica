@@ -18,16 +18,13 @@ MonoBehaviour:
   - LevelSelect_Embargo2
   - LevelSelect_Embargo3
   - LevelSelect_Embargo4
-  - LevelSelect_Embargo5
   ttsKey: []
   icons:
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
-  - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
   _speakerName:
-  - 'Guide Bot '
   - 'Guide Bot '
   - 'Guide Bot '
   - 'Guide Bot '
