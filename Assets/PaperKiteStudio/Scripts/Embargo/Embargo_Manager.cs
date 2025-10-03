@@ -25,6 +25,9 @@ namespace PaperKiteStudio.Dangers
                 case GameStateMachine.GameState.AdvanceRound:
                     gamePhaseManager.IncrementPhaseStep();
                     break;
+                case GameStateMachine.GameState.Win:
+                    gamePhaseManager.IncrementPhaseStep();
+                    break;
             }
         }
         //private void HandleScoreDepleted()
