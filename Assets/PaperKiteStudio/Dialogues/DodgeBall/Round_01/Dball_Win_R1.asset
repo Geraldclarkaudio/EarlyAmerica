@@ -16,7 +16,9 @@ MonoBehaviour:
   key:
   - Dodge_Win_1
   - Dodge_Win_2
-  ttsKey: []
+  ttsKey:
+  - 
+  - Dodge_Win_2_TTS
   icons:
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}

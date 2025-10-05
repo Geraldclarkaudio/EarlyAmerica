@@ -15,12 +15,20 @@ MonoBehaviour:
   dialogueID: 0
   key:
   - Dodgeball_R3_Win
+  - Dodgeball_R3_Win2
+  - Dodgeball_R3_Win3
+  ttsKey: []
   icons:
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
+  - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
+  - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
   _speakerName:
+  - Guidebot
+  - Guidebot
   - Guidebot
   _animations: []
   _newUIEvents: []
   _dialoguePositionChanges: []
   _eventTriggers: []
   _endDialogueEvent: {fileID: 11400000, guid: fe0f6dbd3efc12f458501371b9560b60, type: 2}
+  _postDialogEvent: {fileID: 0}
