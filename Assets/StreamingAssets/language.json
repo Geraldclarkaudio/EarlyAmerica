@@ -143,7 +143,8 @@
     "LS_Mc1": "You've seen the injustice of impressment first hand. American sailors have been stolen, silenced and forced to serve a foreign crown.",
     "LS_Mc2": "Now British warships gather near Baltimore. Their cannons aimed at Fort McHenry.",
     "LS_Mc3": "If the flag falls, so does the hope of a unified nation!",
-    "LS_Mc4": "Your next and final mission: Defend Fort McHenry.",
+    "LS_Mc4": "Your next and final mission: <u>Defend Fort McHenry.</u>",
+    "LS_Mc4_TTS": "Your next and final mission: Defend Fort McHenry.",
     "LS_Mc5": "This battle is one of the most defining battles of the War of 1812.",
     "LS_Mc6": "We will need to travel to the year 1814 and hold the line against British bombardment to ensure the flag is still flying when its all said and done!"
 

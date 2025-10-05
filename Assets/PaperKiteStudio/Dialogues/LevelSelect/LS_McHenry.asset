@@ -20,7 +20,13 @@ MonoBehaviour:
   - LS_Mc4
   - LS_Mc5
   - LS_Mc6
-  ttsKey: []
+  ttsKey:
+  - 
+  - 
+  - 
+  - LS_Mc4_TTS
+  - 
+  - 
   icons:
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
