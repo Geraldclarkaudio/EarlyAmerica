@@ -21,9 +21,7 @@ namespace PaperKiteStudio.Dangers
             Vector3 clampedPosition = transform.position;
             clampedPosition.z = Mathf.Clamp(clampedPosition.z, -10f, -2.0f);
             clampedPosition.x = Mathf.Clamp(clampedPosition.x, -17f, 17f);
-            clampedPosition.y = 1f; // just in case the player wants to fly away for some reason. 
-
-            transform.position = clampedPosition;
+            clampedPosition.y = 1f; // just in case the player wants to fly away for some reason.
         }
     }
 }

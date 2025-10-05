@@ -14,9 +14,7 @@ namespace PaperKiteStudio.Dangers
             SerializedProperty modeProp = serializedObject.FindProperty("movementMode");
             SerializedProperty targetProp = serializedObject.FindProperty("targetObject");
             SerializedProperty fixedDirProp = serializedObject.FindProperty("fixedDirection");
-            SerializedProperty collProp = serializedObject.FindProperty("targetTag");
 
-            EditorGUILayout.PropertyField(collProp);
             EditorGUILayout.PropertyField(speedProp);
             EditorGUILayout.PropertyField(modeProp);
 

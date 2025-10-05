@@ -386,6 +386,7 @@ GameObject:
   - component: {fileID: 257363322}
   - component: {fileID: 257363321}
   - component: {fileID: 257363323}
+  - component: {fileID: 257363324}
   m_Layer: 7
   m_Name: Temp Crate
   m_TagString: Foreign
@@ -477,7 +478,7 @@ MonoBehaviour:
   movementMode: 1
   targetObject: {fileID: 0}
   fixedDirection: 0
-  targetTag: Boundary
+  targetTag: Ocean
   scoreManager: {fileID: 0}
 --- !u!50 &257363321
 Rigidbody2D:
@@ -564,6 +565,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreEffect: {fileID: 11400000, guid: b1aadadea4fe99d4085c22e7fdceea1b, type: 2}
+  scoreManager: {fileID: 578451850}
+--- !u!114 &257363324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257363317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef26c916270e04f4084544b822e07f06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Boundary
   scoreManager: {fileID: 578451850}
 --- !u!1 &395302117
 GameObject:
@@ -1750,6 +1765,7 @@ GameObject:
   - component: {fileID: 1361935267}
   - component: {fileID: 1361935266}
   - component: {fileID: 1361935269}
+  - component: {fileID: 1361935270}
   m_Layer: 7
   m_Name: Temp Crate (1)
   m_TagString: Foreign
@@ -1913,7 +1929,7 @@ MonoBehaviour:
   movementMode: 1
   targetObject: {fileID: 0}
   fixedDirection: 0
-  targetTag: Boundary
+  targetTag: Ocean
   scoreManager: {fileID: 0}
 --- !u!114 &1361935269
 MonoBehaviour:
@@ -1928,6 +1944,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreEffect: {fileID: 11400000, guid: b1aadadea4fe99d4085c22e7fdceea1b, type: 2}
+  scoreManager: {fileID: 578451850}
+--- !u!114 &1361935270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361935263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef26c916270e04f4084544b822e07f06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Boundary
   scoreManager: {fileID: 578451850}
 --- !u!1 &1386800859
 GameObject:
@@ -2737,6 +2767,7 @@ GameObject:
   - component: {fileID: 2031673599}
   - component: {fileID: 2031673598}
   - component: {fileID: 2031673601}
+  - component: {fileID: 2031673602}
   m_Layer: 7
   m_Name: Temp Crate (2)
   m_TagString: Foreign
@@ -2900,7 +2931,7 @@ MonoBehaviour:
   movementMode: 1
   targetObject: {fileID: 0}
   fixedDirection: 0
-  targetTag: Boundary
+  targetTag: Ocean
   scoreManager: {fileID: 0}
 --- !u!114 &2031673601
 MonoBehaviour:
@@ -2916,6 +2947,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreEffect: {fileID: 11400000, guid: b1aadadea4fe99d4085c22e7fdceea1b, type: 2}
   scoreManager: {fileID: 578451850}
+--- !u!114 &2031673602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031673595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef26c916270e04f4084544b822e07f06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Boundary
+  scoreManager: {fileID: 578451850}
 --- !u!1 &2047605559
 GameObject:
   m_ObjectHideFlags: 0
@@ -2930,6 +2975,7 @@ GameObject:
   - component: {fileID: 2047605565}
   - component: {fileID: 2047605563}
   - component: {fileID: 2047605562}
+  - component: {fileID: 2047605566}
   m_Layer: 7
   m_Name: American Crate
   m_TagString: American
@@ -3093,7 +3139,7 @@ MonoBehaviour:
   movementMode: 1
   targetObject: {fileID: 0}
   fixedDirection: 0
-  targetTag: Boundary
+  targetTag: Ocean
   scoreManager: {fileID: 0}
 --- !u!114 &2047605565
 MonoBehaviour:
@@ -3108,6 +3154,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreEffect: {fileID: 11400000, guid: cd2372ff6295baa42be1688622708c5b, type: 2}
+  scoreManager: {fileID: 578451850}
+--- !u!114 &2047605566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047605559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef26c916270e04f4084544b822e07f06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Boundary
   scoreManager: {fileID: 578451850}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

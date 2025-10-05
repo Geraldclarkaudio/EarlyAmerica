@@ -10,6 +10,7 @@ TagManager:
   - Boundary
   - American
   - Foreign
+  - Delivery
   layers:
   - Default
   - TransparentFX
