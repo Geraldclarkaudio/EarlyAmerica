@@ -94,6 +94,7 @@
     "LevelSelect_SceneButton5": "Embargo Act",
     "LevelSelect_SceneButton4": "Barbary Wars",
     "LevelSelect_SceneButton6": "Impressment",
+    "LevelSelect_SceneButton7": "Battle of Fort McHenry",
     "USSPhil": "1804: decatur leads a raid to burn the USS Philadelphia in Tripoli Harbor",
     "Barbary_Phil1": "Here we are. Lieutenant Decatur is already making his way to the Philadelphia.",
     "Barbary_Phil2": "Lets help him make it up here so he can set fire to the ship rendering it useless to the enemy!",
@@ -129,7 +130,16 @@
     "Impressment_Guard8": "We have quotas to fill. Your story better be air tight.",
     "Impressment_Intro1": "Welcome to 1811. British naval commanders are on the look out for any able-bodied men they can illegally recruit into their navy.",
     "Impressment_Intro2": "Lets help this American get home over here without getting impressed!",
-    "Impressment_Intro3": "Lets go!"
+    "Impressment_Intro3": "Lets go!",
+    "Impress_Inst": "Hold down the left mouse button to begin moving the arrow. Lift the left mouse button when the arrow is within the target zone to avoid impressment!",
+    "Impressment_Loss": "You've been impressed into the British Royal Navy. We need to time warp back and try again!",
+    "LS_Mc1": "You've seen the injustice of impressment first hand. American sailors have been stolen, silenced and forced to serve a foreign crown.",
+    "LS_Mc2": "Now British warships gather near Baltimore. Their cannons aimed at Fort McHenry.",
+    "LS_Mc3": "If the flag falls, so does the hope of a unified nation!",
+    "LS_Mc4": "Your next and final mission: Defend Fort McHenry.",
+    "LS_Mc5": "This battle is one of the most defining battles of the War of 1812.",
+    "LS_Mc6": "We will need to travel to the year 1814 and hold the line against British bombardment to ensure the flag is still flying when its all said and done!"
+
 
   }
 }
