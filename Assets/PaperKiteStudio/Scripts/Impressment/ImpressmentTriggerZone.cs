@@ -40,6 +40,13 @@ namespace PaperKiteStudio.Dangers
             _miniGameCanvas.enabled = false;
             _miniGameUI._currentTriggerZone = null;
         }
+        public void Lose()
+        {
+            _dialogueCanvas.enabled = false;
+            _miniGameCanvas.enabled = false;
+            _miniGameUI._currentTriggerZone = null;
+
+        }
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.CompareTag("Player"))

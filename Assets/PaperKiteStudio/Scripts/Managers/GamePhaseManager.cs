@@ -113,6 +113,9 @@ namespace PaperKiteStudio.Dangers
                         case 6: // impressment
                             _dialogueManager.dialogueIndex = 25; 
                             break;
+                        case 7: // won impressment
+                            _dialogueManager.dialogueIndex = 35;
+                            break;
                     }
                     break;
 

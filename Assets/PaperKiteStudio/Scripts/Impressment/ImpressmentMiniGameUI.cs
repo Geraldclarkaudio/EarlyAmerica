@@ -30,9 +30,11 @@ namespace PaperKiteStudio.Dangers
 
   
         public ImpressmentTriggerZone _currentTriggerZone;
-
+        [SerializeField]
+        private DialogueManager _dialogueManager;
         private void Start()
         {
+            _dialogueManager = FindAnyObjectByType<DialogueManager>();
             _minX = _backgroundImage.anchoredPosition.x - (_backgroundImage.rect.width / 2);
             _maxX = _backgroundImage.anchoredPosition.x + (_backgroundImage.rect.width / 2);
         }
@@ -66,17 +68,15 @@ namespace PaperKiteStudio.Dangers
             if (indicatorPosition.x >= perfectCastZonePosition.x - perfectCastZoneSize.x / 2 &&
                 indicatorPosition.x <= perfectCastZonePosition.x + perfectCastZoneSize.x)
             {
-                // perfect click
-                Debug.Log("PERFECT");
                 _currentTriggerZone.Complete();
                 onPerfectClick?.Invoke();
             }
             else
             {
-                //missed click
-                Debug.Log("Miss");
+                _currentTriggerZone.Lose();
                 onMissedClick?.Invoke();
-                //make dialogue manager pop up with a loss dialogue that reloads the scene. 
+                _dialogueManager.dialogueIndex = 34;
+                _dialogueManager.StartDialogue();
             }
         }
 
@@ -84,9 +84,13 @@ namespace PaperKiteStudio.Dangers
         {
             if (_miniGameCanvas.enabled == true)
             {
-                MoveNeedle();
+                if (Input.GetMouseButton(0))
+                {
+                    MoveNeedle();
 
-                if (Input.GetMouseButtonDown(0))
+                }
+
+                if (Input.GetMouseButtonUp(0))
                 {
                     CheckPerfectClick();
                 }
