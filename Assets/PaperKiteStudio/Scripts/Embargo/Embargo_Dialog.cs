@@ -1,77 +1,77 @@
-using System.Collections;
-using System.Collections.Generic;
-using PaperKiteStudio.Dangers;
 using UnityEngine;
 
-public class Embargo_Dialog : MonoBehaviour
+namespace PaperKiteStudio.Dangers
 {
-    private DialogueManager _dialogueManager;
-    private GamePhaseManager _gamePhaseManager;
-
-    private void OnEnable()
+    public class Embargo_Dialog : MonoBehaviour
     {
-        GameStateMachine.OnStateChanged += HandleGameStateChanged;
-    }
+        private DialogueManager _dialogueManager;
+        private GamePhaseManager _gamePhaseManager;
 
-    private void OnDisable()
-    {
-        GameStateMachine.OnStateChanged -= HandleGameStateChanged;
-    }
-
-    private void Start()
-    {
-        _dialogueManager = FindAnyObjectByType<DialogueManager>();
-        _gamePhaseManager = FindAnyObjectByType<GamePhaseManager>();
-    }
-
-    private void HandleGameStateChanged(GameStateMachine.GameState newState)
-    {
-        switch (newState)
+        private void OnEnable()
         {
-            case GameStateMachine.GameState.Win:
-                StartWinDialog();
-                break;
-            case GameStateMachine.GameState.Lose:
-                StartLoseDialog();
-                break;
-        }
-    }
-
-    public void StartWinDialog()
-    {
-        switch (_gamePhaseManager.GetPhaseStep())
-        {
-            case 1:
-                _dialogueManager.dialogueIndex = 26;
-                break;
-            case 2:
-                _dialogueManager.dialogueIndex = 28;
-
-                break;
-            case 3:
-                _dialogueManager.dialogueIndex = 30;
-                break;
+            GameStateMachine.OnStateChanged += HandleGameStateChanged;
         }
 
-        _dialogueManager.StartDialogue();
-    }
-
-    public void StartLoseDialog()
-    {
-        switch (_gamePhaseManager.GetPhaseStep())
+        private void OnDisable()
         {
-            case 1:
-                _dialogueManager.dialogueIndex = 27;
-                break;
-            case 2:
-                _dialogueManager.dialogueIndex = 29;
-
-                break;
-            case 3:
-                _dialogueManager.dialogueIndex = 31;
-                break;
+            GameStateMachine.OnStateChanged -= HandleGameStateChanged;
         }
 
-        _dialogueManager.StartDialogue();
+        private void Start()
+        {
+            _dialogueManager = FindAnyObjectByType<DialogueManager>();
+            _gamePhaseManager = FindAnyObjectByType<GamePhaseManager>();
+        }
+
+        private void HandleGameStateChanged(GameStateMachine.GameState newState)
+        {
+            switch (newState)
+            {
+                case GameStateMachine.GameState.Win:
+                    StartWinDialog();
+                    break;
+                case GameStateMachine.GameState.Lose:
+                    StartLoseDialog();
+                    break;
+            }
+        }
+
+        public void StartWinDialog()
+        {
+            switch (_gamePhaseManager.GetPhaseStep())
+            {
+                case 1:
+                    _dialogueManager.dialogueIndex = 26;
+                    break;
+                case 2:
+                    _dialogueManager.dialogueIndex = 28;
+
+                    break;
+                case 3:
+                    _dialogueManager.dialogueIndex = 30;
+                    break;
+            }
+
+            _dialogueManager.StartDialogue();
+        }
+
+        public void StartLoseDialog()
+        {
+            switch (_gamePhaseManager.GetPhaseStep())
+            {
+                case 1:
+                    _dialogueManager.dialogueIndex = 27;
+                    break;
+                case 2:
+                    _dialogueManager.dialogueIndex = 29;
+
+                    break;
+                case 3:
+                    _dialogueManager.dialogueIndex = 31;
+                    break;
+            }
+
+            _dialogueManager.StartDialogue();
+        }
     }
 }

@@ -6,7 +6,8 @@ namespace PaperKiteStudio.Dangers
     {
         TowardTarget,
         FixedDirection,
-        UseRotation
+        UseRotation,
+        PlayerInput
     }
 
     public enum FixedDirection
@@ -17,6 +18,7 @@ namespace PaperKiteStudio.Dangers
         Down
     }
 
+    [RequireComponent(typeof(Rigidbody2D))]
     public abstract class MovingObject : MonoBehaviour
     {
         [Header("Movement Settings")]
@@ -29,26 +31,59 @@ namespace PaperKiteStudio.Dangers
         [Header("Fixed Direction Settings")]
         [SerializeField] protected FixedDirection fixedDirection = FixedDirection.Right;
 
-        [Header("Collision Settings")]
-        [SerializeField] protected string targetTag = "Player";
-
         protected Vector3 _targetDirection;
         protected bool isMoving = false;
 
+        protected Rigidbody2D _rb;
+
+        protected virtual void Awake()
+        {
+            _rb = GetComponent<Rigidbody2D>();
+        }
+
+        private void Reset()
+        {
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.gravityScale = 0f;
+                rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+                rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+                rb.interpolation = RigidbodyInterpolation2D.Interpolate;
+            }
+        }
+
+
+
         protected virtual void OnEnable()
         {
-            //isMoving = false;
-            //CalculateDirection();
+            GameStateMachine.OnStateChanged += HandleGameStateChanged;
+
             CalculateDirection();
             StartMoving();
         }
 
+        protected virtual void OnDisable()
+        {
+            GameStateMachine.OnStateChanged -= HandleGameStateChanged;
+        }
+
         protected virtual void Update()
         {
-            if (isMoving)
-            {
-                transform.Translate(_targetDirection * _speed * Time.deltaTime, Space.World);
-            }
+            if (!isMoving || movementMode == MovementMode.PlayerInput) return;
+
+            transform.Translate(_targetDirection * _speed * Time.deltaTime, Space.World);
+        }
+
+        protected virtual void FixedUpdate()
+        {
+            if (!isMoving || movementMode != MovementMode.PlayerInput || _rb == null) return;
+
+            Vector3 inputDirection = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0f);
+            _targetDirection = inputDirection.normalized;
+
+            Vector2 movement = _targetDirection * _speed * Time.fixedDeltaTime;
+            _rb.MovePosition(_rb.position + movement);
         }
 
         public virtual void StartMoving()
@@ -64,6 +99,12 @@ namespace PaperKiteStudio.Dangers
 
         protected void CalculateDirection()
         {
+            if (movementMode == MovementMode.PlayerInput)
+            {
+                _targetDirection = Vector3.zero; // Let Update handle it
+                return;
+            }
+
             switch (movementMode)
             {
                 case MovementMode.TowardTarget:
@@ -85,32 +126,14 @@ namespace PaperKiteStudio.Dangers
                     break;
 
                 case MovementMode.UseRotation:
-                    _targetDirection = transform.up; // or transform.forward for 3D
+                    _targetDirection = transform.up;
                     break;
             }
         }
 
-        protected virtual void OnTriggerEnter2D(Collider2D other)
+        protected virtual void HandleGameStateChanged(GameStateMachine.GameState newState)
         {
-            if (string.IsNullOrEmpty(targetTag))
-            {
-                Debug.LogWarning($"{name} has no targetTag set for collision detection.");
-                return;
-            }
 
-            if (other.CompareTag(targetTag))
-            {
-                OnTargetCollision(other);
-            }
-        }
-
-        /// <summary>
-        /// Called when this object collides with something matching targetTag.
-        /// Override this in subclasses to define custom behavior.
-        /// </summary>
-        protected virtual void OnTargetCollision(Collider2D other)
-        {
-            // Default: do nothing
         }
     }
 }
