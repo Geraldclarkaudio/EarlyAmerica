@@ -12,6 +12,8 @@ namespace PaperKiteStudio.Dangers
         private List<Button> _levelButtons;
         [SerializeField]
         private GamePhaseManager _gamePhaseManager;
+        [SerializeField]
+        private GameObject _completeGameButton;
 
         private void Start()
         {
@@ -32,6 +34,11 @@ namespace PaperKiteStudio.Dangers
             {
                 _levelButtons[0].interactable = true;
             }
+
+            if(_gamePhaseManager.GetGamePhase() >= 8)
+            {
+                _completeGameButton.SetActive(true);
+            }
         }
         public void LockAllButtons()
         {
@@ -44,6 +51,11 @@ namespace PaperKiteStudio.Dangers
         public void LevelSelected(int levelID)
         {
             _gamePhaseManager.SetTempPhase(levelID);
+        }
+
+        public void CompleteGameButtonEnable() // give player option to complete assignment.
+        {
+            _completeGameButton.SetActive(true);
         }
     }
 }

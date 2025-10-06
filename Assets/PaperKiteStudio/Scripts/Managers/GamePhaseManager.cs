@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
@@ -28,6 +29,7 @@ namespace PaperKiteStudio.Dangers
 
         [SerializeField]
         private bool isContinuePressed;
+
 
         private void OnEnable()
         {
@@ -117,8 +119,7 @@ namespace PaperKiteStudio.Dangers
                             _dialogueManager.dialogueIndex = 35;
                             break;
                         case 8:
-                            //go back and defend ft mchenry
-                            _dialogueManager.dialogueIndex = 35;
+                            _dialogueManager.dialogueIndex = 39; //game complete dialogue
                             break;
                     }
                     break;

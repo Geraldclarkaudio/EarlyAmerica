@@ -1238,9 +1238,13 @@ PrefabInstance:
       propertyPath: continueButton
       value: 
       objectReference: {fileID: 1244628861}
+    - target: {fileID: 913447498461102951, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 932875196045897375, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
       propertyPath: dialogues.Array.size
-      value: 39
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 932875196045897375, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
       propertyPath: dialogues.Array.data[34]
@@ -1262,6 +1266,10 @@ PrefabInstance:
       propertyPath: dialogues.Array.data[38]
       value: 
       objectReference: {fileID: 11400000, guid: a2dee68f68e12c9419145bc9cbf2745d, type: 2}
+    - target: {fileID: 932875196045897375, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: dialogues.Array.data[39]
+      value: 
+      objectReference: {fileID: 11400000, guid: 339eeac76c1ed2649afe274f7ec07eb5, type: 2}
     - target: {fileID: 1002832277598218874, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
       propertyPath: m_Name
       value: Persistent Objects
@@ -1342,6 +1350,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8636701606015750486, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078649384276876043, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: allPages.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078649384276876043, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: allPages.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: aea958664bbc76f4eb91728ebb9ec22b, type: 2}
+    - target: {fileID: 9078649384276876043, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: allPages.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3a5af5398cf7c2945bbbae38c802263d, type: 2}
+    - target: {fileID: 9078649384276876043, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: allPages.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 71e83cfed0b34c846a4409ecc58b3cae, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

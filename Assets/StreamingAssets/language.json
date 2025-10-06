@@ -155,7 +155,25 @@
     "Move_Prompt": "Movement",
     "LeftClickCrates": "Left Click Crates",
     "FireCannon": "Fire Cannons",
-    "LeftClickBubbles": "Left Click Bubbles"
+    "LeftClickBubbles": "Left Click Bubbles",
+    "LeftClickCannons": "Left Click Cannon Balls",
+    "CompleteGameButton": "Complete Game",
+    "LevelSelect_Complete1": "Mission complete. The flag endures. You've done more than preserve the integrity of histroy. You've given back its heart beat.",
+    "LevelSelect_Complete2": "I detect no more time rips in this era. We can leave this timeline open so you can return to any era and replay the moments that shaped history.",
+    "LevelSelect_Complete3": "In the meantime, I will be leaving to ensure no other time rips exist in other eras. Feel free to join me when you're finished by selecting the Complete Game button at the bottom right of this screen.",
+    "LevelSelect_Complete4": "Until next time traveler...",
+    "Page5_Title": "Embargo Act",
+    "Page5_Update1": "The belligerent powers of Europe threaten our vessels. I have urged congress to consider the advantages of halting all departures from our ports. - Thomas Jefferson 1807",
+    "Page5_Update2": "The docks are silent. My ships rot in the harbot. Their carggo unsold. Jefferson calls this patriotism. I call it strangulation! We've been punished for the crimes of foreign powers. - New England Merchant 1807",
+    "Page5_Update3": "In every point of view I prefer a war to a permanent embargo. - Albert Gallatin to Jefferson, December 1807",
+    "Page6_Title": "Impressment",
+    "Page6_Update1": "The took me from the ship Chesapeake. I told them I was American, but they said I was a British subject and must serve. - Deposition of John Strachan, 1807",
+    "Page6_Update2": "This act was a flagrant violation of our rights. I have issues a proclamation interdicting British armed vessels from our harbors. - Jefferson's Proclamation, 1807",
+    "Page6_Update3": "The right of the king to the allegiance of his subjects is indefeasible. No act of a foreign state can discharge it. - British Foreign Office, 1807",
+    "Page7_Title": "Battle of Ft. McHenry",
+    "Page7_Update1": "By the dawn's early light...our flag was still there. - Franic Scott Key, The Defense of Fort McHenry, 1814",
+    "Page7_Update2": "The flag was kept flying during the whole bombardment...though several shells struck flagstaff. - Major George Armistead, 1814",
+    "Page7_Update3": "The fort was found too strong to be taken by bombardment. - Vice Admiral Alexander Cochrane, 1814"
 
 
   }

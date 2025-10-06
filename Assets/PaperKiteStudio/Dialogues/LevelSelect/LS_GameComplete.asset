@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0368cd5f494b8dd4cab4883467603c5b, type: 3}
-  m_Name: McHenry_Intro
+  m_Name: LS_GameComplete
   m_EditorClassIdentifier: 
   dialogueID: 0
   key:
-  - Mc_Intro1
-  - Mc_Intro2
-  - Mc_Intro3
-  - Mc_Intro4
+  - LevelSelect_Complete1
+  - LevelSelect_Complete2
+  - LevelSelect_Complete3
+  - LevelSelect_Complete4
   ttsKey: []
   icons:
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
@@ -33,5 +33,5 @@ MonoBehaviour:
   _newUIEvents: []
   _dialoguePositionChanges: []
   _eventTriggers: []
-  _endDialogueEvent: {fileID: 11400000, guid: 31b2034fa0dd3384a8a1853fa923ac1c, type: 2}
+  _endDialogueEvent: {fileID: 11400000, guid: e847262bd8a50df4bbd8986705eb4b63, type: 2}
   _postDialogEvent: {fileID: 0}
