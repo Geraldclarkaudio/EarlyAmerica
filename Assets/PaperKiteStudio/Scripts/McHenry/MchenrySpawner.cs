@@ -36,7 +36,6 @@ namespace PaperKiteStudio.Dangers
         {
             GameStateMachine.OnStateChanged -= HandleGameStateChanged;
         }
-
         void StartSpawning()
         {
             // Validate setup
@@ -85,18 +84,6 @@ namespace PaperKiteStudio.Dangers
             }
         }
 
-        //void SpawnCrateAt(GameObject spawnPoint)
-        //{
-        //    GameObject cratePrefab = cratePrefabs[Random.Range(0, cratePrefabs.Length)];
-        //    GameObject crate = GetFromPool(cratePrefab);
-        //    if (crate == null) return;
-
-        //    crate.transform.SetParent(null); // Ensure world position
-        //    crate.transform.position = spawnPoint.transform.position;
-        //    crate.transform.localScale = scaleMap.ContainsKey(spawnPoint) ? scaleMap[spawnPoint] : Vector3.one;
-        //    crate.SetActive(true);
-        //}
-
         void SpawnCrateAt(GameObject spawnPoint)
         {
             GameObject cratePrefab = cratePrefabs[Random.Range(0, cratePrefabs.Length)];
@@ -126,8 +113,6 @@ namespace PaperKiteStudio.Dangers
                 }
             }
         }
-
-
 
         GameObject GetFromPool(GameObject prefab)
         {
@@ -168,7 +153,5 @@ namespace PaperKiteStudio.Dangers
                 }
             }
         }
-
-
     }
 }

@@ -1,17 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
-using PaperKiteStudio.Dangers;
 using UnityEngine;
 
-public class CannonCollision : BaseCollision
+namespace PaperKiteStudio.Dangers
 {
-    protected override void OnTargetCollision(Collider2D other)
+    public class CannonCollision : BaseCollision
     {
-        if (other.TryGetComponent<CrateScoreTrigger>(out var trigger))
-        {
-            trigger.ApplyScore();
-        }
+        [SerializeField] private GameObject explosionEffect;
 
-        gameObject.SetActive(false);
+        protected override void OnTargetCollision(Collider2D other)
+        {
+            if (other.TryGetComponent<CrateScoreTrigger>(out var trigger))
+            {
+                trigger.ApplyScore();
+            }
+
+            if (explosionEffect != null && explosionEffect.TryGetComponent<TimedEffect>(out var effect))
+            {
+                effect.Play(0.5f);
+            }
+
+
+            gameObject.SetActive(false);
+        }
     }
 }
