@@ -13,14 +13,17 @@ namespace PaperKiteStudio.Dangers
         private bool canMove;
         [SerializeField]
         private GameObject _shipBurnCut;
-
+        [SerializeField]
+        private SpriteRenderer _spriteRenderer;
+        [SerializeField]
+        private GameObject _cutScene;
         private void Start()
         {
             _dialogueManager = FindAnyObjectByType<DialogueManager>();
         }
         void Update()
         {
-            if (_dialogueManager.dialogueIsActive)
+            if (_dialogueManager.dialogueIsActive || _cutScene.activeInHierarchy)
             {
                 canMove = false;
             }
@@ -52,6 +55,15 @@ namespace PaperKiteStudio.Dangers
                         _shipBurnCut.SetActive(true);
                         canMove = false;
                     }
+                }
+
+                if(hor > 0)
+                {
+                    _spriteRenderer.flipX = false;
+                }
+                else if(hor < 0)
+                {
+                    _spriteRenderer.flipX = true;
                 }
             }
         }

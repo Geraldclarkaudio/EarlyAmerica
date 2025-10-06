@@ -17,6 +17,8 @@ namespace PaperKiteStudio.Dangers
         private RectTransform _roundPanel;
         [SerializeField]
         private RectTransform _promptPanel;
+        [SerializeField]
+        private QuasiTimer _timer;
         private void Start()
         {
             EnemyShip.onHitPlayer += DisplayGameOver;
@@ -30,6 +32,7 @@ namespace PaperKiteStudio.Dangers
         private void DisplayGameOver()
         {
             _gameOverPanel.SetActive(true);
+            _timer.StopTimer();
         }
 
         public void DisplayWinPrompt() // displays when tribute is paid. 

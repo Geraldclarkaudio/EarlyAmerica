@@ -74,6 +74,11 @@ namespace PaperKiteStudio.Dangers
                     if(_canFire < Time.time)
                     Fire();
                 }
+                //clamppin and flampin
+                transform.position = new Vector2(
+                    Mathf.Clamp(transform.position.x, -9.5f, 9.5f),
+                    Mathf.Clamp(transform.position.y, -3.5f, 5.5f));
+
             }
         }
         private void Fire()

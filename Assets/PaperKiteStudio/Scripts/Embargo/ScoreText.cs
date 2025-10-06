@@ -22,7 +22,7 @@ namespace PaperKiteStudio.Dangers
 
         private void HandleScoreChanged(int obj)
         {
-            scoreText.text = obj.ToString();
+            scoreText.text = "Score: " + obj.ToString();
         }
 
         private void HandleScoreDepleted()
