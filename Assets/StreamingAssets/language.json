@@ -151,7 +151,11 @@
     "Mc_Intro1": "September 13, 1814: The British Navy has positioned themselves just outside of Baltimore Harbor.",
     "Mc_Intro2": "The bombardment is soon to begin...",
     "Mc_Intro3": "They intend to break your will to persevere! Don't allow them to secure naval dominance in the Chesapeake Bay!",
-    "Mc_Intro4": "Left click the cannon balls as they come flying towards Ft. McHenry to stop them from reaching their target and survive until the timer runs down!"
+    "Mc_Intro4": "Left click the cannon balls as they come flying towards Ft. McHenry to stop them from reaching their target and survive until the timer runs down!",
+    "Move_Prompt": "Movement",
+    "LeftClickCrates": "Left Click Crates",
+    "FireCannon": "Fire Cannons",
+    "LeftClickBubbles": "Left Click Bubbles"
 
 
   }
