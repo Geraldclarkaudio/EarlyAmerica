@@ -224,6 +224,18 @@ namespace PaperKiteStudio.Dangers
                     }
                     _dialogueManager.dialogueIndex = 32;
                     break;
+                case "McHenry":
+                    if ( _phaseStep == 0)
+                    {
+                        SetPhaseStep(1);
+                    }
+                    switch (_phaseStep)
+                    {
+                        case 1:
+                            _dialogueManager.dialogueIndex = 4;
+                            break;
+                    }
+                    break;
             }
             // start a dialogue at the beginning of every scene load.
             _dialogueManager.StartDialogue();

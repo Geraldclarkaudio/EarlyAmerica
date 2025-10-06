@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/PaperKiteStudio/Scenes/Impressment.unity
     guid: e77899f7e349ba245b31a2143ddc54cd
+  - enabled: 1
+    path: Assets/PaperKiteStudio/Scenes/McHenry.unity
+    guid: 7e341e127f9b3434a8b8ba2628c50459
   m_configObjects: {}
