@@ -831,6 +831,7 @@ MonoBehaviour:
   minScore: 0
   useLossCondition: 1
   currentScore: 0
+  roundStartScore: 50
 --- !u!4 &578451851
 Transform:
   m_ObjectHideFlags: 0

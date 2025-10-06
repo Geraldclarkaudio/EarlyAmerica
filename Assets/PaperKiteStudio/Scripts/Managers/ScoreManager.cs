@@ -10,7 +10,7 @@ namespace PaperKiteStudio.Dangers
         [SerializeField] private bool useLossCondition = true;
 
         [SerializeField] private int currentScore;
-        private int roundStartScore = 50;
+        [SerializeField] private int roundStartScore = 50;
 
         public event Action<int> ScoreChanged;
         public event Action ScoreDepleted;

@@ -1240,7 +1240,7 @@ PrefabInstance:
       objectReference: {fileID: 1244628861}
     - target: {fileID: 932875196045897375, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
       propertyPath: dialogues.Array.size
-      value: 37
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 932875196045897375, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
       propertyPath: dialogues.Array.data[34]
@@ -1254,6 +1254,14 @@ PrefabInstance:
       propertyPath: dialogues.Array.data[36]
       value: 
       objectReference: {fileID: 11400000, guid: c3154ac57ae4b9743a6ec1e773178fa4, type: 2}
+    - target: {fileID: 932875196045897375, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: dialogues.Array.data[37]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2c6aaad1026adec4a8c8e7abb567f5ce, type: 2}
+    - target: {fileID: 932875196045897375, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
+      propertyPath: dialogues.Array.data[38]
+      value: 
+      objectReference: {fileID: 11400000, guid: a2dee68f68e12c9419145bc9cbf2745d, type: 2}
     - target: {fileID: 1002832277598218874, guid: 76bad3483ecdcba45b3276c584839209, type: 3}
       propertyPath: m_Name
       value: Persistent Objects
