@@ -26429,6 +26429,8 @@ MonoBehaviour:
   canBurn: 0
   canMove: 0
   _shipBurnCut: {fileID: 383150375}
+  _spriteRenderer: {fileID: 1880090226}
+  _cutScene: {fileID: 383150375}
 --- !u!212 &1880090226
 SpriteRenderer:
   m_ObjectHideFlags: 0
