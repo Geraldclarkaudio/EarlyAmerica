@@ -152,6 +152,8 @@
     "Mc_Intro2": "The bombardment is soon to begin...",
     "Mc_Intro3": "They intend to break your will to persevere! Don't allow them to secure naval dominance in the Chesapeake Bay!",
     "Mc_Intro4": "Left click the cannon balls as they come flying towards Ft. McHenry to stop them from reaching their target and survive until the timer runs down!",
+    "Mc_Win_01": "Congratulations! The flag is still flying over Fort McHenry!",
+    "Mc_Lose_01": "The British have bombarded Fort McHenry into submission. The flag has fallen. We must go back and try again!",
     "Move_Prompt": "Movement",
     "LeftClickCrates": "Left Click Crates",
     "FireCannon": "Fire Cannons",
