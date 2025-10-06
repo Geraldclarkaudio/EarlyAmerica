@@ -1687,6 +1687,7 @@ MonoBehaviour:
   _gameOverPanel: {fileID: 263912387}
   _roundPanel: {fileID: 0}
   _promptPanel: {fileID: 0}
+  _timer: {fileID: 323494024}
 --- !u!114 &1295446607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3581,7 +3582,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1869602338154211339, guid: a9858b3a4e3167440a83af50d344404c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.4
+      value: -3.29
       objectReference: {fileID: 0}
     - target: {fileID: 1869602338154211339, guid: a9858b3a4e3167440a83af50d344404c, type: 3}
       propertyPath: m_LocalPosition.z

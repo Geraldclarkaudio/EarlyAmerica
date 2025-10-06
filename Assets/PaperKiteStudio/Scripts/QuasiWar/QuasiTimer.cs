@@ -16,10 +16,18 @@ namespace PaperKiteStudio.Dangers
         [SerializeField]
         private DialogueManager _dialogueManager;
 
+        private bool timerStopped;
+
         private void Start()
         {
+            timerStopped = false;
             _dialogueManager = FindAnyObjectByType<DialogueManager>();
             _timer = 60f;
+        }
+
+        public void StopTimer()
+        {
+            timerStopped = true;
         }
 
         private void Update()
@@ -28,8 +36,9 @@ namespace PaperKiteStudio.Dangers
             {
                 return;
             }
-            //if (stateMachine.CurrentState == GameStateMachine.GameState.Playing)
-            //{
+
+            if(timerStopped == false)
+            {
                 if (_timer > 0)
                 {
                     _timer -= Time.deltaTime;
@@ -37,18 +46,19 @@ namespace PaperKiteStudio.Dangers
                 }
                 if (_timer <= 0)
                 {
-                _timer = 0;
+                    _timer = 0;
                     WinRound();
                     _cutScene.SetActive(true);
-              //      stateMachine.SetState(GameStateMachine.GameState.Win);
-              // }
+                }
             }
+                
         }
 
         private void WinRound()
         {
             _timerText.text = "0:00";
         }
+
 
         private void UpdateClock(float time)
         {
