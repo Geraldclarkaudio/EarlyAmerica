@@ -11,6 +11,7 @@ TagManager:
   - American
   - Foreign
   - Delivery
+  - Cannonball
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - UI
   - Teammate
   - Crate
-  - 
+  - CannonBall
   - 
   - 
   - 
@@ -59,4 +60,7 @@ TagManager:
     locked: 0
   - name: Crate
     uniqueID: 3363121001
+    locked: 0
+  - name: CannonBall
+    uniqueID: 19476039
     locked: 0
