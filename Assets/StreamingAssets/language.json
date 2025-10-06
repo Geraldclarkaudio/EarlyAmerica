@@ -8,7 +8,8 @@
     "Guide_Bot_01": "You've landed in 1793-America's caught between France and Britain. France insists that we assist them with their war with Great Britain.",
     "Guide_Bot_02": "As per our treaty from 1778, we are obligated to assist! George Washington knows the U.S. is not prepard to commit to any new wars right now.",
     "Guide_Bot_03": "Lets settle this with a friendly game of dodgeball! Remain neutral by taking as few hits as possible.",
-    "Guide_Bot_04": "If your neutrality meter is below the half way point when the timer runs out, we will need to retry! Lets go!",
+    "Guide_Bot_04": "If your neutrality meter is below the half way point when the timer runs out, we will need to retry!",
+    "Guide_Bot_05": "Watch out for your team mate. They agree we should go to war with Great Britain, so they will be trying to tilt the neutrality meter in their favor as well.",
     "Dodgeball_Washington_01": "Peace is fragile. I must choose wisely-for the sake of the nation.",
     "Dodgeball_Jefferson_01": "France stood with us. Now we stand with them!",
     "Dodgeball_Hamilton_01": "Neutrality is cowardice dressed as caution.",
@@ -19,9 +20,9 @@
     "LevelSelect_XYZ4": "France demanded tribute be paid before peace could be established.",
     "LevelSelect_XYZ5": "Agents, X, Y, and Z were sent to collect this tribute. The U.S. refused!",
     "LevelSelect_XYZ6": "A new rip in the Space-Time Continuum has occured during this event. We need to go to 1793 and ensure the U.S. doesn't pay tribute!",
-    "LevelSelect_QuasiWar_Intro1": "After that, people in the United States are furios. We need to help President John Adams attempt peace!",
-    "LevelSelect_QuasiWar_Intro2": "He faces tremendous pressure from his fellow country men. Even his wife suggests against peace with France!",
-    "LevelSelect_QuasiWar_Intro3": "We know peace is the only way! Lets go!",
+    "LevelSelect_QuasiWar_Intro1": "After France demanded tribute people in the United States are furious. We need to help President John Adams attempt peace!",
+    "LevelSelect_QuasiWar_Intro2": "He faces tremendous pressure from his fellow country men. Even his own wife suggests against peace with France!",
+    "LevelSelect_QuasiWar_Intro3": "Adams dispatched a peace envoy to France with hopes of negotiations in 1800. We need to make sure they get there unscathed!",
     "LevelSelect_Quasi_Return1": "John Adams has sent a group of brave men to France in hopes of establishing peace. We need to help them get there! Lets go!",
     "LevelSelect_BarbaryWars_Intro1": "Pirates off the North African coast are seizing American ships.",
     "LevelSelect_BarbaryWars_Intro2": "Before independence, American ships were protected by the British Royal Navy. After 1776, they became easy targets.",
@@ -146,7 +147,11 @@
     "LS_Mc4": "Your next and final mission: <u>Defend Fort McHenry.</u>",
     "LS_Mc4_TTS": "Your next and final mission: Defend Fort McHenry.",
     "LS_Mc5": "This battle is one of the most defining battles of the War of 1812.",
-    "LS_Mc6": "We will need to travel to the year 1814 and hold the line against British bombardment to ensure the flag is still flying when its all said and done!"
+    "LS_Mc6": "We will need to travel to the year 1814 and hold the line against British bombardment to ensure the flag is still flying when its all said and done!",
+    "Mc_Intro1": "September 13, 1814: The British Navy has positioned themselves just outside of Baltimore Harbor.",
+    "Mc_Intro2": "The bombardment is soon to begin...",
+    "Mc_Intro3": "They intend to break your will to persevere! Don't allow them to secure naval dominance in the Chesapeake Bay!",
+    "Mc_Intro4": "Left click the cannon balls as they come flying towards Ft. McHenry to stop them from reaching their target and survive until the timer runs down!"
 
 
   }

@@ -116,6 +116,10 @@ namespace PaperKiteStudio.Dangers
                         case 7: // won impressment
                             _dialogueManager.dialogueIndex = 35;
                             break;
+                        case 8:
+                            //go back and defend ft mchenry
+                            _dialogueManager.dialogueIndex = 35;
+                            break;
                     }
                     break;
 
@@ -225,16 +229,11 @@ namespace PaperKiteStudio.Dangers
                     _dialogueManager.dialogueIndex = 32;
                     break;
                 case "McHenry":
-                    if ( _phaseStep == 0)
+                    if (_phaseStep == 0)
                     {
                         SetPhaseStep(1);
                     }
-                    switch (_phaseStep)
-                    {
-                        case 1:
-                            _dialogueManager.dialogueIndex = 4;
-                            break;
-                    }
+                    _dialogueManager.dialogueIndex = 36;
                     break;
             }
             // start a dialogue at the beginning of every scene load.
