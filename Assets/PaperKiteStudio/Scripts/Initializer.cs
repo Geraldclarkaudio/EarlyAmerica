@@ -158,13 +158,8 @@ public class Initializer : MonoBehaviour
             _gamePhaseManager._gamePhase = loadedPlayerData.gamePhase;
             _gamePhaseManager._phaseStep = loadedPlayerData.phaseStep;
 
-
-            //app submission of progress...
-            //if (loadedPlayerData.something to save)
-            //{
-            //    LOLSDK.Instance.SubmitProgress(1, 1, 9); submit progress to teacher app. 
-            //}
-
+            LOLSDK.Instance.SubmitProgress(1, loadedPlayerData.gamePhase, 8);
+           
             Save();
         }
 

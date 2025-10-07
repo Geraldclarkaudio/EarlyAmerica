@@ -5,8 +5,8 @@
     "LevelSelect_Intro1": "<color=#1B1212>A rip in the Space-Time Continuum has occured! I believe more will happen as a result.</color>",
     "TTS_LevelSelect_Intro1": "A rip in the Space-Time Continuum has occured! I believe more will happen as a result.",
     "LevelSelect_Intro2": "Lets travel to 1790s America. George Washington needs our help!",
-    "Guide_Bot_01": "You've landed in 1793-America's caught between France and Britain. France insists that we assist them with their war with Great Britain.",
-    "Guide_Bot_02": "As per our treaty from 1778, we are obligated to assist! George Washington knows the U.S. is not prepard to commit to any new wars right now.",
+    "Guide_Bot_01": "You've landed in 1793. America's caught between France and Britain. France insists that we assist them with their war with Great Britain.",
+    "Guide_Bot_02": "As per our treaty from 1778, we are obligated to assist! George Washington knows the U.S. is not prepared to commit to any new wars right now.",
     "Guide_Bot_03": "Lets settle this with a friendly game of dodgeball! Remain neutral by taking as few hits as possible.",
     "Guide_Bot_04": "If your neutrality meter is below the half way point when the timer runs out, we will need to retry!",
     "Guide_Bot_05": "Watch out for your team mate. They agree we should go to war with Great Britain, so they will be trying to tilt the neutrality meter in their favor as well.",
@@ -48,9 +48,9 @@
     "Quasi_Intro4": "Dodge incoming French ships. Fire back if you must.",
     "Quasi_Intro5": "Your orders are clear. Your path is not.",
     "Page1_Title": "The Fight For Neutrality",
-    "Page1_Update1": "...the duty and interest of the United States require, that they should with sincerity and good faith adopt and pursue a conduct friendly and impartial toward the belligerent powers...",
-    "Page1_Update2": "...to terminate all differences and to establish a firm and lasting peace and friendship between His Majesty and the United States.",
-    "Page1_Update3": "I am influenced by no diminution of zeal for your future interest… but retire from the great theater of action.",
+    "Page1_Update1": "Today, President Washington declared that we shall remain neutral in the storm brewing between France and Britain. - Proclamation of Neutrality, 1793",
+    "Page1_Update2": "The British ports will open to our ships and war will be kept away. - Jay's Treaty, 1794'",
+    "Page1_Update3": "The general is stepping down. He warns against factions, against foreign entanglements, against the poison of unchecked ambition.",
     "Page2_Title": "Adams' Letter to Congress (1797)'",
     "Page2_Update1": "We attempted peace, but France wanted bribes.",
     "Page2_Update2": "If trouble is coming, we will face it with courage.",
@@ -175,7 +175,9 @@
     "Page7_Title": "Battle of Ft. McHenry",
     "Page7_Update1": "By the dawn's early light...our flag was still there. - Franic Scott Key, The Defense of Fort McHenry, 1814",
     "Page7_Update2": "The flag was kept flying during the whole bombardment...though several shells struck flagstaff. - Major George Armistead, 1814",
-    "Page7_Update3": "The fort was found too strong to be taken by bombardment. - Vice Admiral Alexander Cochrane, 1814"
+    "Page7_Update3": "The fort was found too strong to be taken by bombardment. - Vice Admiral Alexander Cochrane, 1814",
+    "Ball_Prompt": "Throw Ball",
+    "JournalInstruct": "Press the TAB key to open your journal."
 
 
   }

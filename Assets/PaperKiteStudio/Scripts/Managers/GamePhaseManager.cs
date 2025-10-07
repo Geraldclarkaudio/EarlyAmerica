@@ -1,10 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Data;
+using LoLSDK;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 namespace PaperKiteStudio.Dangers
 {
@@ -271,10 +267,12 @@ namespace PaperKiteStudio.Dangers
                 return; // dont increment it if we are replayying a level... 
             }
             _gamePhase++;
-            if (_gamePhase > 9)
+            if (_gamePhase > 8)
             {
-                _gamePhase = 10;
+                _gamePhase = 8;
             }
+
+            LOLSDK.Instance.SubmitProgress(1, _gamePhase, 8);
             SetGamePhase(_gamePhase);
             SetPhaseStep(0);
         }

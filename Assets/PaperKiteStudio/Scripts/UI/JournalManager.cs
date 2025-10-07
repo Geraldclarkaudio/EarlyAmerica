@@ -30,6 +30,9 @@ namespace PaperKiteStudio.Dangers
         [SerializeField]
         private GameObject _pageSelectUI;
 
+        [SerializeField]
+        private ReadAloudButton[] _readAloudButtons;
+
         private void Start()
         {
             _pageSelectUI.SetActive(false);
@@ -88,6 +91,7 @@ namespace PaperKiteStudio.Dangers
                 for (int i = 0; i < _updateTexts.Length; i++)
                 {
                     _updateTexts[i].text = _initializer.GetText(newPage.updateTextKeys[i]);
+                    _readAloudButtons[i].SetCurrentPage(newPage);
                 }
             }
             else if (_currentPage.associatedGamePhase == _gamePhaseManager.GetGamePhase())
@@ -99,12 +103,11 @@ namespace PaperKiteStudio.Dangers
                     if (i < currentPhaseStep -1) 
                     {
                         _updateTexts[i].text = _initializer.GetText(newPage.updateTextKeys[i]);
-                        //pdateTexts[i].gameObject.SetActive(true);
+                        _readAloudButtons[i].SetCurrentPage(newPage);
                     }
                     else
                     {
                         _updateTexts[i].text = "???";
-                       //updateTexts[i].gameObject.SetActive(false); // Optional: hide incomplete entries
                     }
                 }
             }

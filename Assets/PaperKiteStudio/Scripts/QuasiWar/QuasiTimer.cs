@@ -22,7 +22,7 @@ namespace PaperKiteStudio.Dangers
         {
             timerStopped = false;
             _dialogueManager = FindAnyObjectByType<DialogueManager>();
-            _timer = 60f;
+            _timer = 30f;
         }
 
         public void StopTimer()

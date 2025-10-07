@@ -17,7 +17,10 @@ MonoBehaviour:
   - Dodgeball_R3_Win
   - Dodgeball_R3_Win2
   - Dodgeball_R3_Win3
-  ttsKey: []
+  ttsKey:
+  - 
+  - Dodgeball_R3_Win2_TTS
+  - Dodgeball_R3_Win3_TTS
   icons:
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
