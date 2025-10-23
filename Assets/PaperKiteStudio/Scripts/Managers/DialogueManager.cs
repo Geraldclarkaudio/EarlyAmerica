@@ -172,7 +172,7 @@ namespace PaperKiteStudio.Dangers
                         //hopefully speaks the tts key instead of the key with encoding
                         if (currentDialogue.ttsKey.Length > 0)
                         {
-                            if (currentDialogue.ttsKey[keyIndex] != null) // if a tts key exists for this index, use it
+                            if (currentDialogue.ttsKey[keyIndex] != "") // if a tts key exists for this index, use it
                                 LOLSDK.Instance.SpeakText(currentDialogue.ttsKey[keyIndex]);
 
                             else // otherwise use the normal key
