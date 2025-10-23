@@ -23,16 +23,16 @@ MonoBehaviour:
   ttsKey: []
   icons:
   - {fileID: 21300000, guid: e9366bd912d6fff4ab1f41ace494ed1d, type: 3}
-  - {fileID: 21300000, guid: 335de48c459547a4b9560ada62aaa2e7, type: 3}
+  - {fileID: 21300000, guid: 38ddc68530373c24ab7c4f787b35fdc6, type: 3}
   - {fileID: 21300000, guid: e9366bd912d6fff4ab1f41ace494ed1d, type: 3}
-  - {fileID: 21300000, guid: 335de48c459547a4b9560ada62aaa2e7, type: 3}
+  - {fileID: 21300000, guid: 38ddc68530373c24ab7c4f787b35fdc6, type: 3}
   - {fileID: 21300000, guid: e9366bd912d6fff4ab1f41ace494ed1d, type: 3}
   - {fileID: 21300000, guid: e9366bd912d6fff4ab1f41ace494ed1d, type: 3}
   _speakerName:
   - Napoleon Bonaparte
-  - John Adams
+  - Oliver Ellsworth
   - Napoleon Bonaparte
-  - John Adams
+  - Oliver Ellsworth
   - Napoleon Bonaparte
   - Napoleon Bonaparte
   _animations: []

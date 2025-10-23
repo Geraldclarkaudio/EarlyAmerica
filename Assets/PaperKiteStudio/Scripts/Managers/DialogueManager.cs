@@ -101,11 +101,19 @@ namespace PaperKiteStudio.Dangers
             if (_ttsToggle.GetTTSToggle() == true)
             {
                 //hopefully speaks the tts key instead of the key with encoding
-                //if (currentDialogue.ttsKey[keyIndex] != null)
-                if (currentDialogue.ttsKey != null && keyIndex < currentDialogue.ttsKey.Length && currentDialogue.ttsKey[keyIndex] != null)
-                    LOLSDK.Instance.SpeakText(currentDialogue.ttsKey[keyIndex]);
+                if(currentDialogue.ttsKey.Length > 0)
+                {
+                    if (currentDialogue.ttsKey[keyIndex] != "") // if a tts key exists for this index, use it
+                        LOLSDK.Instance.SpeakText(currentDialogue.ttsKey[keyIndex]);
+
+                    else // otherwise use the normal key if the string is empty
+                        LOLSDK.Instance.SpeakText(currentDialogue.key[keyIndex]);
+                }
                 else
+                {
                     LOLSDK.Instance.SpeakText(currentDialogue.key[keyIndex]);
+                }
+
 
                 //original code
                 //LOLSDK.Instance.SpeakText(currentDialogue.key[keyIndex]);
@@ -162,14 +170,18 @@ namespace PaperKiteStudio.Dangers
                     if (_ttsToggle.GetTTSToggle() == true)
                     {
                         //hopefully speaks the tts key instead of the key with encoding
-                        //if (currentDialogue.ttsKey[keyIndex] != null)
-                        if (currentDialogue.ttsKey != null && keyIndex < currentDialogue.ttsKey.Length && currentDialogue.ttsKey[keyIndex] != null)
+                        if (currentDialogue.ttsKey.Length > 0)
+                        {
+                            if (currentDialogue.ttsKey[keyIndex] != null) // if a tts key exists for this index, use it
                                 LOLSDK.Instance.SpeakText(currentDialogue.ttsKey[keyIndex]);
-                        else
-                            LOLSDK.Instance.SpeakText(currentDialogue.key[keyIndex]);
 
-                        //original code
-                        //LOLSDK.Instance.SpeakText(currentDialogue.key[keyIndex]);
+                            else // otherwise use the normal key
+                                LOLSDK.Instance.SpeakText(currentDialogue.key[keyIndex]);
+                        }
+                        else
+                        {
+                            LOLSDK.Instance.SpeakText(currentDialogue.key[keyIndex]);
+                        }
                     }
                 }
                 else if (keyIndex >= currentDialogue.key.Length - 1) // at the end of the keys
@@ -202,8 +214,8 @@ namespace PaperKiteStudio.Dangers
             if (dialogueIsActive)
             {
                 //For testing. Delete later (used to make wait time between dialogue lines 0 so we dont have to wait for TTS length) 
-                //_progressSlider.value = _progressSlider.maxValue;
-                //canProceed = 0;
+                _progressSlider.value = _progressSlider.maxValue;
+                canProceed = 0;
 
 
                 if (_progressSlider.value < _progressSlider.maxValue)
