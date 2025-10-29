@@ -17,6 +17,14 @@ namespace PaperKiteStudio.Dangers
         public int _phaseStep; // used to store sub phase of the current game/temp phase. may not need it. depends on the design. 
         public int _tempPhase; // used to store the value of the currently played phase.. 
 
+        public bool timeline1Completed;
+        public bool timeline2Completed;
+        public bool timeline3Completed;
+        public bool timeline4Completed;
+        public bool timeline5Completed;
+        public bool timeline6Completed;
+        public bool timeline7Completed;
+
         /// <summary>
         /// You can have a tempPhase of 1 while the gmae phase is 10 for example. If we want the player to be able to return to previous parts of the game, this is 
         /// necessary. Otherwise we probably wont need a tempPhase. 
@@ -43,6 +51,9 @@ namespace PaperKiteStudio.Dangers
                 case "Init": // do nothing. 
                     return;
                 case "LevelSelect":
+                    //set the timeline pages completion status? 
+
+
                     switch (_gamePhase)
                     {
                         case 0: // intro dialogue
@@ -237,6 +248,43 @@ namespace PaperKiteStudio.Dangers
             _dialogueManager.StartDialogue();
         }
 
+
+        public void SetTimelineComplete(int timelinePage) 
+        {
+            switch (timelinePage)
+            {
+                case 1:
+                    timeline1Completed = true;
+                    _init.playerData.timeline1Complete = true;
+                    break;
+                case 2:
+                    timeline2Completed = true;
+                    _init.playerData.timeline2Complete = true;
+                    break;
+                case 3:
+                    timeline3Completed = true;
+                    _init.playerData.timeline3Complete = true;
+                    break;
+                case 4:
+                    timeline4Completed = true;
+                    _init.playerData.timeline4Complete = true;
+                    break;
+                case 5:
+                    timeline5Completed = true;
+                    _init.playerData.timeline5Complete = true;
+                    break;
+                case 6:
+                    timeline6Completed = true;
+                    _init.playerData.timeline6Complete = true;
+                    break;
+                case 7:
+                    timeline7Completed = true;
+                    _init.playerData.timeline7Complete = true;
+                    break;
+            }
+
+            _init.Save();
+        }
         public void SetGamePhase(int phase)
         {
             _gamePhase = phase;

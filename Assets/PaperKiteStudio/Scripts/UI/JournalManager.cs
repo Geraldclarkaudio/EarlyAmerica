@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Video;
 namespace PaperKiteStudio.Dangers
 {
@@ -32,6 +33,9 @@ namespace PaperKiteStudio.Dangers
 
         [SerializeField]
         private ReadAloudButton[] _readAloudButtons;
+
+        [SerializeField]
+        private Button _timelineButton;
 
         private void Start()
         {
@@ -88,6 +92,7 @@ namespace PaperKiteStudio.Dangers
       
             if (_currentPage.associatedGamePhase < _gamePhaseManager.GetGamePhase()) // if the associated game phase value is less than the current game phase enable all the entries because they wouldnt be there otherwise. 
             {
+                _timelineButton.interactable = true;
                 for (int i = 0; i < _updateTexts.Length; i++)
                 {
                     _updateTexts[i].text = _initializer.GetText(newPage.updateTextKeys[i]);
@@ -108,6 +113,7 @@ namespace PaperKiteStudio.Dangers
                     else
                     {
                         _updateTexts[i].text = "???";
+                        _timelineButton.interactable = false;
                     }
                 }
             }
@@ -120,6 +126,11 @@ namespace PaperKiteStudio.Dangers
             _currentPage = allPages[_currentPageNumber -1];
             PopulatePageData(_currentPage);
             _pageSelectUI.SetActive(false);
+        }
+
+        public int GetPageNumber()
+        {
+            return _currentPageNumber;
         }
     }
 }

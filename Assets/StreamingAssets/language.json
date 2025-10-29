@@ -171,12 +171,31 @@
     "LevelSelect_QuasiWar_Intro3": "Adams dispatched a peace envoy to France with hopes of negotiations in 1800. We need to make sure they get there unscathed!",
     "continue": "Continue",
     "Page5_Update3": "In every point of view I prefer a war to a permanent embargo. - Albert Gallatin to Jefferson, December 1807",
-    "Page5_Update2": "The docks are silent. My ships rot in the harbot. Their carggo unsold. Jefferson calls this patriotism. I call it strangulation! We've been punished for the crimes of foreign powers. - New England Merchant 1807",
+    "Page5_Update2": "The docks are silent. My ships rot in the harbor. Their cargo unsold. Jefferson calls this patriotism. I call it strangulation! We've been punished for the crimes of foreign powers. - New England Merchant 1807",
     "Move_Prompt": "Movement",
     "Barbary_Phil3": "Be careful to not be seen.",
     "Page7_Update3": "The fort was found too strong to be taken by bombardment. - Vice Admiral Alexander Cochrane, 1814",
     "Page5_Title": "Embargo Act",
     "Dodgeball_R2_Win2_TTS": "You have unlocked Jay's Treaty in your journal.",
-    "LevelSelect_Intro2": "Let's travel to 1790s America. George Washington needs our help!"
+    "LevelSelect_Intro2": "Let's travel to 1790s America. George Washington needs our help!",
+    "TL_1_Proclamation": "This formal declaration stated the U.S. would remain neutral in the conflict between France and Great Britain.",
+    "TL_1_Jay": "This treaty aimed to avoid war with Great Britain and facilitate trade with them.",
+    "TL_1_Farewell": "A powerful letter to the American people announcing his decision not to seek a third term as president.",
+    "TL_2_BribeDemand": "Agents X, Y, and Z demand bribe payments during this historical event.",
+    "TL_2_Publicoutrage": "Adams publishes the correspondence with France to the public.",
+    "TL_2_Quasi": "Undeclared war between the U.S. and France fought in the Caribbean and Atlantic",
+    "TL_3_Begin": "U.S. rescinds treaties with France and authorizes American ships to seize French vessels.",
+    "TL_3_Battle": "The USS Constellation defeats a French frigate in the Caribbean marking the first major U.S. victory.",
+    "TL_3_Treaty": "Also known as the Treaty of Mortefontaine. This treaty ended the Quasi War.",
+    "Page1_ButtonText1": "Proclamation of Neutrality",
+    "Page1_ButtonText2": "Jays Treaty",
+    "Page1_ButtonText3": "Washingtons Farewell Address",
+    "Page2_ButtonText1": "The XYZ Affair",
+    "Page2_ButtonText2": "Public Outrage",
+    "Page2_ButtonText3": "Quasi-War",
+    "Page3_ButtonText1": "Beginning War",
+    "Page3_ButtonText2": "Constellation vs LInsurgente",
+    "Page3_ButtonText3": "Convention of 1800"
+
   }
 }

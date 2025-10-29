@@ -17,7 +17,8 @@ MonoBehaviour:
   - LevelSelect_Intro1
   - LevelSelect_Intro2
   ttsKey:
-  - TTS_LevelSelect_Intro1
+  - 
+  - 
   icons:
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}

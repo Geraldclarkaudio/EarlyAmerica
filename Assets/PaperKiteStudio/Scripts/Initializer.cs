@@ -12,6 +12,14 @@ public class PlayerData // what do we want to save?
 {
     public int gamePhase; // main progression phase. Phase 1 = level 1 Phase 2  = level 2 etc etc 
     public int phaseStep; // sub phase for main progression.. example : GamePhase 1 PhaseStep 4
+    public bool timeline1Complete;
+    public bool timeline2Complete;
+    public bool timeline3Complete;
+    public bool timeline4Complete;
+    public bool timeline5Complete;
+    public bool timeline6Complete;
+    public bool timeline7Complete;
+
 }
 
 public class Initializer : MonoBehaviour
@@ -157,6 +165,14 @@ public class Initializer : MonoBehaviour
             playerData = loadedPlayerData;
             _gamePhaseManager._gamePhase = loadedPlayerData.gamePhase;
             _gamePhaseManager._phaseStep = loadedPlayerData.phaseStep;
+
+            _gamePhaseManager.timeline1Completed = loadedPlayerData.timeline1Complete;
+            _gamePhaseManager.timeline2Completed = loadedPlayerData.timeline2Complete;
+            _gamePhaseManager.timeline3Completed = loadedPlayerData.timeline3Complete;
+            _gamePhaseManager.timeline4Completed = loadedPlayerData.timeline4Complete;
+            _gamePhaseManager.timeline5Completed = loadedPlayerData.timeline5Complete;
+            _gamePhaseManager.timeline7Completed = loadedPlayerData.timeline6Complete;
+            _gamePhaseManager.timeline7Completed = loadedPlayerData.timeline7Complete;
 
             LOLSDK.Instance.SubmitProgress(1, loadedPlayerData.gamePhase, 8);
            
