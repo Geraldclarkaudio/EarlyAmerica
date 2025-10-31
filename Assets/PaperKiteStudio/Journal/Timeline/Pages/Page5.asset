@@ -14,3 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageID: 5
   pageTitle: The Embargo Act
+  pageButtonTexts:
+  - Page5_ButtonText1
+  - Page5_ButtonText2
+  - Page5_ButtonText3
+  timelineDates:
+  - 1807
+  - 1808
+  - 1809

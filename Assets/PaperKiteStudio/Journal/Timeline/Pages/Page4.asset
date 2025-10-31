@@ -14,3 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageID: 4
   pageTitle: The Barbary Wars
+  pageButtonTexts:
+  - Page4_ButtonText1
+  - Page4_ButtonText2
+  - Page4_ButtonText3
+  timelineDates:
+  - 1801
+  - 1804
+  - 1804

@@ -14,3 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageID: 7
   pageTitle: The Battle of Ft. McHenry
+  pageButtonTexts:
+  - Page7_ButtonText1
+  - Page7_ButtonText2
+  - Page7_ButtonText3
+  timelineDates:
+  - 1814
+  - 1814
+  - 1814

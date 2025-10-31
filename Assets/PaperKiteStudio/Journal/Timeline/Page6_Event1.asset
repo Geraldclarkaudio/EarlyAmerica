@@ -9,16 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2747ee9c5fa764449c3dc40d773afc0, type: 3}
-  m_Name: Page6
+  m_Script: {fileID: 11500000, guid: 64e1d5e141eec154ab5300c0de7169e1, type: 3}
+  m_Name: Page6_Event1
   m_EditorClassIdentifier: 
-  pageID: 6
-  pageTitle: Impressment
-  pageButtonTexts:
-  - Page6_ButtonText1
-  - Page6_ButtonText2
-  - Page6_ButtonText3
-  timelineDates:
-  - 1807
-  - 1812
-  - 1812
+  eventID: 1
+  eventText: TL6_Ship

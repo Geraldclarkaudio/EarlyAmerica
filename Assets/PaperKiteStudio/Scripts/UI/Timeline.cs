@@ -42,6 +42,10 @@ namespace PaperKiteStudio.Dangers
         private int _numberCorrect;
         [SerializeField]
         private RectTransform _celebratePopUp;
+
+        //to do: when opening the completed timeline.. dont have the celebrate pop up happen. 
+        //reset the button correct/ incorrect icons when opening the timeline of another page. 
+
         private void Awake()
         {
             _init = FindAnyObjectByType<Initializer>();
@@ -126,6 +130,8 @@ namespace PaperKiteStudio.Dangers
             }
 
             CheckCurrentPageCompletion();
+
+            _numberCorrect = 0;
         }
         private void CheckCurrentPageCompletion()
         {
@@ -155,79 +161,6 @@ namespace PaperKiteStudio.Dangers
             }
         }
 
-
-        //private void CheckCurrentPageCompletion()
-        //{
-        //    if (_currentPage.pageID == 1)
-        //    {
-        //        if (_gamePhaseManager.timeline1Completed)
-        //        {
-        //            CompletePage(); //disable all the buttons.. 
-        //            ToggleInteractabilityEventButtons(false);
-        //            ToggleInteractabilitySlotButtons(false);
-        //        }
-        //    }
-
-        //    if (_currentPage.pageID == 2)
-        //    {
-        //        if (_gamePhaseManager.timeline2Completed)
-        //        {
-        //            CompletePage(); //disable all the buttons.. 
-        //            ToggleInteractabilityEventButtons(false);
-        //            ToggleInteractabilitySlotButtons(false);
-        //        }
-        //    }
-
-        //    if (_currentPage.pageID == 3)
-        //    {
-        //        if (_gamePhaseManager.timeline3Completed)
-        //        {
-        //            CompletePage(); //disable all the buttons.. 
-        //            ToggleInteractabilityEventButtons(false);
-        //            ToggleInteractabilitySlotButtons(false);
-        //        }
-        //    }
-
-        //    if (_currentPage.pageID == 4)
-        //    {
-        //        if (_gamePhaseManager.timeline4Completed)
-        //        {
-        //            CompletePage(); //disable all the buttons.. 
-        //            ToggleInteractabilityEventButtons(false);
-        //            ToggleInteractabilitySlotButtons(false);
-        //        }
-        //    }
-
-        //    if (_currentPage.pageID == 5)
-        //    {
-        //        if (_gamePhaseManager.timeline5Completed)
-        //        {
-        //            CompletePage(); //disable all the buttons.. 
-        //            ToggleInteractabilityEventButtons(false);
-        //            ToggleInteractabilitySlotButtons(false);
-        //        }
-        //    }
-
-        //    if (_currentPage.pageID == 6)
-        //    {
-        //        if (_gamePhaseManager.timeline6Completed)
-        //        {
-        //            CompletePage(); //disable all the buttons.. 
-        //            ToggleInteractabilityEventButtons(false);
-        //            ToggleInteractabilitySlotButtons(false);
-        //        }
-        //    }
-
-        //    if (_currentPage.pageID == 7)
-        //    {
-        //        if (_gamePhaseManager.timeline7Completed)
-        //        {
-        //            CompletePage(); //disable all the buttons.. 
-        //            ToggleInteractabilityEventButtons(false);
-        //            ToggleInteractabilitySlotButtons(false);
-        //        }
-        //    }
-        //}
         public void SetCurrentEvent(TimelineEvent currentEvent)
         {
             _currentEvent = currentEvent;

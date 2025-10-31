@@ -187,6 +187,18 @@
     "TL_3_Begin": "U.S. rescinds treaties with France and authorizes American ships to seize French vessels.",
     "TL_3_Battle": "The USS Constellation defeats a French frigate in the Caribbean marking the first major U.S. victory.",
     "TL_3_Treaty": "Also known as the Treaty of Mortefontaine. This treaty ended the Quasi War.",
+    "TL_4_Philly": "In 1803, this frigate ran aground and was seized by Tripolitan forces.",
+    "TL_4_Burn": "In 1804 this Lieutenant led a nighttime raid to burn the USS Philadelphia to prevent its use by the enemy.",
+    "TL4_FirstWar": "This president rejected tribute payments to the Barbary States.",
+    "TL5_President": "Thomas Jefferson pushed the Embargo Act in hopes of weakening them.",
+    "TL5_EmbargoAct": "Banned all foreign imports and exports.",
+    "TL5_Neutrality": "Thomas Jefferson hoped the economic pressure would force foreign nations to respect this American goal.",
+    "TL6_War": "As a result of Impressment, the U.S. declared war on this nation.",
+    "TL6_Ship": "British forces boarded this ship and impressed 4 sailors in U.S. waters.",
+    "TL6_1812": "The war the U.S. waged on Great Britain would come to be known as what?",
+    "TL7_Where": "The star shaped fort the battle of Fort McHenry is located here.",
+    "TL7_Bangled": "This song was composed by Francis Scott Key as he watched the 25 hour bombardment.",
+    "TL7_Who": "What nation bombarded Fort Mchenry?",
     "Page1_ButtonText1": "Proclamation of Neutrality",
     "Page1_ButtonText2": "Jays Treaty",
     "Page1_ButtonText3": "Washingtons Farewell Address",
@@ -195,7 +207,20 @@
     "Page2_ButtonText3": "Quasi-War",
     "Page3_ButtonText1": "Beginning War",
     "Page3_ButtonText2": "Constellation vs LInsurgente",
-    "Page3_ButtonText3": "Convention of 1800"
+    "Page3_ButtonText3": "Convention of 1800",
+    "Page4_ButtonText1": "USS Philadelphia",
+    "Page4_ButtonText2": "Stephan Decatur",
+    "Page4_ButtonText3": "Thomas Jefferson",
+    "Page5_ButtonText1": "France and Great Britain",
+    "Page5_ButtonText2": "The Embargo Act",
+    "Page5_ButtonText3": "Neutrality",
+    "Page6_ButtonText1": "Chesapeake",
+    "Page6_ButtonText2": "War of 1812",
+    "Page6_ButtonText3": "Great Britain",
+    "Page7_ButtonText1": "Baltimore, Maryland",
+    "Page7_ButtonText2": "The Star Spangled Banner",
+    "Page7_ButtonText3":"Great Britain" 
+
 
   }
 }

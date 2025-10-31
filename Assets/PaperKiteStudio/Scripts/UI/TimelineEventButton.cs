@@ -18,21 +18,30 @@ namespace PaperKiteStudio.Dangers
         [SerializeField]
         private Image _correctImage;
 
+        private void OnEnable()
+        {
+            _correctPopUp.SetActive(false); 
+        }
         public void SelectedButton()
         {
-            if(_timelineManager.GetCurrentSlot().GetAssociatedEvent().eventID != _buttonID)
+            if (_timelineManager.GetCurrentSlot() != null)
             {
-                _correctImage.sprite = _wrongSprite;
-            }
-            else
-            {
-                _correctImage.sprite = _correctSprite;
-                _timelineManager.GetCurrentSlot().SetCompleted(true);
-            }
+                if (_timelineManager.GetCurrentSlot().GetAssociatedEvent().eventID != _buttonID)
+                {
+                    _correctImage.sprite = _wrongSprite;
+                }
+                else
+                {
+                    _correctImage.sprite = _correctSprite;
+                    _timelineManager.GetCurrentSlot().SetCompleted(true);
+                }
 
-            _timelineManager.ToggleEventPanel(false);
-            _timelineManager.ToggleInteractabilityEventButtons(false);
-            _correctPopUp.SetActive(true);
+
+                _timelineManager.ToggleEventPanel(false);
+                _timelineManager.ToggleInteractabilityEventButtons(false);
+                _correctPopUp.SetActive(true);
+
+            }
         }
     }
 }
