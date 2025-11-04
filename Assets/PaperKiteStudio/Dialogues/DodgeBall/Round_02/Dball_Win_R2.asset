@@ -29,5 +29,5 @@ MonoBehaviour:
   _newUIEvents: []
   _dialoguePositionChanges: []
   _eventTriggers: []
-  _endDialogueEvent: {fileID: 0}
-  _postDialogEvent: {fileID: 11400000, guid: 6c284af45ef4af34c8f243efc661f5b4, type: 2}
+  _endDialogueEvent: {fileID: 11400000, guid: fe0f6dbd3efc12f458501371b9560b60, type: 2}
+  _postDialogEvent: {fileID: 0}

@@ -18,13 +18,16 @@ MonoBehaviour:
   - XYZ_Intro2
   - XYZ_Intro3
   - XYZ_Intro4
+  - XYZ_Intro5
   ttsKey: []
   icons:
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
+  - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
   _speakerName:
+  - Guide Bot
   - Guide Bot
   - Guide Bot
   - Guide Bot

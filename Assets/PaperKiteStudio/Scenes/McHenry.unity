@@ -1105,14 +1105,14 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 925822891}
   - {fileID: 1285889363}
-  defaultSpawnInterval: {x: 0.5, y: 1.75}
+  defaultSpawnInterval: {x: 1, y: 3}
   poolSizePerType: 8
   spawnScales:
-  - {x: 3, y: 3, z: 3}
-  - {x: 3, y: 3, z: 3}
+  - {x: 4, y: 4, z: 4}
+  - {x: 4, y: 4, z: 4}
   spawnIntervals:
-  - {x: 0.5, y: 1.75}
-  - {x: 0.5, y: 1.75}
+  - {x: 1, y: 3}
+  - {x: 1, y: 3}
 --- !u!4 &867961380
 Transform:
   m_ObjectHideFlags: 0
@@ -1911,7 +1911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateMachine: {fileID: 760560540}
   _timerText: {fileID: 1899073747}
-  originalTimerDuration: 60
+  originalTimerDuration: 30
 --- !u!4 &1618979858
 Transform:
   m_ObjectHideFlags: 0
@@ -2389,7 +2389,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.15
 --- !u!1 &4167482057578753847
 GameObject:
   m_ObjectHideFlags: 0

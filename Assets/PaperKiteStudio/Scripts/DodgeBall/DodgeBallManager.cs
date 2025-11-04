@@ -67,7 +67,7 @@ namespace PaperKiteStudio.Dangers
 
         public void EndGame()
         {
-            if (dodgeballUI.neutrality > 0)
+            if (dodgeballUI.neutrality >= 0)
             {
                 WinGame();
             }
@@ -114,6 +114,7 @@ namespace PaperKiteStudio.Dangers
 
         public void IncrementTempPhase()
         {
+            Debug.Log("INCREMENTING");
             _gamePhaseManager.SetTempPhase(2);
         }
     }

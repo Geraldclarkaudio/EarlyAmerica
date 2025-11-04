@@ -52,8 +52,6 @@ namespace PaperKiteStudio.Dangers
                     return;
                 case "LevelSelect":
                     //set the timeline pages completion status? 
-
-
                     switch (_gamePhase)
                     {
                         case 0: // intro dialogue
