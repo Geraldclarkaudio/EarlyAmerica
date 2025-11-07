@@ -24,7 +24,7 @@ namespace PaperKiteStudio.Dangers
         public bool timeline5Completed;
         public bool timeline6Completed;
         public bool timeline7Completed;
-
+        public bool hasOpenedJournal;
         /// <summary>
         /// You can have a tempPhase of 1 while the gmae phase is 10 for example. If we want the player to be able to return to previous parts of the game, this is 
         /// necessary. Otherwise we probably wont need a tempPhase. 
@@ -305,8 +305,21 @@ namespace PaperKiteStudio.Dangers
             }
         }
 
+        public void SetHasOpenedJournalComplete()
+        {
+            hasOpenedJournal = true;
+            _init.playerData.hasOpenedJournal = true;
+            _init.Save();
+        }
+
+        public bool GetHasOpenedJournal()
+        {
+            return hasOpenedJournal;
+        }
+
         public void IncrementGamePhase() // call when current phase is completed. 
         {
+            Debug.LogWarning("INCREMENT GAME PHASE");
             if(_tempPhase < _gamePhase)
             {
          

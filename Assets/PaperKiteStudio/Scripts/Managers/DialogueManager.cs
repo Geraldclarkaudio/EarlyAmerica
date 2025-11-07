@@ -45,6 +45,7 @@ namespace PaperKiteStudio.Dangers
         public static event Action onEndDialogue;
         public void StartDialogue() // called when button is clicked or specific event happens. 
         {
+            Debug.Log("Starting Dialogue");
             onBeginDialogue?.Invoke();
 
             _thisCanvas.enabled = true;
@@ -113,10 +114,6 @@ namespace PaperKiteStudio.Dangers
                 {
                     LOLSDK.Instance.SpeakText(currentDialogue.key[keyIndex]);
                 }
-
-
-                //original code
-                //LOLSDK.Instance.SpeakText(currentDialogue.key[keyIndex]);
             }
         }
 

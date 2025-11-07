@@ -99,7 +99,7 @@
     "Impress_Inst": "Hold down the left mouse button to begin moving the arrow. Lift the left mouse button when the arrow is within the target zone to avoid impressment!",
     "Embargo_Lose_02": "lost round 2",
     "Page3_Update1": "Congress gave us a Navy, and now we're fighting back at sea! - The Naval Act of 1798",
-    "Dodgeball_R2_Win": "One last chance to keep America out of Europe's endless wars and stand firm on neutrality!",
+    "Dodgeball_R2_Win": "You've succeeded in keeping America out of Europe's endless wars and stand firm on neutrality!",
     "Page6_Update1": "The took me from the ship Chesapeake. I told them I was American, but they said I was a British subject and must serve. - Deposition of John Strachan, 1807",
     "Page4_Title": "Barbary Wars",
     "LevelSelect_Impressment_Intro6": "The British Navy is prowling the harbor looking for deserters...even if they are Americans.",
@@ -114,7 +114,7 @@
     "Guide_Bot_03": "Let's settle this with a friendly game of dodgeball! Remain neutral by taking as few hits as possible.",
     "XYZ_LoseRound2": "You lost round 2!",
     "LS_Mc6": "We will need to travel to the year 1814 and hold the line against British bombardment to ensure the flag is still flying when it's all said and done!",
-    "XYZ_LoseRound1": "You lost round 1!",
+    "XYZ_LoseRound1": "Oh no! It looks like agents X, Y, and Z were sneaky enough to get you to pay France tribute! We need to go back and try again!",
     "LevelSelect_XYZ1": "After George Washington left presidential office John Adams took over.",
     "Quasi_Intro3": "Negotiate peace with France.",
     "Dodgeball_Jefferson_01": "France stood with us. Now we stand with them!",
@@ -220,8 +220,11 @@
     "Page6_ButtonText3": "Great Britain",
     "Page7_ButtonText1": "Baltimore, Maryland",
     "Page7_ButtonText2": "The Star Spangled Banner",
-    "Page7_ButtonText3":"Great Britain" 
-
-
+    "Page7_ButtonText3": "Great Britain",
+    "JournalIntro1": "You're probably wondering what I meant before when I said that you had unlocked something in your journal. Your journal is a collection of important historical documents and events related to the missions you've completed.",
+    "JournalIntro2": "You can access your journal at any time by pressing the TAB key. Take a look through it when you get a chance! So anyway... lets talk about what happened after George Washington left office.",
+    "JournalWelcome1": "Welcome to your journal, traveler! Here you'll find important historical documents and events related to the missions you've completed.",
+    "JournalWelcome2": "The Timeline button down there in the bottom left is where you will officially repair the rip in the Space-Time Continuum.",
+    "JournalWelcome3": "Match the dates and their corresponding events to complete the timeline and seal the rip!"
   }
 }

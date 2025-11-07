@@ -10,25 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0368cd5f494b8dd4cab4883467603c5b, type: 3}
-  m_Name: LS_XYZ
+  m_Name: Journal_Intro
   m_EditorClassIdentifier: 
   dialogueID: 0
   key:
-  - JournalIntro1
-  - JournalIntro2
-  - LevelSelect_XYZ1
-  - LevelSelect_XYZ2
-  - LevelSelect_XYZ3
-  - LevelSelect_XYZ4
-  - LevelSelect_XYZ5
-  - LevelSelect_XYZ6
+  - JournalWelcome1
+  - JournalWelcome2
+  - JournalWelcome3
   ttsKey: []
   icons:
-  - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
-  - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
-  - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
-  - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
-  - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
   - {fileID: 21300000, guid: 746f60d17e45bdd468bb307472b2d095, type: 3}
@@ -36,14 +26,9 @@ MonoBehaviour:
   - Guide Bot
   - Guide Bot
   - Guide Bot
-  - Guide Bot
-  - Guide Bot
-  - Guide Bot
-  - Guide Bot
-  - Guide Bot
   _animations: []
   _newUIEvents: []
   _dialoguePositionChanges: []
   _eventTriggers: []
-  _endDialogueEvent: {fileID: 11400000, guid: e847262bd8a50df4bbd8986705eb4b63, type: 2}
+  _endDialogueEvent: {fileID: 0}
   _postDialogEvent: {fileID: 0}

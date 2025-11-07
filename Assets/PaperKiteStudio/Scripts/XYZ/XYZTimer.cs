@@ -30,7 +30,7 @@ namespace PaperKiteStudio.Dangers
                 {
                     ResetTimer();
                     EndRound();
-                    stateMachine.SetState(GameStateMachine.GameState.Win);
+                    stateMachine.SetState(GameStateMachine.GameState.Win); // win because you made it to the end.. 
                 }
             }
         }

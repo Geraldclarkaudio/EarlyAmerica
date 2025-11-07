@@ -37,14 +37,14 @@ namespace PaperKiteStudio.Dangers
             switch (_gamePhaseManager.GetPhaseStep())
             {
                 case 1: // good job you lost round 1
-                    _dialogueManager.dialogueIndex = 16;
+                    _dialogueManager.dialogueIndex = 40;
                     break;
                 case 2: // you lost round 2 
-                    _dialogueManager.dialogueIndex = 17;
+                    _dialogueManager.dialogueIndex = 40;
 
                     break;
                 case 3: // you lost round 3
-                    _dialogueManager.dialogueIndex = 18;
+                    _dialogueManager.dialogueIndex = 40;
                     break;
             }
 

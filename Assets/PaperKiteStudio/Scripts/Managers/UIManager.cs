@@ -40,7 +40,8 @@ namespace PaperKiteStudio.Dangers
         private DialogueManager _dialogueManager;
         [SerializeField]
         private JournalManager _journalManager;
-
+        [SerializeField]
+        private GamePhaseManager _gamePhaseManager;
 
         private void OnEnable()
         {
@@ -86,6 +87,12 @@ namespace PaperKiteStudio.Dangers
             }
             if (Input.GetKeyDown(KeyCode.Tab))
             {
+                if(_gamePhaseManager.GetHasOpenedJournal() == false)
+                {
+                    _gamePhaseManager.SetHasOpenedJournalComplete();
+                    _dialogueManager.dialogueIndex = 41;
+                    _dialogueManager.StartDialogue();
+                }
                 //open journal.. 
                 if(state != UIState.Journal)
                 {

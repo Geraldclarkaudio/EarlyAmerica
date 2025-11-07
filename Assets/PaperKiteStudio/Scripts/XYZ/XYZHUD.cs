@@ -73,7 +73,8 @@ namespace PaperKiteStudio.Dangers
 
             if (_coinAmount <= 0)
             {
-                stateMachine.SetState(GameStateMachine.GameState.Lose);
+                stateMachine.SetState(GameStateMachine.GameState.Lose); // lose in the hud.. eh! 
+                Debug.Log("Lost");
                 //_gameOverPanel.SetActive(true); // animate with DG.Twweening eventually
             }
             if (!stateMachine.Is(GameStateMachine.GameState.Lose))

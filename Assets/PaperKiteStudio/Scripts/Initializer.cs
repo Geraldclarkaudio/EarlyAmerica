@@ -19,7 +19,7 @@ public class PlayerData // what do we want to save?
     public bool timeline5Complete;
     public bool timeline6Complete;
     public bool timeline7Complete;
-
+    public bool hasOpenedJournal;
 }
 
 public class Initializer : MonoBehaviour
@@ -173,7 +173,7 @@ public class Initializer : MonoBehaviour
             _gamePhaseManager.timeline5Completed = loadedPlayerData.timeline5Complete;
             _gamePhaseManager.timeline7Completed = loadedPlayerData.timeline6Complete;
             _gamePhaseManager.timeline7Completed = loadedPlayerData.timeline7Complete;
-
+            _gamePhaseManager.hasOpenedJournal = loadedPlayerData.hasOpenedJournal;
             LOLSDK.Instance.SubmitProgress(1, loadedPlayerData.gamePhase, 8);
            
             Save();

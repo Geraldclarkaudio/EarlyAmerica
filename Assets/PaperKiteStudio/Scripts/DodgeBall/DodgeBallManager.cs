@@ -114,8 +114,17 @@ namespace PaperKiteStudio.Dangers
 
         public void IncrementTempPhase()
         {
-            Debug.Log("INCREMENTING");
-            _gamePhaseManager.SetTempPhase(2);
+            if(_gamePhaseManager.GetGamePhase() > _gamePhaseManager.GetTempPhase())
+            {
+                _gamePhaseManager.SetTempPhase(2);
+            }
+            else
+            {
+                _gamePhaseManager.IncrementGamePhase(); // dunno 
+
+            }
+            _gamePhaseManager.SetPhaseStep(0);
+
         }
     }
 }

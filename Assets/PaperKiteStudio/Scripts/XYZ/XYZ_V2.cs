@@ -52,7 +52,6 @@ namespace PaperKiteStudio.Dangers
                 return;
             }
 
-           // if (_gamePhaseManager.GetGamePhase() != _gamePhaseManager.GetTempPhase()) return; // breaking stuff
             if (hasStartedTweens) return;
 
             float duration = _gamePhaseManager.GetPhaseStep() switch
@@ -69,25 +68,13 @@ namespace PaperKiteStudio.Dangers
             hasStartedTweens = true;
         }
 
-        //private void StartTweens(float duration)
-        //{
-        //    moveTween = transform.DOMove(_playerPos.transform.position, duration).OnComplete(() =>
-        //    {
-        //        stateMachine.SetState(GameStateMachine.GameState.Paused);
-        //        transform.position = _originalPosition.transform.position;
-        //        _associatedButton.SetActive(false);
-        //        gameObject.SetActive(false);
-        //    }).SetAutoKill(true);
-
-        //    scaleTween = transform.DOScale(1, duration).SetAutoKill(true);
-        //}
         private void StartTweens(float duration)
         {
             moveTween = transform.DOMove(_playerPos.transform.position, duration).OnComplete(() =>
             {
                 if (stateMachine.CurrentState != GameStateMachine.GameState.Lose)
                 {
-                    stateMachine.SetState(GameStateMachine.GameState.Paused);
+                    stateMachine.SetState(GameStateMachine.GameState.Paused); // pause the game when hit. 
                 }
 
                 transform.position = _originalPosition.transform.position;

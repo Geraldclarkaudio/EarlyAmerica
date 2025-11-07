@@ -14,17 +14,15 @@ namespace PaperKiteStudio.Dangers
         private GamePhaseManager _gamePhaseManager;
         [SerializeField]
         private GameObject _completeGameButton;
-
+        [SerializeField]
+        private GameObject _journalInstructionText;
         private void Start()
         {
             _gamePhaseManager = FindAnyObjectByType<GamePhaseManager>();
-          //  UnlockLevelButtons(_gamePhaseManager.GetGamePhase()); 
-          //this is now being called as a game vent after the dialogue when loading into the level select scene. 
         }
 
-        public void UnlockLevelButtons() //planet buttons are enabled/disabled according to current GamePhase. 
+        public void UnlockLevelButtons()
         {
-            //Debug.Log("UNLOCK BUTTONS");
             for (int i = 0; i < _levelButtons.Count; i++)
             {
                 _levelButtons[i].interactable = i < _gamePhaseManager.GetGamePhase();
@@ -56,6 +54,11 @@ namespace PaperKiteStudio.Dangers
         public void CompleteGameButtonEnable() // give player option to complete assignment.
         {
             _completeGameButton.SetActive(true);
+        }
+        public void ActivateJournalInstructions()
+        {
+            if(_gamePhaseManager.GetHasOpenedJournal() == true)
+            _journalInstructionText.SetActive(true);
         }
     }
 }
