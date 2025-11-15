@@ -27,7 +27,6 @@ namespace PaperKiteStudio.Dangers
             if (newState == CurrentState) return;
 
             currentState = newState;
-            Debug.Log($"GameState changed to: {newState}");
             OnStateChanged?.Invoke(newState);
         }
 

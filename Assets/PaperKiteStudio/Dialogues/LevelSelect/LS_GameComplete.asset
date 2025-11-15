@@ -34,4 +34,4 @@ MonoBehaviour:
   _dialoguePositionChanges: []
   _eventTriggers: []
   _endDialogueEvent: {fileID: 11400000, guid: e847262bd8a50df4bbd8986705eb4b63, type: 2}
-  _postDialogEvent: {fileID: 0}
+  _postDialogEvent: {fileID: 11400000, guid: 1ee5ba73d7d43f74a884c5b7ea031172, type: 2}

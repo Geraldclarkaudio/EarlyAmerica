@@ -319,7 +319,6 @@ namespace PaperKiteStudio.Dangers
 
         public void IncrementGamePhase() // call when current phase is completed. 
         {
-            Debug.LogWarning("INCREMENT GAME PHASE");
             if(_tempPhase < _gamePhase)
             {
          
@@ -372,11 +371,18 @@ namespace PaperKiteStudio.Dangers
             return _tempPhase;
         }
 
-        private void Update()
+        public bool IsTimelineComplete(int pageNumber)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha9))
+            switch (pageNumber)
             {
-                IncrementPhaseStep();
+                case 1: return timeline1Completed;
+                case 2: return timeline2Completed;
+                case 3: return timeline3Completed;
+                case 4: return timeline4Completed;
+                case 5: return timeline5Completed;
+                case 6: return timeline6Completed;
+                case 7: return timeline7Completed;
+                default: return false;
             }
         }
     }

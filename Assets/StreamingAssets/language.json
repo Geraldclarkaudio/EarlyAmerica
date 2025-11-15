@@ -142,7 +142,7 @@
     "LevelSelect_DodgeBall1": "Let's go dodge some balls!",
     "Dodgeball_R3_Win2_TTS": "It was survival.",
     "ShipBurn5": "It's time to travel to 1807 and ensure Jefferson's plan unfolds...however damaging it may be to the U.S. at the time. History must remain accurate!",
-    "Embargo_Win_01": "Nicely done. You've unlocked a new journal entry.",
+    "Embargo_Win_01": "Nicely done. No foreign goods shall pass! You successfully upheld Jefferson's decre.",
     "LevelSelect_BarbaryWars_Intro4": "Let's travel to 1804. In 1803, the USS Philadelphia ran aground and the crew was imprisoned!",
     "Quasi_PopUp_Enemy2": "Neutrality is cowardice! Choose a side!",
     "Dodgeball_R2_Intro": "1 more round! Let's go!",
@@ -225,6 +225,7 @@
     "JournalIntro2": "You can access your journal at any time by pressing the TAB key. Take a look through it when you get a chance! So anyway... lets talk about what happened after George Washington left office.",
     "JournalWelcome1": "Welcome to your journal, traveler! Here you'll find important historical documents and events related to the missions you've completed.",
     "JournalWelcome2": "The Timeline button down there in the bottom left is where you will officially repair the rip in the Space-Time Continuum.",
-    "JournalWelcome3": "Match the dates and their corresponding events to complete the timeline and seal the rip!"
+    "JournalWelcome3": "Match the dates and their corresponding events to complete the timeline and seal the rip!",
+    "JournalPrompt": "Your journal has been updated with new entries."
   }
 }

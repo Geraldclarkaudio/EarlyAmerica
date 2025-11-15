@@ -37,6 +37,9 @@ namespace PaperKiteStudio.Dangers
         [SerializeField]
         private Button _timelineButton;
 
+        [SerializeField]
+        private JournalVFX _journalVFX;
+
         private void Start()
         {
             _pageSelectUI.SetActive(false);
@@ -117,6 +120,8 @@ namespace PaperKiteStudio.Dangers
                     }
                 }
             }
+
+            _journalVFX.SetImage();
 
             //grab the data from the currentpage. currentPage should = the page number..
         }

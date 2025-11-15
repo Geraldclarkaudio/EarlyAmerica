@@ -74,7 +74,6 @@ namespace PaperKiteStudio.Dangers
             if (_coinAmount <= 0)
             {
                 stateMachine.SetState(GameStateMachine.GameState.Lose); // lose in the hud.. eh! 
-                Debug.Log("Lost");
                 //_gameOverPanel.SetActive(true); // animate with DG.Twweening eventually
             }
             if (!stateMachine.Is(GameStateMachine.GameState.Lose))
@@ -87,7 +86,6 @@ namespace PaperKiteStudio.Dangers
         public void UpdateCoinUI()
         {
             _coinText.text = _coinAmount.ToString();
-            Debug.Log("coin ui updated");
         }
 
         public void SetRoundStartCoinAmount()
@@ -99,7 +97,6 @@ namespace PaperKiteStudio.Dangers
         public void SetCoinAmount()
         {
             _coinText.text = 0.ToString();
-            Debug.Log("coin text set to 0");
             _coinAmount = roundStartCoinAmount;
         }
     }

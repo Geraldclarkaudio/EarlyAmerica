@@ -45,7 +45,6 @@ namespace PaperKiteStudio.Dangers
         public static event Action onEndDialogue;
         public void StartDialogue() // called when button is clicked or specific event happens. 
         {
-            Debug.Log("Starting Dialogue");
             onBeginDialogue?.Invoke();
 
             _thisCanvas.enabled = true;
@@ -211,8 +210,8 @@ namespace PaperKiteStudio.Dangers
             if (dialogueIsActive)
             {
                 //For testing. Delete later (used to make wait time between dialogue lines 0 so we dont have to wait for TTS length) 
-                _progressSlider.value = _progressSlider.maxValue;
-                canProceed = 0;
+                //_progressSlider.value = _progressSlider.maxValue;
+                //canProceed = 0;
 
 
                 if (_progressSlider.value < _progressSlider.maxValue)

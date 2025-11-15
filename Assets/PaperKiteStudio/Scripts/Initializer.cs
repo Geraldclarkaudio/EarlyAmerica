@@ -126,7 +126,6 @@ public class Initializer : MonoBehaviour
             return;
 
         JSONNode startGamePayload = JSON.Parse(startGameJSON);
-        // Debug.Log("StartGame()Called");
 
         // Capture the language code from the start payload. Use this to switch fonts
         _langCode = startGamePayload["languageCode"];

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,13 @@ namespace PaperKiteStudio.Dangers
         private PlayableDirector _cutsceneDirector;
         [SerializeField]
         private GamePhaseManager _gamePhaseManager;
-    
+        [SerializeField]
+        private RectTransform _journalRect;
+        [SerializeField]
+        private RectTransform _originalRect;
+        [SerializeField]
+        private RectTransform _targetRect;
+
         private void Start()
         {
             _gamePhaseManager = FindAnyObjectByType<GamePhaseManager>();
@@ -32,6 +39,10 @@ namespace PaperKiteStudio.Dangers
         public void IndrementGamePhase()
         {
             _gamePhaseManager.IncrementGamePhase();
+        }
+        public void ShowJournalPrompt()
+        {
+            _journalRect.DOAnchorPosX(_targetRect.anchoredPosition.x, 0.5f);    
         }
     }
 }
